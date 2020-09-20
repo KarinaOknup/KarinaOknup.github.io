@@ -267,3 +267,37 @@ margin: 0 5px;
 .btn-implement{
     margin-top: 2px;
 }
+.subscribe{
+    width: 1600px;
+    height: 524px;
+    background-image: url(assets/image/image-bg.png);
+}
+.h2_subscribe{
+    width: 385px;
+    height: 28px;
+    margin-left: 610px;
+    margin-top: 200px;   
+    color: #FFFFFF;
+}
+.form{
+margin-top: 30px;
+margin-left: 597px;
+}
+input{
+width: 340px;
+height: 46px;
+border: 0;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+padding-left: 24px;
+line-height: 20px;
+}
+.btn-form{
+position: absolute;
+padding: 0;
+display: inline-block;
+width: 66px;
+height: 48px;
+margin-left:-25px;
+}
