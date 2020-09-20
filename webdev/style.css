@@ -1,0 +1,162 @@
+body{
+    font-family: Roboto;
+    width: 1600px;
+    margin: 0;
+}
+a{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-decoration: none;
+    }
+a:link{
+    opacity: 0.8;
+    text-decoration: none;
+}
+a:hover{
+    border-bottom: 1px solid #FFFFFF;
+    font-weight: 500;
+}
+p{
+    color: #4E4E4E;  
+}
+div{
+    display: inline-block;
+    vertical-align: middle;
+}
+h3{
+    width: 165px;
+    height: 20px;
+    margin-left:69px;
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #373737;
+
+}
+button{
+font-family: Roboto;
+background: #00AFDB;
+width: 184px;
+height: 46px;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+padding: 15px 47px;
+border: 0;
+color: white;
+}
+button:hover{
+background: #009CC2;
+}
+h1{
+position: absolute;
+left: 435px;
+top: 188px;
+font-style: normal;
+font-weight: bold;
+font-size: 64px;
+line-height: 75px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 4.5px;
+text-transform: uppercase;
+}
+h2{
+    width: 370px;
+    height: 57px;
+    left: 0px;
+    top: 0px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    color: #373737;
+}
+
+/* HEADER */ 
+.fst_screen{
+    width: 1600px;
+    height: 744px;
+    background-image: url(assets/image/bg-image.png);
+    color: white;
+     }
+header{
+width: 1600px;
+height: 95px;
+}
+.logo{
+width: 44px;
+height: 44px;
+margin-left: 778px;
+margin-top: 25px;
+}
+.menu{
+    position: absolute;
+    top: 38px;
+    }
+.abt{
+    left: 502px;
+   }
+.syl{
+    left: 625px;
+    }
+.prjkt{
+    left: 923px;
+}
+.faq{
+    left: 1058px; 
+}
+.btn-main{
+margin-left: 707px;
+margin-top: 310px;
+
+}
+.p-main{
+    position: absolute;
+    width: 504px;
+    height: 50px;
+    left: 548px;
+    top: 310px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: white;
+}
+.icon{
+    position: absolute;
+    left: 715px;
+    top:635px;
+}
+.icon_img{
+    margin-right: 25px;
+}
+.icon_img:hover{
+    transform: scale(1.2);
+}
+div.icon>a:hover{
+    border: none;
+   }
+   
