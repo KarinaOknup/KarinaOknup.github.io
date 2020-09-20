@@ -301,3 +301,51 @@ width: 66px;
 height: 48px;
 margin-left:-25px;
 }
+.download{
+    width: 1600px;
+    height: 464px;
+}
+.h2_download{
+    width: 255px;
+    height: 28px;
+    margin-left: 675px;
+    margin-top: 120px;
+    
+}
+.p_download{
+    width: 480px;
+    height: 40px;
+    margin-left: 560px;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.btn-app{
+    display: inline-table;
+    margin-right: 30px;
+    }
+.btn-download{
+    position: absolute;
+    margin-left: 599px;
+    margin-top: 15px;
+}
+.btn-icon{
+    position: absolute;
+    background-color: #009CC2;
+    padding-top: 10px;
+    width: 55px;
+    height: 36px; 
+    float: left;
+    top:0;
+   }
+.btn-downtext{
+    float: left;
+    margin-top: 2px;
+    margin-left: -25px;
+    margin-right: 20px;
+}
