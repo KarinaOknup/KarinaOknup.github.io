@@ -20,7 +20,7 @@ a:hover{
     font-weight: 500;
 }
 p{
-    color: #4E4E4E;  
+    color: #4E4E4E; 
 }
 div{
     display: inline-block;
@@ -100,7 +100,7 @@ text-transform: uppercase;
     height: 1px ;
     padding: 0 ;
     overflow: hidden;
-    border: 0 ;
+    border: 0;
   }
 .fst_screen{
     width: 1600px;
