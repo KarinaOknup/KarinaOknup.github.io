@@ -63,20 +63,6 @@ color: white;
 button:hover{
 background: #009CC2;
 }
-h1{
-position: absolute;
-left: 435px;
-top: 188px;
-font-style: normal;
-font-weight: bold;
-font-size: 64px;
-line-height: 75px;
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 4.5px;
-text-transform: uppercase;
-}
 h2{
     width: 370px;
     height: 57px;
@@ -93,8 +79,29 @@ h2{
     
     color: #373737;
 }
-
-/* HEADER */ 
+.main-text{
+font-family: Roboto;  
+position: absolute;
+left: 435px;
+top: 168px;
+font-style: normal;
+font-weight: bold;
+font-size: 64px;
+line-height: 75px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 4.5px;
+text-transform: uppercase;
+}
+.visually-hidden{
+    position: absolute ;
+    width: 1px ;
+    height: 1px ;
+    padding: 0 ;
+    overflow: hidden;
+    border: 0 ;
+  }
 .fst_screen{
     width: 1600px;
     height: 744px;
