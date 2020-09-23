@@ -124,6 +124,8 @@ margin-top: 25px;
     }
 .abt{
     left: 502px;
+    border-bottom: 1px solid #FFFFFF;
+    font-weight: 500;
    }
 .syl{
     left: 625px;
