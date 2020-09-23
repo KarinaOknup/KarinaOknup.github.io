@@ -15,7 +15,7 @@ a:link{
     opacity: 0.8;
     text-decoration: none;
 }
-a:hover a:active a:focus{
+a:hover{
     border-bottom: 1px solid #FFFFFF;
     font-weight: 500;
 }
