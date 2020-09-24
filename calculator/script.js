@@ -49,7 +49,10 @@ compute(){
     computation = prev / current
     break
     case'^':
-    computation=Math.pow(prev,current)
+    computation=prev**current
+    break
+    case'&#8730'://&#8730-знак корня из html
+    computation=Math.sqrt(prev)
     break
     default:
       return
