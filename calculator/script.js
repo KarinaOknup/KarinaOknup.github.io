@@ -21,7 +21,6 @@ this.currentOperand = this.currentOperand.toString() + number.toString();
 }
 
 chooseOperation(operation){
-if(this.currentOperand === '')  return
 if(this.previousOperand !== ''){
   this.compute()
 }
@@ -34,7 +33,7 @@ compute(){
  let computation
  const prev = parseFloat(this.previousOperand)
  const current = parseFloat(this.currentOperand)
- if (isNaN(prev) || isNaN(current)) return
+ if (isNaN(prev)) return
  switch (this.operation) {
    case '+':
      computation = prev + current
@@ -49,10 +48,7 @@ compute(){
     computation = prev / current
     break
     case'^':
-    computation=prev**current
-    break
-    case'&#8730'://&#8730-знак корня из html
-    computation=Math.sqrt(prev)
+    computation = prev**current
     break
     default:
       return
@@ -61,6 +57,19 @@ this.currentOperand = computation
 this.operation = undefined
 this.previousOperand = ''
 }
+
+sqrt(){
+  if (this.currentOperand < 0) {
+    this.currentOperand = 'ERROR'
+    return;
+  }
+  if (this.currentOperand == '') {
+    this.currentOperand = NaN;
+    this.resetFlag = true;
+    return;
+  }
+  this.currentOperand = this.currentOperand**0.5
+   }
 
 getDisplayNumber(number){
   const stringNumber = number.toString()
@@ -89,10 +98,13 @@ if (this.operation != null) {
   this.previousOperandTextElement.innerText = ''
 }
 }
+
+
 }
 
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
+const sqrt = document.querySelector('[data-operation-sqrt]')
 const eaqualsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
@@ -108,13 +120,17 @@ numberButtons.forEach( button => {
   })
 })
 
-
 operationButtons.forEach(button =>{
   button.addEventListener('click',() =>{
     calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
 })
+
+sqrt.addEventListener('click', () =>{
+  calculator.sqrt()
+  calculator.updateDisplay()
+    })
 
 eaqualsButton.addEventListener('click', button =>{
 calculator.compute()
