@@ -7,8 +7,10 @@
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(133,19,152,1) 41%, rgba(208,58,224,1) 100%);
-}
+  background-image: url(https://images.unsplash.com/photo-1543892524-a56364723402?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
 
 .calculator-grid {
   display: grid;
@@ -17,7 +19,7 @@ body {
   min-height: 100vh;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(120px, auto) repeat(6, 100px);
-}
+  }
 
 .calculator-grid > button  {
   cursor: pointer;
