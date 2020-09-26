@@ -31,24 +31,24 @@ this.currentOperand = ''
 
 compute(){
  let computation
- const prev = parseFloat(this.previousOperand)
- const current = parseFloat(this.currentOperand)
- if (isNaN(prev)||isNaN(current)) return
+ if (isNaN(this.previousOperand)||isNaN(this.currentOperand)) return
  switch (this.operation) {
    case '+':
-     computation = prev + current
+     computation = this.previousOperand + this.currentOperand
      break
    case '-':
-    computation = prev - current
+    computation = this.previousOperand - this.currentOperand
     break
    case '*':
-    computation = prev * current
+    computation = this.previousOperand * this.currentOperand
     break
    case '÷':
-    computation = prev / current
+    computation = this.previousOperand / this.currentOperand
     break
     case'^':
-    computation = prev**current
+    //if(current%2 !== 0 && prev < 0)
+   computation = this.previousOperand ** this.currentOperand
+   // else computation = prev**current 
     break
     default:
       return
