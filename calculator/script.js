@@ -34,25 +34,26 @@ compute(){
  if (isNaN(this.previousOperand)||isNaN(this.currentOperand)) return
  switch (this.operation) {
    case '+':
-     computation = this.previousOperand + this.currentOperand
+     computation = +this.previousOperand + +this.currentOperand
      break
    case '-':
-    computation = this.previousOperand - this.currentOperand
+    computation = +this.previousOperand - +this.currentOperand
     break
    case '*':
-    computation = this.previousOperand * this.currentOperand
+    computation = +this.previousOperand * +this.currentOperand
     break
    case '÷':
-    computation = this.previousOperand / this.currentOperand
+    computation = +this.previousOperand / +this.currentOperand
     break
     case'^':
     //if(current%2 !== 0 && prev < 0)
-   computation = this.previousOperand ** this.currentOperand
+   computation = (+this.previousOperand) ** +this.currentOperand
    // else computation = prev**current 
     break
     default:
       return
  }
+computation=Math.round(computation*1000000000000000)/1000000000000000
 this.currentOperand = computation
 this.operation = undefined
 this.previousOperand = ''
@@ -103,9 +104,8 @@ if (this.operation != null) {
   `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
 }else{
   this.previousOperandTextElement.innerText = ''
+  }
 }
-}
-
 
 }
 
@@ -120,6 +120,8 @@ const previousOperandTextElement = document.querySelector('[data-previous-operan
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
 const calculator=new Calculator(previousOperandTextElement,currentOperandTextElement)
+
+alert('Hello! My calculator is very easy to figure out, but you need to know a couple of things: 1) The root is calculated immediately after pressing the button 2) If you want to make a number negative, there is a special button +/- ')
 
 numberButtons.forEach( button => {
   button.addEventListener('click', () => {
@@ -148,6 +150,7 @@ sqrt.addEventListener('click', () =>{
 eaqualsButton.addEventListener('click', button =>{
 calculator.compute()
 calculator.updateDisplay()
+calculator.currentOperand=''
 })
 
 allClearButton.addEventListener('click', button =>{
