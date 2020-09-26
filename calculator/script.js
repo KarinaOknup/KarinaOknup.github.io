@@ -33,7 +33,7 @@ compute(){
  let computation
  const prev = parseFloat(this.previousOperand)
  const current = parseFloat(this.currentOperand)
- if (isNaN(prev)) return
+ if (isNaN(prev)||isNaN(current)) return
  switch (this.operation) {
    case '+':
      computation = prev + current
@@ -71,6 +71,12 @@ sqrt(){
   this.currentOperand = this.currentOperand**0.5
    }
 
+plus_minus(){
+  if(this.currentOperand !== ''){
+    this.currentOperand = -this.currentOperand
+  }
+}
+
 getDisplayNumber(number){
   const stringNumber = number.toString()
   const integerDigits = parseFloat(stringNumber.split('.')[0])
@@ -90,7 +96,8 @@ getDisplayNumber(number){
 }
 
 updateDisplay() {
-this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
+if(this.currentOperand ==='ERROR') this.currentOperandTextElement.innerText = 'ERROR'
+else this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
 if (this.operation != null) {
   this.previousOperandTextElement.innerText=
   `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
@@ -103,6 +110,7 @@ if (this.operation != null) {
 }
 
 const numberButtons = document.querySelectorAll('[data-number]')
+const plus_minus=document.querySelector('[data-plus-minus]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const sqrt = document.querySelector('[data-operation-sqrt]')
 const eaqualsButton = document.querySelector('[data-equals]')
@@ -118,6 +126,11 @@ numberButtons.forEach( button => {
     calculator.appendNumber(button.innerText)
     calculator.updateDisplay()
   })
+})
+
+plus_minus.addEventListener('click', () =>{
+  calculator.plus_minus()
+  calculator.updateDisplay()
 })
 
 operationButtons.forEach(button =>{
