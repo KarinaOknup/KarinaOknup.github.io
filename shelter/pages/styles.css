@@ -1,13 +1,13 @@
 body {
-    width: 100vw;
+    width: 1920px;
     margin:0px ;
-   }
+    margin: auto;
+     }
 .wrapper {
       max-width: 1200px;
       height: 100%;
       margin: 0 auto;
      }
-
 a{
    text-decoration: none;
    color: #CDCDCD ;
@@ -16,9 +16,14 @@ a{
    font-weight: normal;
    font-size: 15px;
    line-height: 160%;
+  
+}
+.active{
+   border-bottom:4px solid #F1CDB3;
+   cursor: pointer;
 }
 a:hover{
-   border-bottom:2px solid #F1CDB3;
+   border-bottom: 4px solid #F1CDB3;
    cursor: pointer;
 }
 h1{
@@ -26,8 +31,10 @@ h1{
    font-style: normal;
    font-weight: normal;
    font-size: 32px;
-   line-height: 110%; 
+   line-height: 35px; 
    color:#F1CDB3;
+   letter-spacing: 0.06em;
+   margin-bottom: 0;
   }
 .name-logo > p{
    font-family: Arial;
@@ -36,24 +43,23 @@ h1{
    font-size: 13px;
    line-height: 15px;
    color:#FFFFFF;
-   margin: 10px;
    padding: 0;
+   letter-spacing: 0.1em;
+   margin-top: 10px;
+   margin-left: 5px;
 }
 ul{
    display: inline-flex;
-   position:right;
     }
-
 .top-main{
    width: 100%;
    height: 908px;
    background-image: url(/shelter/assets/images/start-screen-background.png);
     }
 .header{
-   display: inline-flex;
- }
-.name-logo{
-   }    
+   display: grid;
+   grid-template-columns:auto auto;
+  } 
 .about{
    height: 588px;
    background: #FFFFFF;
@@ -74,3 +80,17 @@ ul{
    height: 355px;
    background-image: url(/shelter/assets/images/footer-background.png);
    }
+.name-logo{
+   margin-top: 38px; 
+}
+.nav-menu{
+   margin-top: 60px; 
+   text-align: right;
+}
+.nav-items{
+   width: fit-content;
+   padding-bottom: 3px;
+   padding-left: 0px;
+   margin-left: 18px;
+}
+
