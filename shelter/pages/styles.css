@@ -140,7 +140,7 @@ margin-top: 28px;
    background-color: #FDDCC4;
    cursor: pointer;
 }
-div.info>button.btn{
+.btn-primary{
    background: #F1CDB3;
 }
 div.about>div.wrapper{
@@ -173,4 +173,17 @@ div.text>p{
    margin-bottom: -16px;
    width: 70%;
    color: #4C4C4C;
+}
+
+div.pets>div.wrapper{
+   display: grid;
+   grid-template-rows:30% 60% 30% ;
+}
+.slide{
+   display: grid;
+   grid-template-columns: 5% 30% 30% 30% 5%;
+}
+div.pets>div.wrapper>button{
+  margin: 0 auto;
+  width:261px;
 }
