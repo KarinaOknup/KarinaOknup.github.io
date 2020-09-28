@@ -7,7 +7,7 @@ body {
       max-width: 1200px;
       height: 100%;
       margin: 0 auto;
-     }
+      }
 a{
    text-decoration: none;
    color: #CDCDCD ;
@@ -36,14 +36,13 @@ h1{
    letter-spacing: 0.06em;
    margin-bottom: 0;
   }
-.name-logo > p{
+.name-logo > p {
    font-family: Arial;
    font-style: normal;
    font-weight: normal;
    font-size: 13px;
    line-height: 15px;
    color:#FFFFFF;
-   padding: 0;
    letter-spacing: 0.1em;
    margin-top: 10px;
    margin-left: 5px;
@@ -94,3 +93,53 @@ ul{
    margin-left: 18px;
 }
 
+.start-screen{
+   display: grid;
+   grid-template-columns: auto auto;
+   margin-top: 48px;
+}
+
+h2{
+width: 310px;   
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 44px;
+line-height: 130%;
+color: #FFFFFF;
+}
+div.start-screen>div.info{
+   margin-top:126px;
+}
+p{
+margin-top:46px;
+width:92% ;
+font-family: Arial;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 160%;
+color: #CDCDCD;
+
+}
+.btn{
+width: 207px;
+height: 52px;
+border: 2px solid #F1CDB3;
+border-radius: 100px;
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 17px;
+line-height: 130%;
+letter-spacing: 0.06em;
+color: #292929;
+margin-top: 28px;
+}
+.btn:hover{
+   background-color: #FDDCC4;
+   cursor: pointer;
+}
+div.info>button.btn{
+   background: #F1CDB3;
+}
