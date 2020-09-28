@@ -6,7 +6,7 @@ body {
 .wrapper {
       max-width: 1200px;
       height: 100%;
-      margin: 0 auto;
+      margin: 0 auto 0;
       }
 a{
    text-decoration: none;
@@ -60,12 +60,14 @@ ul{
    grid-template-columns:auto auto;
   } 
 .about{
+   margin: 0px;
    height: 588px;
    background: #FFFFFF;
 }
 .pets{
    height: 877px;
    background: #F6F6F6;
+   margin-top: 0px;
 }
 .help{
    height: 611px;
@@ -92,14 +94,12 @@ ul{
    padding-left: 0px;
    margin-left: 18px;
 }
-
 .start-screen{
    display: grid;
    grid-template-columns: auto auto;
    margin-top: 48px;
 }
-
-h2{
+div.start-screen>div.info>h2{
 width: 310px;   
 font-family: Georgia;
 font-style: normal;
@@ -142,4 +142,35 @@ margin-top: 28px;
 }
 div.info>button.btn{
    background: #F1CDB3;
+}
+div.about>div.wrapper{
+   display: grid;
+   grid-template-columns: 50% 50%;
+   }
+.img-about-pets{
+   margin-left: 175px;
+   margin-top: 80px;
+}
+div.about>div.wrapper>div.info>h2{
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 35px;
+   line-height: 130%;
+   letter-spacing: 0.06em;
+   color: #545454; 
+   width: 370px;
+   margin-top: 20px;
+   }
+div.about>div.wrapper>div.info{
+   margin-left: -5px;
+   margin-top: 75px;
+}
+div.about>div.wrapper>div.info>div.text{
+ margin-top:-20px;  
+}
+div.text>p{
+   margin-bottom: -16px;
+   width: 70%;
+   color: #4C4C4C;
 }
