@@ -104,46 +104,46 @@ ul{
    margin-top: 48px;
 }
 div.start-screen>div.info>h2{
-width: 310px;  
+   width: 310px;  
 
-font-family: Georgia;
-font-style: normal;
-font-weight: normal;
-font-size: 44px;
-line-height: 130%;
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 44px;
+   line-height: 130%;
 
-color: #FFFFFF;
+   color: #FFFFFF;
 }
 div.start-screen>div.info{
    margin-top:126px;
 }
 p{
-margin-top:46px;
-width:92% ;
+   margin-top:46px;
+   width:92% ;
 
-font-family: Arial;
-font-style: normal;
-font-weight: normal;
-font-size: 15px;
-line-height: 160%;
+   font-family: Arial;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 160%;
 
-color: #CDCDCD;
+   color: #CDCDCD;
 
 }
 .btn{
-width: 207px;
-height: 52px;
-border: 2px solid #F1CDB3;
-border-radius: 100px;
-font-family: Georgia;
-font-style: normal;
-font-weight: normal;
-font-size: 17px;
-line-height: 130%;
-letter-spacing: 0.06em;
-color: #292929;
-margin-top: 28px;
-}
+   width: 207px;
+   height: 52px;
+   border: 2px solid #F1CDB3;
+   border-radius: 100px;
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 17px;
+   line-height: 130%;
+   letter-spacing: 0.06em;
+   color: #292929;
+   margin-top: 28px;
+   }
 .btn:hover{
    background-color: #FDDCC4;
    cursor: pointer;
@@ -200,11 +200,11 @@ div.pets>div.wrapper>button{
   width:260px;
 }
 .slide-items{
-background-color: #FAFAFA;
-border-radius: 9px;
-width: 75%;
-margin-left: 12.5%;
-text-align:center;
+   background-color: #FAFAFA;
+   border-radius: 9px;
+   width: 75%;
+   margin-left: 12.5%;
+   text-align:center;
 
 }
 div.slide>button.slide-nav{
@@ -230,28 +230,61 @@ div.slide>button.slide-nav{
    margin: 9% auto;
 }
 .btn-secondary{
-margin-top: 2.5%;
-width: 70%;
+   margin-top: 2.5%;
+   width: 70%;
 }
-div.pets>div.wrapper>h2{
-font-family: Georgia;
-font-style: normal;
-font-weight: normal;
-font-size: 35px;
-line-height: 130%;
+div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 35px;
+   line-height: 130%;
 
-align-items: center;
-text-align: center;
-letter-spacing: 0.06em ;
+   align-items: center;
+   text-align: center;
+   letter-spacing: 0.06em ;
 
-color: #545454;
+   color: #545454;
 
-margin: 6.8% auto;
+   margin: 6.8% auto;
 }
 .slide-nav-next{
    transform: rotate(-180deg);
 }
 .slide-nav{
    padding: 0%;
+}
+.help-example{
+   display: grid;
+   grid-template-rows: auto auto;
+}
+.first-row-help{
+   display: grid;
+   grid-template-columns: auto auto auto auto auto;
+   margin:-2% 3%;
+}
+.second-row-help{
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   margin:3% 9%;
+   }
+.help-items{
+margin:0 auto;
+}
+.help-name{
+   margin-top: 2hv;
+   padding-left:1vh;
+   width:100%;
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 20px;
+   line-height: 115%;
 
+   letter-spacing: 0.06em;
+
+   color: #545454;
+   }
+.img-help{
+   margin-left:;
 }
