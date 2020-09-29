@@ -188,7 +188,7 @@ div.text>p{
 
 div.pets>div.wrapper{
    display: grid;
-   grid-template-rows:26.5% 49% auto ;
+   grid-template-rows:26.7% 49% auto ;
 }
 .slide{
    display: grid;
@@ -203,7 +203,7 @@ div.pets>div.wrapper>button{
 background-color: #FAFAFA;
 border-radius: 9px;
 width: 75%;
-margin-left: 11.5%;
+margin-left: 12.5%;
 text-align:center;
 
 }
@@ -227,10 +227,10 @@ div.slide>button.slide-nav{
    text-align: center;
    letter-spacing: 0.06em;
    color: #545454;
-   margin: 10% auto;
+   margin: 9% auto;
 }
 .btn-secondary{
-margin-top: 1%;
+margin-top: 2.5%;
 width: 70%;
 }
 div.pets>div.wrapper>h2{
@@ -250,4 +250,8 @@ margin: 6.8% auto;
 }
 .slide-nav-next{
    transform: rotate(-180deg);
+}
+.slide-nav{
+   padding: 0%;
+
 }
