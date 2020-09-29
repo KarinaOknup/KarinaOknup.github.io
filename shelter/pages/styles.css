@@ -1,13 +1,13 @@
 body {
-    width: 100vw;
+    width: 1920px;
     margin:0px ;
-   }
+    margin: auto;
+     }
 .wrapper {
       max-width: 1200px;
       height: 100%;
-      margin: 0 auto;
-     }
-
+      margin: 0 auto 0;
+      }
 a{
    text-decoration: none;
    color: #CDCDCD ;
@@ -16,9 +16,14 @@ a{
    font-weight: normal;
    font-size: 15px;
    line-height: 160%;
+  
+}
+.active{
+   border-bottom:4px solid #F1CDB3;
+   cursor: pointer;
 }
 a:hover{
-   border-bottom:2px solid #F1CDB3;
+   border-bottom: 4px solid #F1CDB3;
    cursor: pointer;
 }
 h1{
@@ -26,41 +31,43 @@ h1{
    font-style: normal;
    font-weight: normal;
    font-size: 32px;
-   line-height: 110%; 
+   line-height: 35px; 
    color:#F1CDB3;
+   letter-spacing: 0.06em;
+   margin-bottom: 0;
   }
-.name-logo > p{
+.name-logo > p {
    font-family: Arial;
    font-style: normal;
    font-weight: normal;
    font-size: 13px;
    line-height: 15px;
    color:#FFFFFF;
-   margin: 10px;
-   padding: 0;
+   letter-spacing: 0.1em;
+   margin-top: 10px;
+   margin-left: 5px;
 }
 ul{
    display: inline-flex;
-   position:right;
     }
-
 .top-main{
    width: 100%;
    height: 908px;
    background-image: url(/shelter/assets/images/start-screen-background.png);
     }
 .header{
-   display: inline-flex;
- }
-.name-logo{
-   }    
+   display: grid;
+   grid-template-columns:auto auto;
+  } 
 .about{
+   margin: 0px;
    height: 588px;
    background: #FFFFFF;
 }
 .pets{
    height: 877px;
    background: #F6F6F6;
+   margin-top: 0px;
 }
 .help{
    height: 611px;
@@ -74,3 +81,109 @@ ul{
    height: 355px;
    background-image: url(/shelter/assets/images/footer-background.png);
    }
+.name-logo{
+   margin-top: 38px; 
+}
+.nav-menu{
+   margin-top: 60px; 
+   text-align: right;
+}
+.nav-items{
+   width: fit-content;
+   padding-bottom: 3px;
+   padding-left: 0px;
+   margin-left: 18px;
+}
+.start-screen{
+   display: grid;
+   grid-template-columns: auto auto;
+   margin-top: 48px;
+}
+div.start-screen>div.info>h2{
+width: 310px;   
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 44px;
+line-height: 130%;
+color: #FFFFFF;
+}
+div.start-screen>div.info{
+   margin-top:126px;
+}
+p{
+margin-top:46px;
+width:92% ;
+font-family: Arial;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 160%;
+color: #CDCDCD;
+
+}
+.btn{
+width: 207px;
+height: 52px;
+border: 2px solid #F1CDB3;
+border-radius: 100px;
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 17px;
+line-height: 130%;
+letter-spacing: 0.06em;
+color: #292929;
+margin-top: 28px;
+}
+.btn:hover{
+   background-color: #FDDCC4;
+   cursor: pointer;
+}
+.btn-primary{
+   background: #F1CDB3;
+}
+div.about>div.wrapper{
+   display: grid;
+   grid-template-columns: 50% 50%;
+   }
+.img-about-pets{
+   margin-left: 175px;
+   margin-top: 80px;
+}
+div.about>div.wrapper>div.info>h2{
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 35px;
+   line-height: 130%;
+   letter-spacing: 0.06em;
+   color: #545454; 
+   width: 370px;
+   margin-top: 20px;
+   }
+div.about>div.wrapper>div.info{
+   margin-left: -5px;
+   margin-top: 75px;
+}
+div.about>div.wrapper>div.info>div.text{
+ margin-top:-20px;  
+}
+div.text>p{
+   margin-bottom: -16px;
+   width: 70%;
+   color: #4C4C4C;
+}
+
+div.pets>div.wrapper{
+   display: grid;
+   grid-template-rows:30% 60% 30% ;
+}
+.slide{
+   display: grid;
+   grid-template-columns: 5% 30% 30% 30% 5%;
+}
+div.pets>div.wrapper>button{
+  margin: 0 auto;
+  width:261px;
+}
