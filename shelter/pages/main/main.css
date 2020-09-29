@@ -260,20 +260,16 @@ div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
 }
 .first-row-help{
    display: grid;
-   grid-template-columns: auto auto auto auto auto;
-   margin:-2% 3%;
-}
+   grid-template-columns: 20% 20% 20% 20% 20%;
+   }
 .second-row-help{
    display: grid;
-   grid-template-columns: auto auto auto auto;
-   margin:3% 9%;
-   }
+   grid-template-columns: 25% 25% 25% 25%;
+ }
 .help-items{
-margin:0 auto;
+margin:auto;
 }
 .help-name{
-   margin-top: 2hv;
-   padding-left:1vh;
    width:100%;
    font-family: Georgia;
    font-style: normal;
@@ -285,6 +281,3 @@ margin:0 auto;
 
    color: #545454;
    }
-.img-help{
-   margin-left:;
-}
