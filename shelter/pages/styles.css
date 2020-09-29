@@ -32,8 +32,10 @@ h1{
    font-weight: normal;
    font-size: 32px;
    line-height: 35px; 
-   color:#F1CDB3;
    letter-spacing: 0.06em;
+
+   color:#F1CDB3;
+   
    margin-bottom: 0;
   }
 .name-logo > p {
@@ -42,8 +44,10 @@ h1{
    font-weight: normal;
    font-size: 13px;
    line-height: 15px;
-   color:#FFFFFF;
    letter-spacing: 0.1em;
+
+   color:#FFFFFF;
+
    margin-top: 10px;
    margin-left: 5px;
 }
@@ -100,12 +104,14 @@ ul{
    margin-top: 48px;
 }
 div.start-screen>div.info>h2{
-width: 310px;   
+width: 310px;  
+
 font-family: Georgia;
 font-style: normal;
 font-weight: normal;
 font-size: 44px;
 line-height: 130%;
+
 color: #FFFFFF;
 }
 div.start-screen>div.info{
@@ -114,11 +120,13 @@ div.start-screen>div.info{
 p{
 margin-top:46px;
 width:92% ;
+
 font-family: Arial;
 font-style: normal;
 font-weight: normal;
 font-size: 15px;
 line-height: 160%;
+
 color: #CDCDCD;
 
 }
@@ -158,7 +166,9 @@ div.about>div.wrapper>div.info>h2{
    font-size: 35px;
    line-height: 130%;
    letter-spacing: 0.06em;
+
    color: #545454; 
+
    width: 370px;
    margin-top: 20px;
    }
@@ -172,18 +182,72 @@ div.about>div.wrapper>div.info>div.text{
 div.text>p{
    margin-bottom: -16px;
    width: 70%;
+
    color: #4C4C4C;
 }
 
 div.pets>div.wrapper{
    display: grid;
-   grid-template-rows:30% 60% 30% ;
+   grid-template-rows:26.5% 49% auto ;
 }
 .slide{
    display: grid;
    grid-template-columns: 5% 30% 30% 30% 5%;
+
 }
 div.pets>div.wrapper>button{
-  margin: 0 auto;
-  width:261px;
+  margin:5.3% auto;
+  width:260px;
+}
+.slide-items{
+background-color: #FAFAFA;
+border-radius: 9px;
+width: 75%;
+margin-left: 11.5%;
+text-align:center;
+
+}
+div.slide>button.slide-nav{
+   margin: auto 0;
+   border: 2px solid #F1CDB3;
+   box-sizing: border-box;
+   border-radius: 100px;
+   height:12%;
+   width:85%;
+}
+.pet-img{
+   margin-top:10%;
+  }
+.pet-name{
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 20px;
+   line-height: 23px;
+   text-align: center;
+   letter-spacing: 0.06em;
+   color: #545454;
+   margin: 10% auto;
+}
+.btn-secondary{
+margin-top: 1%;
+width: 70%;
+}
+div.pets>div.wrapper>h2{
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 35px;
+line-height: 130%;
+
+align-items: center;
+text-align: center;
+letter-spacing: 0.06em ;
+
+color: #545454;
+
+margin: 6.8% auto;
+}
+.slide-nav-next{
+   transform: rotate(-180deg);
 }
