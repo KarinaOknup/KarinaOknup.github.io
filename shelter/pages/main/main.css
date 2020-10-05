@@ -1,5 +1,5 @@
 body {
-    width: 1920px;
+    width: 1280px;
     margin:0px ;
     margin: auto;
      }
@@ -74,7 +74,7 @@ ul{
    margin-top: 0px;
 }
 .help{
-   height: 611px;
+   height: 530px;
    background: #FFFFFF;
 }
 .donation{
@@ -146,6 +146,7 @@ p{
    }
 .btn:hover{
    background-color: #FDDCC4;
+   border: none;  
    cursor: pointer;
 }
 .btn-primary{
@@ -159,7 +160,7 @@ div.about>div.wrapper{
    margin-left: 175px;
    margin-top: 80px;
 }
-div.about>div.wrapper>div.info>h2{
+div.about>div.wrapper>div.info>h2, div.donation>div.wrapper>div.info>h2 {
    font-family: Georgia;
    font-style: normal;
    font-weight: normal;
@@ -215,9 +216,6 @@ div.slide>button.slide-nav{
    height:12%;
    width:85%;
 }
-.pet-img{
-   margin-top:10%;
-  }
 .pet-name{
    font-family: Georgia;
    font-style: normal;
@@ -227,10 +225,10 @@ div.slide>button.slide-nav{
    text-align: center;
    letter-spacing: 0.06em;
    color: #545454;
-   margin: 9% auto;
+   margin: 7% auto;
 }
 .btn-secondary{
-   margin-top: 2.5%;
+   margin-top: 4.5%;
    width: 70%;
 }
 div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
@@ -267,7 +265,7 @@ div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
    grid-template-columns: 25% 25% 25% 25%;
  }
 .help-items{
-margin:auto;
+margin:0 auto;
 }
 .help-name{
    width:100%;
@@ -281,3 +279,63 @@ margin:auto;
 
    color: #545454;
    }
+div.donation>div.wrapper{ 
+   display: grid;
+   grid-template-columns: 54% auto;
+}
+div.donation>div.wrapper>img{
+   margin: 14% 0 auto auto ;
+}
+div.donation>div.wrapper>div.info{
+   margin: 11% 5%;
+   width: 75%;
+}
+div.donation>div.wrapper>div.info>h2{
+   width: 70%;
+   margin-bottom: 5%;
+}
+div.donation>div.wrapper>div.info>span{
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 110%;
+
+letter-spacing: 0.06em;
+
+color: #545454;
+}
+div.donation>div.wrapper>div.info>p{
+font-family: Arial;
+font-style: italic;
+font-weight: normal;
+font-size: 12px;
+line-height: 150%;
+margin-top: 4.5%;
+color: #B2B2B2;
+}
+.card{
+margin-top: 4.2%;
+display: flex;
+height: 13%;
+width: 85%;
+background: #F1CDB3;
+border-radius: 9px;
+}
+a.card>span{
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 115%;
+letter-spacing: 0.06em;
+color: #545454;
+margin: auto auto auto 5%;
+}
+a.card>img{
+margin-left: 5%;
+}
+a.card:hover{
+   border: none;
+   background: #FDDCC4;
+}
