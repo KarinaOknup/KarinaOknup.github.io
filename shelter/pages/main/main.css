@@ -1,6 +1,5 @@
 body {
     width: 1280px;
-    margin:0px ;
     margin: auto;
      }
 .wrapper {
@@ -338,4 +337,44 @@ margin-left: 5%;
 a.card:hover{
    border: none;
    background: #FDDCC4;
+}
+.footer{
+display: grid;
+grid-template-columns: auto auto auto;
+}
+h3{
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 35px;
+line-height: 130%;
+
+letter-spacing: 0.06em;
+
+color: #FFFFFF;
+}
+footer>div{
+   width: 60%;
+   margin-top: 5%;
+   margin-left: 9%;
+}
+.footer-span{
+font-family: Georgia;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 115%;
+
+letter-spacing: 0.06em;
+
+color: #F1CDB3;
+}
+footer>div.contacts>a{
+width: 100%;
+margin-right: 10%;
+}
+footer>img{
+  }
+div.place>h3{
+   width:110%
 }
