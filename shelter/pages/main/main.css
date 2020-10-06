@@ -254,6 +254,8 @@ div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
 .slide-nav{
    padding: 0%;
 }
+
+
 .help-example{
    display: grid;
    grid-template-rows: auto auto;
@@ -261,13 +263,19 @@ div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
 .first-row-help{
    display: grid;
    grid-template-columns: 20% 20% 20% 20% 20%;
+   margin-top: -1.7%;
    }
 .second-row-help{
    display: grid;
-   grid-template-columns: 25% 25% 25% 25%;
- }
+   grid-template-columns: 30% 20% 20% 30%;
+   }
 .help-items{
 margin:0 auto;
+justify-content: center;
+}
+.img-help{
+   margin:auto ;
+   display: flex;
 }
 .help-name{
    width:100%;
@@ -280,7 +288,10 @@ margin:0 auto;
    letter-spacing: 0.06em;
 
    color: #545454;
+   margin-top: 27px;
    }
+
+
 div.donation>div.wrapper{ 
    display: grid;
    grid-template-columns: 54% auto;
