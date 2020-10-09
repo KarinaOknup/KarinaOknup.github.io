@@ -92,8 +92,7 @@ div.slide{
     padding-top: 2.7%;
     }
  .item{
-    /* background-color: #FAFAFA; */
-    background: crimson;
+    background-color: #FAFAFA;
     display: block;
     border-radius: 9px;
     text-align:center;
@@ -101,7 +100,6 @@ div.slide{
     height: 435px; 
     margin-bottom: 2.5%;
      }
-
 
 
 .pet-name{
@@ -113,7 +111,7 @@ div.slide{
     text-align: center;
     letter-spacing: 0.06em;
     color: #545454;
-    margin: 7% auto;
+    margin: 10% auto;
  }
 div.text-h2>h2{
     font-family: Georgia;
@@ -155,7 +153,7 @@ div.text-h2>h2{
     cursor: pointer;
  }
  .btn-secondary{
-   margin-top: 7%;
+   margin-top: 2%;
    width: 70%;
 }
 
