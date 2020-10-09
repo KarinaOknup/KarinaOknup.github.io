@@ -255,26 +255,23 @@ div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
 
 
 .help-example{
-   display: grid;
-   grid-template-rows: auto auto;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-content: space-around;
+   margin-top: -3.5%;
 }
-.first-row-help{
-   display: grid;
-   grid-template-columns: 20% 20% 20% 20% 20%;
-   margin-top: -1.7%;
-   }
-.second-row-help{
-   display: grid;
-   grid-template-columns: 30% 20% 20% 30%;
-   }
+
 .help-items{
-margin:0 auto;
+margin:1.7% 5%;
+display: flex;
+flex-flow: column;
 justify-content: center;
+align-content: flex-end;
 }
 .img-help{
-   margin:auto ;
-   display: flex;
-}
+   display: flexbox;
+   }
 .help-name{
    width:100%;
    font-family: Georgia;
@@ -284,9 +281,8 @@ justify-content: center;
    line-height: 115%;
 
    letter-spacing: 0.06em;
-
    color: #545454;
-   margin-top: 27px;
+   display: flexbox;
    }
 
 
