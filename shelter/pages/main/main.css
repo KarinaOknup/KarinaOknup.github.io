@@ -32,9 +32,7 @@ h1{
    font-size: 32px;
    line-height: 35px; 
    letter-spacing: 0.06em;
-
-   color:#F1CDB3;
-   
+   color: #F1CDB3;
    margin-bottom: 0;
   }
 .name-logo > p {
@@ -254,21 +252,26 @@ div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
 .slide-nav{
    padding: 0%;
 }
+
+
 .help-example{
-   display: grid;
-   grid-template-rows: auto auto;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-content: space-around;
+   margin-top: -3.5%;
 }
-.first-row-help{
-   display: grid;
-   grid-template-columns: 20% 20% 20% 20% 20%;
-   }
-.second-row-help{
-   display: grid;
-   grid-template-columns: 25% 25% 25% 25%;
- }
+
 .help-items{
-margin:0 auto;
+margin:1.7% 5%;
+display: flex;
+flex-flow: column;
+justify-content: center;
+align-content: flex-end;
 }
+.img-help{
+   display: flexbox;
+   }
 .help-name{
    width:100%;
    font-family: Georgia;
@@ -278,9 +281,11 @@ margin:0 auto;
    line-height: 115%;
 
    letter-spacing: 0.06em;
-
    color: #545454;
+   display: flexbox;
    }
+
+
 div.donation>div.wrapper{ 
    display: grid;
    grid-template-columns: 54% auto;

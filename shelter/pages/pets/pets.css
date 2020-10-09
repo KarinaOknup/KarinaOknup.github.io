@@ -1,0 +1,253 @@
+body {
+    width: 1280px;
+    margin: auto;
+     }
+.wrapper {
+      max-width: 1200px;
+      margin: 0% auto 0%;
+      height: 100%;
+      }
+div{
+   display: block;
+}
+header{
+    background: #FFFFFF;
+    height: 120px;
+} 
+header>div.wrapper{
+   display: grid;
+   grid-template-columns:auto auto;
+     } 
+a{
+   text-decoration: none;
+   color:  #545454;
+   font-family: Arial;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 160%;
+  
+}
+.active{
+   border-bottom:4px solid  #F1CDB3;
+   cursor: pointer;
+   color: #292929;
+
+}
+a:hover{
+   border-bottom: 4px solid #F1CDB3;
+   cursor: pointer;
+}
+h1{
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 32px;
+   line-height: 35px; 
+   letter-spacing: 0.06em;
+
+   color: #545454;
+   
+   margin-bottom: 0;
+  }
+.name-logo{
+   margin-top: 2%;
+}
+.name-logo > p {
+   font-family: Arial;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 15px;
+   letter-spacing: 0.1em;
+
+   color: #292929;
+
+   margin-top: 10px;
+   margin-left: 5px;
+}
+ul{
+   display: inline-flex;
+}
+.nav-menu{
+    /* margin-top: 4%;  */
+    display: flex;
+    flex-flow: row ;
+    justify-content:flex-end ;
+    align-content: center; 
+ }
+ .nav-items{
+      display: flexbox;
+      margin: auto;
+      white-space:nowrap;
+      }
+
+div.pets{
+  background: #F6F6F6; 
+  height: 1342px;
+}
+div.slide{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content:space-around;
+    padding-top: 2.7%;
+    }
+.item{
+    background-color: #FAFAFA;
+    display: block;
+    border-radius: 9px;
+    text-align:center;
+    width: 270px;
+    height: 435px; 
+    margin-bottom: 2.5%;
+     }
+.pet-name{
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 10% auto;
+ }
+div.text-h2>h2{
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+ 
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em ;
+ 
+    color: #545454;
+       
+ }
+.text-h2{
+      padding-top:4.1%;
+}
+ div.item:hover{
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+ }
+ .btn{
+    width: 207px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    margin-top: 28px;
+    }
+ .btn:hover{
+    background-color: #FDDCC4;
+    border: none;  
+    cursor: pointer;
+ }
+ .btn-secondary{
+   margin-top: 2%;
+   width: 70%;
+}
+.slide-nav{
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-content:space-around;
+    
+}
+.slide-nav-iteam , .nav-number{
+   border: 2px solid #F1CDB3;
+   box-sizing: border-box;
+   border-radius: 100px;
+
+   width: 52px;
+   height: 52px;
+   display: block;
+   margin:2.5% 0.81% auto;
+   text-align:center;
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 20px;
+   line-height: 115%;
+   letter-spacing: 0.06em;
+
+   color: #292929;
+   
+}
+.nav-number{
+   background: #F1CDB3;
+   border:none;
+   padding: 1.2%;
+}
+button:disabled{
+   border-color:#CDCDCD;
+   color: #CDCDCD;
+}
+button.slide-nav-iteam:not(:disabled):hover{
+background-color: #F1CDB3;
+cursor: pointer;
+}
+ .footer>.wrapper{
+   display: grid;
+   grid-template-columns: 36.5% auto 25%;
+   }
+ .footer-span{
+   font-family: Georgia;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 20px;
+   line-height: 115%;
+   padding-left: 5%;
+   margin-top: auto;
+   margin-bottom: auto;
+   letter-spacing: 0.06em;
+   color: #F1CDB3;
+   }
+   a.a-footer:hover{
+      border:none;
+   }
+   footer>div.wrapper>div{
+      margin-top: 5%;
+   }
+   footer>div.wrapper>img{
+      margin-top: 12%;
+   }
+   .a-footer{
+      display: flex;
+      width: 70%;
+      }
+   .footer-span{
+   margin-left: 1.2%;
+   }
+   div.place>a{
+      margin-top:-0.6%;
+      margin-bottom: 8%;
+   }
+   div.contacts>a{
+      margin-top:9.5%;
+      margin-bottom: 8%;
+   }
+   h3{
+      font-family: Georgia;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 35px;
+      line-height: 130%;
+      width: 64%;
+      letter-spacing: 0.06em;
+      color: #FFFFFF;
+      }
+  .footer{
+         height: 355px;
+         background-image: url(/shelter/assets/images/footer-background.png);
+         }
