@@ -6,14 +6,13 @@ body {
       max-width: 1200px;
       margin: 0% auto 0%;
       height: 100%;
-      display: block;
       }
 div{
    display: block;
 }
 header{
     background: #FFFFFF;
-    height: 91px;
+    height: 120px;
 } 
 header>div.wrapper{
    display: grid;
@@ -63,7 +62,6 @@ h1{
    letter-spacing: 0.1em;
 
    color: #292929;
-;
 
    margin-top: 10px;
    margin-left: 5px;
@@ -80,31 +78,32 @@ ul{
       width: fit-content;
       margin-left: 0;
      }
+   
 div.pets{
   background: #F6F6F6; 
+  height: 1342px;
 }
-div.pets>div.wrapper{
-    
-    
-    height: 1342px;
-    }
+
 div.slide{
-    /* flex-direction: row;
-    flex-wrap: wrap; */
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    align-content: space-around;
+    justify-content: space-between;
+    align-content:space-around;
+    padding-top: 2.7%;
     }
  .item{
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA; */
+    background: crimson;
     display: block;
     border-radius: 9px;
     text-align:center;
-    flex-basis: 0;
     width: 270px;
     height: 435px; 
- }
+    margin-bottom: 2.5%;
+     }
+
+
+
 .pet-name{
     font-family: Georgia;
     font-style: normal;
@@ -131,7 +130,7 @@ div.text-h2>h2{
        
  }
 .text-h2{
-   height: 230px;
+      padding-top:4.1%;
 }
  div.item:hover{
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -155,7 +154,10 @@ div.text-h2>h2{
     border: none;  
     cursor: pointer;
  }
-
+ .btn-secondary{
+   margin-top: 7%;
+   width: 70%;
+}
 
 
  .footer>.wrapper{
