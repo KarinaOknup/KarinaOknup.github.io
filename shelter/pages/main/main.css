@@ -190,9 +190,10 @@ div.pets>div.wrapper{
    grid-template-rows:26.7% 49% auto ;
 }
 .slide{
-   display: grid;
-   grid-template-columns: 5% 30% 30% 30% 5%;
-
+   display: flex;
+   flex-flow: row nowrap;
+   align-content: space-around;
+   justify-content: space-around;
 }
 div.pets>div.wrapper>button{
   margin:5.3% auto;
@@ -201,21 +202,27 @@ div.pets>div.wrapper>button{
 .slide-items{
    background-color: #FAFAFA;
    border-radius: 9px;
-   width: 75%;
-   margin-left: 12.5%;
+   width: 270px;
+   height: 435px;
    text-align:center;
-
+   margin: auto 45px;
 }
+.slide-cards{
+   display: flex;
+   flex-flow: row nowrap;
+   align-content: flex-start;
+   justify-content: flex-start;
+  }
 div.slide-items:hover{
    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 div.slide>button.slide-nav{
-   margin: auto 0;
+   margin: auto;
    border: 2px solid #F1CDB3;
    box-sizing: border-box;
    border-radius: 100px;
-   height:12%;
-   width:85%;
+   height:52px;
+   width:52px;
 }
 .pet-name{
    font-family: Georgia;
@@ -635,26 +642,32 @@ div.info>button.btn{
     width:260px;
   }
   .slide-items{
-     background-color: #FAFAFA;
-     border-radius: 9px;
-     height: 435px;
-     width: 90%;
-     margin-left: 3.6%;
-     
-     text-align:center;
-    
+   background-color: #FAFAFA;
+   border-radius: 9px;
+   width: 270px;
+   height: 435px;
+   text-align:center;
+   margin: auto 19px;
+}
+.slide-cards{
+   display: flex;
+   flex-flow: row nowrap;
+   align-content: flex-start;
+   justify-content: flex-start;
+   overflow: hidden;
   }
+div.slide>button.slide-nav{
+   margin: auto;
+   border: 2px solid #F1CDB3;
+   box-sizing: border-box;
+   border-radius: 100px;
+   height:52px;
+   width:52px;
+}
   div.slide-items:hover{
      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
   }
-  div.slide>button.slide-nav{
-     margin: auto 0;
-     border: 2px solid #F1CDB3;
-     box-sizing: border-box;
-     border-radius: 100px;
-     height:11%;
-     width:97%;
-      }
+ 
   .pet-name{
      font-family: Georgia;
      font-style: normal;
@@ -700,30 +713,35 @@ div.info>button.btn{
      flex-flow: row wrap;
      justify-content: center;
      align-content: space-around;
-     margin-top:-5%;
+     margin-top:-50px;
      }
   
   .help-items{
-  margin:1.7% 5%;
+  margin:10px 10px;
+  width: 210px;
+  height:150px ;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-content: flex-end;
+  align-content:space-around;
   }
   .img-help{
      display: flexbox;
+     margin: auto;
+     justify-content: center;
      }
   .help-name{
-     width:100%;
      font-family: Georgia;
      font-style: normal;
      font-weight: normal;
      font-size: 20px;
      line-height: 115%;
-  
      letter-spacing: 0.06em;
      color: #545454;
      display: flexbox;
+     margin: auto;
+     text-align: center;
+     flex-flow: nowrap;
      }
   
   
@@ -852,6 +870,9 @@ div.info>button.btn{
   .footer-puppy{
      margin-top: 4%;
   }
+  .footer{
+     overflow: hidden;
+  }
 }
 
 /* 
@@ -920,6 +941,9 @@ ADDAPTIVE
      height: 823px;
      background:  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
     display: flex;
+     overflow: hidden;
+     margin: 0;
+     padding: 0;
    }
   .header{
      display: grid;
@@ -929,6 +953,7 @@ ADDAPTIVE
      margin: 0px;
      height: 974px;
      background: #FFFFFF;
+    
   }
   .pets{
      height: 791px;
@@ -1040,7 +1065,7 @@ div.info>button.btn{
      }
   .img-about-pets{
      width: 86%;
-     margin: 312%  auto;
+     margin: 30%  auto;
      order: 2;
   }
   div.about>div.wrapper>div.info>h2, div.donation>div.wrapper>div.info>h2 {
@@ -1053,8 +1078,8 @@ div.info>button.btn{
     
      color: #545454; 
      text-align: center;
-     width: 90%;
-   
+     width: 100%;
+     margin-left: -2.5%;
      }
   div.about>div.wrapper>div.info{
      margin-left: 5%;
@@ -1062,11 +1087,12 @@ div.info>button.btn{
      order:1;
   }
    div.text>p{
-      text-align: left;
-      margin-top: 12%;
-     margin-bottom: -16px;
-     width: 100%;
+     text-align: justify;
+     width: 95%;
+     margin-top: 12.5%;
+     margin-bottom: -4%;
      color: #4C4C4C;
+     font-size: 15px;
   }
   div.donation>div.wrapper>div.info>h2{
      margin-left: 20%;
@@ -1075,15 +1101,23 @@ div.info>button.btn{
 
   div.pets>div.wrapper{
      display: grid;
-     grid-template-rows:26.7% 49% auto ;
+     grid-template-rows:26.7% 55% auto ;
   }
   .slide{
-     display: grid;
-     grid-template-columns: auto auto auto auto;
-     margin-top: -0.5%;
+     margin-top: -21%;
+     overflow: hidden;
+     display: flex;
+     flex-flow: row wrap;
+     align-items: center;
+     align-content: space-around;
+     justify-content: space-around;
      }
-  .slide-third{
-     display: none;
+  .slide-cards{
+   overflow: hidden;
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+   align-content: space-around;
   }
   div.pets>div.wrapper>button{
     margin:8.6% auto;
@@ -1092,10 +1126,10 @@ div.info>button.btn{
   .slide-items{
      background-color: #FAFAFA;
      border-radius: 9px;
+     width: 270px;
      height: 435px;
-     width: 90%;
      margin-left: 3.6%;
-     
+     order: 1;
      text-align:center;
     
   }
@@ -1107,8 +1141,9 @@ div.info>button.btn{
      border: 2px solid #F1CDB3;
      box-sizing: border-box;
      border-radius: 100px;
-     height:11%;
-     width:97%;
+     height:52px;
+     width:52px;
+     order: 2;
       }
   .pet-name{
      font-family: Georgia;
@@ -1129,7 +1164,7 @@ div.info>button.btn{
      font-family: Georgia;
      font-style: normal;
      font-weight: normal;
-     font-size: 35px;
+     font-size: 25px;
      line-height: 130%;
   
      align-items: center;
@@ -1138,7 +1173,7 @@ div.info>button.btn{
   
      color: #545454;
   
-     margin: 11.5% auto;
+     margin: 14% auto;
   }
   .slide-nav-next{
      transform: rotate(-180deg);
@@ -1147,38 +1182,45 @@ div.info>button.btn{
      padding: 0%;
   }
 
+
+
+
+
   .help{
      display: flex;
   }
   .help-example{
      display: flex;
      flex-flow: row wrap;
-     justify-content: center;
-     align-content: space-around;
-     margin-top:-5%;
-     }
+     justify-content: flex-start;
+     align-content: flex-end;
+     margin-top: 0;
+           }
   
   .help-items{
-  margin:1.7% 5%;
+  margin: 0;
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  align-content: flex-end;
+  justify-content:space-around;
+  align-content: space-around;
+  width:150px ;
+  height:120px ;
   }
   .img-help{
-     display: flexbox;
+     height: 50px;
+     margin: 0 auto 0;
      }
   .help-name{
-     width:100%;
+     width:150px;
      font-family: Georgia;
      font-style: normal;
      font-weight: normal;
      font-size: 15px;
      line-height: 110%;
-  
      letter-spacing: 0.06em;
      color: #545454;
      display: flexbox;
+     margin-top: 20px;
      }
   
   
@@ -1189,16 +1231,18 @@ div.info>button.btn{
   div.donation>div.wrapper>img{
      display: flex;
      order:2;
-     margin: -5% auto auto auto;
+     margin: auto auto 40px;
+     width: 90%;
   }
   div.donation>div.wrapper>div.info{
-     margin-left:23%;
-     margin-top: 8.8%;
+     margin: 40px auto auto;
      order:1;
   }
   div.donation>div.wrapper>div.info>h2{
-    margin-bottom: 3%;
-    width: 55%;
+    margin: auto auto 7%;
+    width: 70%;
+    text-align: center;
+    justify-content: center;
   }
   div.donation>div.wrapper>div.info>span{
   font-family: Georgia;
@@ -1206,9 +1250,11 @@ div.info>button.btn{
   font-weight: normal;
   font-size: 15px;
   line-height: 160%;
-  
-  letter-spacing: 0.06em;
-  
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 0.005em;
+  margin-left: 13px;
+  margin-bottom: 20px;
   color: #545454;
   }
   div.donation>div.wrapper>div.info>p{
@@ -1217,15 +1263,15 @@ div.info>button.btn{
   font-weight: normal;
   font-size: 12px;
   line-height: 150%;
-  margin-top: 3.5%;
+  margin: 3.5% auto;
   color: #B2B2B2;
-  width: 70%;
+  width: 95%;
+  text-align: justify;
   }
   .card{
-  margin-top: 4.2%;
-  display: flex;
-  height: 10.5%;
-  width: 64.5%;
+  margin: 20px auto;
+  width: 281px;
+  height: 43px;
   background: #F1CDB3;
   border-radius: 9px;
   }
@@ -1237,7 +1283,7 @@ div.info>button.btn{
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #545454;
-  padding-left: 3.2%;
+  padding-left: 5%;
   margin-top: auto;
   margin-bottom: auto;
   }
@@ -1254,6 +1300,7 @@ div.info>button.btn{
    flex-flow: row wrap;
    justify-content:space-around;
    align-content: space-around;
+   height: 100%;
     }
   h3{
   font-family: Georgia;
@@ -1261,7 +1308,9 @@ div.info>button.btn{
   font-weight: normal;
   font-size: 25px;
   line-height: 130%;
-  width: 100%;
+  width: 90%;
+  margin: auto;
+  text-align: center;
   letter-spacing: 0.06em;
   color: #FFFFFF;
   }
@@ -1271,7 +1320,7 @@ div.info>button.btn{
   font-weight: normal;
   font-size: 20px;
   line-height: 115%;
-  padding-left: 5%;
+  padding-left: 6%;
   margin-top: auto;
   margin-bottom: auto;
   letter-spacing: 0.06em;
@@ -1281,32 +1330,40 @@ div.info>button.btn{
      border:none;
   }
   footer>div.wrapper>div{
-    width: 300px;
-    
+    width: 100%;
+    margin-top: 0.5%;
     }
-  .a-footer{
-     display: flex;
-     }
-  .footer-span{
-  margin-left: 1.2%;
-  }
   div.place>a{
-     margin-top:-0.6%;
-     margin-bottom: 12%;
+     margin-top:35px;
+     margin-bottom: auto;
   }
   div.contacts>a{
      margin-top:15%;
+     margin-left: 25px;
      margin-bottom: -2%;
   }
   div.contacts{
-   margin-left:-0.5%;
+   margin-left:auto;
   }
   div.place{
-     margin-left: -4.5%;
+     margin-left: auto;
   }
-  .footer-puppy{
-     margin-top: 4%;
-  }  
+   footer>div.wrapper>img{
+     margin-top: auto;
+     margin-bottom: -8%;
+     width: 85%;
+
+  }
+  .footer{
+   height: 809px;
+   background:  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   }
+   .a-footer{
+     width: 100%;
+   } 
 }
 /* 
 
