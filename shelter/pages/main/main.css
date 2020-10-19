@@ -634,9 +634,7 @@ div.info>button.btn{
      grid-template-columns: auto auto auto auto;
      margin-top: -0.5%;
      }
-  .slide-third{
-     display: none;
-  }
+ 
   div.pets>div.wrapper>button{
     margin:8.6% auto;
     width:260px;
