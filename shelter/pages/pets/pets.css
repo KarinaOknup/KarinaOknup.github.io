@@ -601,7 +601,7 @@ cursor: pointer;
       }
   .footer{
          height: 355px;
-         background-image: url(/shelter/assets/images/footer-background.png);
+         background:radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
          }
 
   @media (max-width:1279px){
