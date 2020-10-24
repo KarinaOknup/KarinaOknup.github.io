@@ -20,6 +20,11 @@ body {
   font-size: 8rem;
 }
 
+.data{
+  margin-top: 5rem;
+  font-size:1.2rem;
+}
+
 h1 {
   margin-bottom: 3rem;
 }
@@ -29,8 +34,12 @@ h2 {
   opacity: 0.8;
 }
 
+
 @media (max-width: 700px) {
   .time {
     font-size: 6rem;
+  }
+  .data{
+    font-size:1rem;
   }
 }
