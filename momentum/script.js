@@ -17,13 +17,10 @@ function showTime() {
   // Set AM or PM
   const amPm = hour >= 12 ? 'PM' : 'AM';
 
-  // 12hr Format
-  hour = hour % 12 || 12;
-
   // Output Time
   time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(
     sec
-  )} ${showAmPm ? amPm : ''}`;
+  )}`;
 
   setTimeout(showTime, 1000);
 }
