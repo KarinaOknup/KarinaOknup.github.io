@@ -1,113 +1,353 @@
-// DOM Elements
-const time = document.querySelector('.time'),
-  greeting = document.querySelector('.greeting'),
-  name = document.querySelector('.name'),
-  focus = document.querySelector('.focus');
+const time = document.querySelector('.time');
+const  data = document.querySelector('.data');
+const name = document.querySelector('.name');
+const focus = document.querySelector('.focus');
+const greeting = document.querySelector('.greeting');
+const slideLeft = document.querySelector('.slider-left');
+const slideRight = document.querySelector('.slider-right');
 
-// Options
-const showAmPm = true;
+//create array with random index for BGimages
 
-// Show Time
-function showTime() {
-  let today = new Date(),
+function createRandomImages() {
+    let arrBGImages = [];
+    while(arrBGImages.length <6) { 
+        let i = Math.floor(Math.random()*20);
+        if (i < 10){
+            i = '0' + i;
+        }
+          if (!(arrBGImages.includes(i)) && i !== '00'){
+              arrBGImages. push(i);
+          }
+     }
+     return arrBGImages;
+  }
+
+const arrBGImages = createRandomImages();
+
+function getTime(){
+    let today = new Date(),
     hour = today.getHours(),
     min = today.getMinutes(),
     sec = today.getSeconds();
+    day = today.getDate(); 
+    dayW = today.getDay();
+    month = today.getMonth();
 
-  // Set AM or PM
-  const amPm = hour >= 12 ? 'PM' : 'AM';
-
-  // 12hr Format
-  hour = hour % 12 || 12;
-
-  // Output Time
-  time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(
+  time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(
     sec
-  )} ${showAmPm ? amPm : ''}`;
+  )}`;
 
-  setTimeout(showTime, 1000);
+let weekday =['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+let dayWeek=weekday[dayW];
+
+let monthName = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+let monthNow=monthName[month];
+  data.innerHTML = `${dayWeek}<span> , </span>${day} ${monthNow} `
+
 }
-
 // Add Zeros
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
 
-// Set Background and Greeting
-function setBgGreet() {
-  let today = new Date(),
-    hour = today.getHours();
+function getGreeting(){
+    const date = new Date();
+    const hour = date.getHours();
 
-  if (hour < 12) {
+  if (hour <= 12 && hour > 6) {
     // Morning
-    document.body.style.backgroundImage =
-      "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
     greeting.textContent = 'Good Morning, ';
-  } else if (hour < 18) {
-    // Afternoon
-    document.body.style.backgroundImage =
-      "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
-    greeting.textContent = 'Good Afternoon, ';
-  } else {
+  } else if (hour <= 18 && hour > 12) {
+    // Day
+    greeting.textContent = 'Good Day, ';
+  } else if (hour <= 24 && hour > 18){
     // Evening
-    document.body.style.backgroundImage =
-      "url('https://i.ibb.co/924T2Wv/night.jpg')";
     greeting.textContent = 'Good Evening, ';
+    document.body.style.color = 'white';
+     } else if (hour <= 6){
+    // Night
+    greeting.textContent = 'Good Night, ';
     document.body.style.color = 'white';
   }
 }
 
-// Get Name
-function getName() {
-  if (localStorage.getItem('name') === null) {
-    name.textContent = '[Enter Name]';
-  } else {
-    name.textContent = localStorage.getItem('name');
-  }
-}
+// change bckgr
 
-// Set Name
-function setName(e) {
-  if (e.type === 'keypress') {
-    // Make sure enter is pressed
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('name', e.target.innerText);
-      name.blur();
+const dateN = new Date();
+let hour = dateN.getHours();
+
+function changeIndexBG(e) {
+    if(e.target === slideRight){
+        hour = Number(hour) + 1;
+    } else {
+        hour = Number(hour) - 1;
     }
-  } else {
-    localStorage.setItem('name', e.target.innerText);
-  }
-}
-
-// Get Focus
-function getFocus() {
-  if (localStorage.getItem('focus') === null) {
-    focus.textContent = '[Enter Focus]';
-  } else {
-    focus.textContent = localStorage.getItem('focus');
-  }
-}
-
-// Set Focus
-function setFocus(e) {
-  if (e.type === 'keypress') {
-    // Make sure enter is pressed
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('focus', e.target.innerText);
-      focus.blur();
+    if(hour > 23){
+        hour = hour % 24;
+    } else if (hour === -1){
+        hour = 23;
     }
+    getBG();
+    
+}
+
+function getBG(){
+    const dateBG = new Date();
+    let hourBG = dateBG.getHours();
+    if(dateBG.getMinutes() === 0 && dateBG.getSeconds() === 0){
+        hour ++;
+    }
+    if (hourBG !== hour){
+        hourBG = hour;
+    }
+
+
+    let srcImage = '';
+
+    if (hourBG < 6) {
+        srcImage = `assets/images/night/${arrBGImages[hourBG%6]}.jpg`;
+    } else if (hourBG < 12){
+        srcImage = `assets/images/morning/${arrBGImages[hourBG%6]}.jpg`;
+    } else if (hourBG < 18){
+        srcImage = `assets/images/day/${arrBGImages[hourBG%6]}.jpg`;
+    } else {
+        srcImage = `assets/images/evening/${arrBGImages[hourBG % 6]}.jpg`;
+    }
+        const body = document.querySelector('body');
+        const src = srcImage;
+        const img = document.createElement('img');
+        img.src = src;
+        img.onload = () => {      
+            body.style.backgroundImage = `url(${src})`;
+          }; 
+        slideLeft.style.pointerEvents='none';
+        slideRight.style.pointerEvents='none';
+
+        console.log(hourBG, dateBG.getSeconds());
+        setTimeout(function() { 
+            slideLeft.style.pointerEvents='auto';
+            slideRight.style.pointerEvents='auto';
+        }, 1000);
+
+}
+
+//NAME
+
+const setName = function(e) {
+    if(e.type === 'click'){
+        name.innerText = '';
+    }
+    if (e.type === 'keypress') {
+        // Make sure enter is pressed
+        if (e.which == 13 || e.keyCode == 13) {
+            if(name.textContent === '' || !(name.textContent).match(/[a-zа-я]/)){
+                if(localStorage.getItem('name')){
+                    name.innerText =localStorage.getItem('name');
+                } else {
+                    name.innerText = "[Enter Name]";
+                }
+            } else {
+                localStorage.setItem('name', e.target.innerText);
+            }
+            if(name.textContent === ''){
+                name.innerText = "[Enter Name]";
+            } else {
+                localStorage.setItem('name', e.target.innerText);
+            }
+            name.blur();
+          }
+    } else if(e.type === 'blur') {
+        if(name.textContent === '' || !(name.textContent).match(/[a-zа-я]/)){
+            if(localStorage.getItem('name')){
+                name.innerText =localStorage.getItem('name');
+            } else {
+                name.innerText = "[Enter Name]";
+            }
+        } else {
+            name.innerText = localStorage.getItem('name');
+        }
+    }
+}
+
+const getName = function () {
+    if (!(localStorage.getItem("name"))){
+        name.textContent = 'Enter Name';
+    } else {
+        name.textContent = localStorage.getItem("name");
+        getWeather();
+    } 
+}
+
+//FOCUS
+
+const setFocus = function(e) {
+    if(e.type === 'click'){
+        focus.innerText = '';
+    }
+    if (e.type === 'keypress') {
+        // Make sure enter is pressed
+        if (e.which == 13 || e.keyCode == 13) { if(focus.textContent === '' || !(focus.textContent).match(/[a-zа-я]/)){
+                if(localStorage.getItem('focus')){
+                    focus.innerText =localStorage.getItem('focus');
+                } else {
+                    focus.innerText = "[Enter Focus]";
+                }
+            } else {
+                localStorage.setItem('focus', e.target.innerText);
+            }
+            if(focus.textContent === ''){
+                focus.innerText = "[Enter Focus]";
+            } else {
+                localStorage.setItem('focus', e.target.innerText);
+            }
+                  focus.blur();
+          }
+    } else if(e.type === 'blur') {
+        if(focus.textContent === '' || !(focus.textContent).match(/[a-zа-я]/)){
+            if(localStorage.getItem('focus')){
+                focus.innerText =localStorage.getItem('focus');
+            } else {
+                focus.innerText = "[Enter Focus]";
+            }
+        } else {
+            focus.innerText = localStorage.getItem('focus');
+        }
+    }
+}
+
+const getFocus = function () {
+    if (!(localStorage.getItem("focus"))){
+        focus.textContent = 'Enter Focus';
+    } else {
+        focus.textContent = localStorage.getItem("focus");
+        getWeather();
+    } 
+}
+
+
+//QUOTE
+
+
+const blockquote = document.querySelector('blockquote');
+const figcaption = document.querySelector('figcaption');
+const btn = document.querySelector('.btn');
+
+async function getQuote() {  
+  const url = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json';
+  const res = await fetch(url);
+  const data = await res.json(); 
+  let i = Math.floor(Math.random()*100);
+  if(data.quotes[i].quote.length > 100){
+    getQuote();
   } else {
-    localStorage.setItem('focus', e.target.innerText);
+    blockquote.textContent = data.quotes[i].quote;
+    figcaption.textContent = data.quotes[i].author;
   }
 }
 
+// GET WEATHER
+
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+const city = document.querySelector('.city');
+
+function getCity(){
+    if (!(localStorage.getItem("city"))){
+        city.textContent = 'Enter City';
+    } else {
+        city.textContent = localStorage.getItem("city");
+        document.querySelector('.error-city').style.display = "none";
+        getWeather();
+    } 
+}
+
+function setCity(e){
+    document.querySelector('.error-city').style.display = "none";
+    if(e.type === 'click'){
+        city.innerText = '';
+    }
+    if (e.type === 'keypress') {
+        // Make sure enter is pressed
+        if (e.which == 13 || e.keyCode == 13) { 
+            if(city.textContent === '' || !(city.textContent).match(/[a-zа-я]/)){
+            if(localStorage.getItem('city')){
+                city.innerText =localStorage.getItem('city');
+            } else {
+                city.innerText = "[Enter City]";
+            }
+        } else {
+            localStorage.setItem('city', e.target.innerText);
+            getWeather(); 
+        }
+        if(city.textContent === ''){
+            city.innerText = "[Enter city]";
+        } else {
+            localStorage.setItem('city', e.target.innerText);
+        }
+              city.blur();
+      }
+    } else if(e.type === 'blur') {
+        if(city.textContent === '' || !(city.textContent).match(/[a-zа-я]/)){
+            if(localStorage.getItem('city')){
+                city.innerText =localStorage.getItem('city');
+            } else {
+                city.innerText = "[Enter City]";
+            }
+        } else {
+            city.innerText = localStorage.getItem('city');
+        }
+    }
+}
+
+
+const wind = document.querySelector('.wind');
+const humidity = document.querySelector('.humidity');
+
+async function getWeather(){
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${localStorage.getItem('city')}&&lang=en&appid=89bdd39ee096fa9f10de10648fadb5d1&units=metric`;
+        const res = await fetch(url);
+        const data = await res.json();
+    
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${data.main.temp}°C`;
+    weatherDescription.textContent = data.weather[0].description;
+    humidity.textContent = `Humidity: ${data.main.humidity}%`;
+    wind.textContent = `Wind speed: ${data.wind.speed} m/sec`;
+    } catch(e){
+        document.querySelector('.error-city').style.display = "inline-block";
+    }
+    setTimeout(getWeather, 100000);
+}
+
+document.addEventListener('DOMContentLoaded', getQuote);
+btn.addEventListener('click', getQuote);
+
+
+name.addEventListener('click', setName);
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
+
+focus.addEventListener('click', setFocus);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus);
 
-// Run
-showTime();
-setBgGreet();
+
+
+slideRight.addEventListener('click', changeIndexBG);
+slideLeft.addEventListener('click', changeIndexBG);
+
+document.addEventListener('DOMContentLoaded', getWeather);
+city.addEventListener('click', setCity);
+city.addEventListener('keypress', setCity);
+city.addEventListener('blur', setCity);
+
+getTime();
 getName();
 getFocus();
+getCity();
+getWeather();
+getGreeting();
+getBG();
+getQuote();
