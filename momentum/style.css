@@ -14,6 +14,8 @@ body {
   height: 100vh;
   background-size: cover;
   color: #000000;
+  transition: background-image 1s ease-in-out;
+  background-repeat: no-repeat;
 }
 
 .weather {
@@ -40,7 +42,6 @@ body {
 .temp {
   display: flex;
 }
-
 
 .temperature {
   font-size: 1.5rem;
@@ -69,6 +70,7 @@ body {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin-bottom: 0;
 }
 
 .time {
@@ -118,8 +120,6 @@ h2 {
   transform: scale(1.2) rotate(180deg);
 }
 
-/* quotes */
-
 .quote {
   width: 500px;
   height: 200px;
@@ -135,7 +135,6 @@ h2 {
 .quote figcaption {
   text-align: right;
 }
-
 
 .btn {
   width: 30px;
@@ -163,12 +162,11 @@ h2 {
   font-size: 14px;
   display: none;
 }
+.data{
+  font-size: 1.5rem;
+}
 
-@media (max-width: 720px) {
-  .time {
-    font-size: 5rem;
-  }
-
+@media (max-width: 850px) {
   .weather {
     align-items: center;
     margin-bottom: 60px;
@@ -181,32 +179,37 @@ h2 {
   .city {
     font-size: 2rem;
   }
-
+  .data{
+    font-size: 1rem;
+  }
   .owf {
     font-size: 3rem;
   }
 
   .temperature {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .weather-city {
-    width: 130px;
+    width: 150px;
     height: 50px;
+    font-size: 1rem;
   }
 
   .weather-info {
-    font-size: 14px;
+    font-size: 1rem;
+    margin: auto;
     }
 
   .wrapper {
-    margin: 0px 15px;
-    display: flexbox;
-    order: 1;
+    margin: auto;
   }
 h1{
-  font-size: 2rem;
-  margin: 20px;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+h2{
+  font-size: 1.5rem;
 }
   .slider {
     border-top: 15px solid transparent;
@@ -230,8 +233,15 @@ h1{
   }
   .time-name {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow:row wrap;
     justify-content: center;
   }
-  
+    .time {
+    font-size: 4rem;
+    margin: auto;
+  }
+  .time-name>.wrapper{
+    display: flexbox;
+    width: 100vw;
+  }
 }

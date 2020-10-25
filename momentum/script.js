@@ -6,24 +6,6 @@ const greeting = document.querySelector('.greeting');
 const slideLeft = document.querySelector('.slider-left');
 const slideRight = document.querySelector('.slider-right');
 
-//create array with random index for BGimages
-
-function createRandomImages() {
-    let arrBGImages = [];
-    while(arrBGImages.length <6) { 
-        let i = Math.floor(Math.random()*20);
-        if (i < 10){
-            i = '0' + i;
-        }
-          if (!(arrBGImages.includes(i)) && i !== '00'){
-              arrBGImages. push(i);
-          }
-     }
-     return arrBGImages;
-  }
-
-const arrBGImages = createRandomImages();
-
 function getTime(){
     let today = new Date(),
     hour = today.getHours(),
@@ -36,7 +18,7 @@ function getTime(){
   time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(
     sec
   )}`;
-
+  setTimeout(getTime, 1000);
 let weekday =['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 let dayWeek=weekday[dayW];
 
@@ -70,8 +52,25 @@ function getGreeting(){
     document.body.style.color = 'white';
   }
 }
+//create random index images
 
-// change bckgr
+function createRandomImages() {
+    let arrBGImages = [];
+    while(arrBGImages.length <6) { 
+        let i = Math.floor(Math.random()*20);
+        if (i < 10){
+            i = '0' + i;
+        }
+          if (!(arrBGImages.includes(i)) && i !== '00'){
+              arrBGImages. push(i);
+          }
+     }
+     return arrBGImages;
+  }
+
+const arrBGImages = createRandomImages();
+
+// change images
 
 const dateN = new Date();
 let hour = dateN.getHours();
