@@ -36,7 +36,7 @@ function getTime(){
   time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(
     sec
   )}`;
-
+  setTimeout(getTime, 1000);
 let weekday =['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 let dayWeek=weekday[dayW];
 
