@@ -69,6 +69,7 @@ body {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin-bottom: 0;
 }
 
 .time {
@@ -163,12 +164,10 @@ h2 {
   font-size: 14px;
   display: none;
 }
-
-@media (max-width: 720px) {
-  .time {
-    font-size: 5rem;
-  }
-
+.data{
+  font-size: 1.5rem;
+}
+@media (max-width: 850px) {
   .weather {
     align-items: center;
     margin-bottom: 60px;
@@ -181,7 +180,9 @@ h2 {
   .city {
     font-size: 2rem;
   }
-
+  .data{
+    font-size: 1rem;
+  }
   .owf {
     font-size: 3rem;
   }
@@ -201,12 +202,13 @@ h2 {
 
   .wrapper {
     margin: 0px 15px;
-    display: flexbox;
-    order: 1;
   }
 h1{
-  font-size: 2rem;
-  margin: 20px;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+h2{
+  font-size: 1.5rem;
 }
   .slider {
     border-top: 15px solid transparent;
@@ -230,8 +232,15 @@ h1{
   }
   .time-name {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow:row wrap;
     justify-content: center;
   }
-  
+    .time {
+    font-size: 4rem;
+    margin: auto;
+  }
+  .time-name>.wrapper{
+    display: flexbox;
+    width: 100vw;
+  }
 }
