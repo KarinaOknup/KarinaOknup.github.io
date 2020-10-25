@@ -14,6 +14,8 @@ body {
   height: 100vh;
   background-size: cover;
   color: #000000;
+  transition: background-image 1s ease-in-out;
+  background-repeat: no-repeat;
 }
 
 .weather {
@@ -40,7 +42,6 @@ body {
 .temp {
   display: flex;
 }
-
 
 .temperature {
   font-size: 1.5rem;
@@ -119,8 +120,6 @@ h2 {
   transform: scale(1.2) rotate(180deg);
 }
 
-/* quotes */
-
 .quote {
   width: 500px;
   height: 200px;
@@ -136,7 +135,6 @@ h2 {
 .quote figcaption {
   text-align: right;
 }
-
 
 .btn {
   width: 30px;
@@ -167,6 +165,7 @@ h2 {
 .data{
   font-size: 1.5rem;
 }
+
 @media (max-width: 850px) {
   .weather {
     align-items: center;
@@ -188,20 +187,22 @@ h2 {
   }
 
   .temperature {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .weather-city {
-    width: 130px;
+    width: 150px;
     height: 50px;
+    font-size: 1rem;
   }
 
   .weather-info {
-    font-size: 14px;
+    font-size: 1rem;
+    margin: auto;
     }
 
   .wrapper {
-    margin: 0px 15px;
+    margin: auto;
   }
 h1{
   font-size: 1.5rem;
