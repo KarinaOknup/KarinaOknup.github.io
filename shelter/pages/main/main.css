@@ -1,7 +1,8 @@
+#menu__toggle{
+   display: none;
+}
 @media (min-width: 1280px) {
-   #menu__toggle{
-      display: none;
-   }
+ 
 body {
     width: 1280px;
     margin: auto;
