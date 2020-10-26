@@ -883,6 +883,7 @@ cursor: pointer;
         max-width: 300px;
         margin: 0% auto 0%;
         height: 100%;
+        
         }
   div{
      display: block;
@@ -897,7 +898,7 @@ cursor: pointer;
        } 
   a{
      text-decoration: none;
-     color:  #545454;
+     color:#CDCDCD;
      font-family: Arial;
      font-style: normal;
      font-weight: normal;
@@ -908,12 +909,13 @@ cursor: pointer;
   .active{
      border-bottom:4px solid  #F1CDB3;
      cursor: pointer;
-     color: #292929;
+     color:#FAFAFA;
   
   }
   a:hover{
      border-bottom: 4px solid #F1CDB3;
      cursor: pointer;
+     color:#FAFAFA;
   }
   h1{
      font-family: Georgia;
@@ -1134,21 +1136,26 @@ cursor: pointer;
    .a-footer{
      width: 100%;
    }
+
+   ul{
+      display: flex;
+      flex-flow: column wrap; 
+      margin:100px auto 20px;
+      padding: 0;
+      justify-content: space-around;
+    }
+    ol{
+       display: flexbox;
+       padding: 0;
+    }
    #menu__toggle {
       opacity: 0;
     }
     
     #menu__toggle:checked ~ .menu__btn > span {
-      transform: rotate(45deg);
-    }
-    #menu__toggle:checked ~ .menu__btn > span::before {
-      top: 0;
-      transform: rotate(0);
-    }
-    #menu__toggle:checked ~ .menu__btn > span::after {
-      top: 0;
       transform: rotate(90deg);
     }
+
     #menu__toggle:checked ~ .nav-menu {
       visibility: visible;
       right: 0;
@@ -1185,25 +1192,13 @@ cursor: pointer;
       content: '';
       top: 11px;
     }
-    ul{
-      display: flex;
-      flex-flow: column wrap; 
-      align-items: center; 
-      justify-content: center;
-    }
-    ol{
-       margin: 70px auto;
-       padding: 0;
-    }
     .nav-menu {
-      display: flex;
-      justify-content: center;
       position: fixed;
       visibility: hidden;
       top: 0;
       right: -100%;
     
-      width: 300px;
+      width: 320px;
       height: 100%;
     
       margin: 0;
@@ -1211,8 +1206,7 @@ cursor: pointer;
     
       list-style: none;
     
-      background-color: #ECEFF1;
-      opacity: 0.9;
+      background-color:  #292929;
       box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     
       transition-duration: .25s;
@@ -1220,10 +1214,8 @@ cursor: pointer;
     
     .nav-items {
       display: flex;
-      color: #333;
       font-size: 20px;
       font-weight: 600;
-      width: 90%;
       transition-duration: .25s;
     }
   }
