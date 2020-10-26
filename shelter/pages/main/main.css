@@ -1338,22 +1338,14 @@ div.info>button.btn{
    } 
 
 
-
    #menu__toggle {
       opacity: 0;
     }
     
     #menu__toggle:checked ~ .menu__btn > span {
-      transform: rotate(45deg);
-    }
-    #menu__toggle:checked ~ .menu__btn > span::before {
-      top: 0;
-      transform: rotate(0);
-    }
-    #menu__toggle:checked ~ .menu__btn > span::after {
-      top: 0;
       transform: rotate(90deg);
     }
+ 
     #menu__toggle:checked ~ .nav-menu {
       visibility: visible;
       right: 0;
@@ -1392,24 +1384,26 @@ div.info>button.btn{
     }
     ul{
       display: flex;
-      flex-flow: column wrap; 
-      align-items: center; 
-      justify-content: center;
+      flex-flow: column wrap;
+      margin-top:0;
+      margin-right: 50px;
+      padding: 0;
+      justify-content: space-around;
+      align-items: center;
     }
     ol{
-       margin: 70px auto 35px;
+       display: flexbox;
+       margin-top:125px ;
        padding: 0;
     }
     .nav-menu {
-      display: flex;
-      flex-flow: column wrap;
-
+      
       position: fixed;
       visibility: hidden;
       top: 0;
       right: -100%;
     
-      width: 300px;
+      width: 320px;
       height: 100%;
     
       margin: 0;
@@ -1417,8 +1411,7 @@ div.info>button.btn{
     
       list-style: none;
     
-      background-color: #ECEFF1;
-      opacity: 0.9;
+      background-color: #292929;
       box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     
       transition-duration: .25s;
@@ -1426,10 +1419,8 @@ div.info>button.btn{
     
     .nav-items {
       display: flex;
-      color: #333;
       font-size: 20px;
       font-weight: 600;
-      width: 90%;
       transition-duration: .25s;
     }
 
