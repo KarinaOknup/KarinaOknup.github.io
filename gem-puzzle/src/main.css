@@ -28,14 +28,16 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
-.nav {
+nav{
     display: flex;
-    justify-content: center;
-    width: 80%;
-    height: 70px;
-    margin: 20px auto;
-    align-items: center;
+}
+.nav {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    width: 450px;
+    margin:auto;
+
 }
 
 .status {
@@ -87,7 +89,7 @@
     text-decoration-line: none;
     text-decoration: none;
     user-select: none;
-    margin: 5px 10px;
+    margin: 5px;
     cursor: pointer;
 }
 .btn-select{
@@ -187,7 +189,7 @@
     padding: 50px;
     border: 2px solid rgb(18, 104, 119);
     background-color: rgba(81, 111, 131, 0.664);
-    color: rgb(130, 36, 207);
+    color: rgb(225, 220, 230);
     position: absolute;
     text-align: center;
     font-size: 30px;
@@ -220,7 +222,7 @@
 
 @media only screen and (max-width: 650px) {
     .nav {
-        width: 92%;
+        width: 350px;
     }
     .wrap {
         width: 92%;

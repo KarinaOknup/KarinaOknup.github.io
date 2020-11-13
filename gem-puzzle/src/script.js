@@ -37,11 +37,31 @@ window.addEventListener('load', () => {
     document.getElementById('results').addEventListener('click', () => {
         puzzle.showResults('resultsMessage');
     })
-
+    document.getElementById('sound').addEventListener('click', () => {
+        soundState();
+    })
     window.addEventListener('newSize', () => {
         newSizeEvent(puzzle);
     });
 })
+
+function soundState(){
+    if (document.getElementById('sound').classList.contains('sound')){
+    document.querySelector('.voice').src='./assets/noVoice.svg';
+}
+else{
+    document.querySelector('.voice').src='./assets/Voice.svg';
+} 
+document.getElementById('sound').classList.toggle('sound');
+}
+
+function sound() {
+if(document.querySelector('#sound').classList.contains('sound')){
+const audio=document.querySelector('audio');
+audio.currentTime=0;
+audio.play();
+}
+}
 
 function newSizeEvent(puzzle) {
     const curWidth = window.innerWidth;
@@ -138,6 +158,11 @@ function createHtml() {
         select.append(option);
     }
     nav.append(select);
+    const sound = document.createElement('button');
+    sound.className = 'btn-nav sound';
+    sound.id = 'sound';
+    sound.innerHTML = '<img class="voice" src="./assets/voice.svg">';
+    nav.append(sound);
     header.append(nav);
 
     const section = document.createElement('section');
@@ -177,10 +202,16 @@ function createHtml() {
     message.id = 'message';
     main.append(message);
 
+   
+    const audio=document.createElement('audio');
+    audio.src='./sound/sound.mp3';
+
     document.body.append(header);
     document.body.append(main);
-    document.body.append(section)
+    document.body.append(section);
+    document.body.append(audio);
 }
+
 
 class Puzzle {
     constructor(cols = 4, id = 'game', width = 400, timeId = 'time', stepsId = 'steps', stopId = 'stop') {
@@ -247,6 +278,7 @@ class Puzzle {
                 }, 0);
             };
         };
+        
     }
 
     moveItem(elem, e) {
@@ -296,6 +328,7 @@ class Puzzle {
                         break;
                 }
             }
+            sound();
         }
 
         function upHandler() {
@@ -304,6 +337,7 @@ class Puzzle {
             elem.style.transition = 'all 0.2s linear';
             elem.style.left = `${button[2]}px`;
             elem.style.top = `${button[3]}px`;
+            sound();
         }
     }
 
