@@ -40,13 +40,18 @@ window.addEventListener('load', () => {
     document.getElementById('sound').addEventListener('click', () => {
         soundState();
     })
+    document.getElementById('music').addEventListener('click', () => {
+        musicState();
+    })
+    document.querySelector('#audioMusic').play();
     window.addEventListener('newSize', () => {
         newSizeEvent(puzzle);
     });
+    
 })
 
-function soundState(){
-    if (document.getElementById('sound').classList.contains('sound')){
+function soundState() {
+    if (document.getElementById('sound').className.includes('sound')){
     document.querySelector('.voice').src='./assets/noVoice.svg';
 }
 else{
@@ -56,12 +61,26 @@ document.getElementById('sound').classList.toggle('sound');
 }
 
 function sound() {
-if(document.querySelector('#sound').classList.contains('sound')){
-const audio=document.querySelector('audio');
+if(document.querySelector('#sound').className.includes('sound')){
+const audio=document.querySelector('#audioSound');
 audio.currentTime=0;
 audio.play();
 }
 }
+
+function musicState() {
+    const audioM=document.querySelector('#audioMusic');
+    if (document.getElementById('music').className.includes('music')){
+    document.querySelector('.voiceM').src='./assets/nolisten.svg';
+    audioM.pause();     
+}
+else{
+    document.querySelector('.voiceM').src='./assets/listen.svg';
+    audioM.play();
+} 
+document.getElementById('music').classList.toggle('music');
+}
+
 
 function newSizeEvent(puzzle) {
     const curWidth = window.innerWidth;
@@ -130,7 +149,7 @@ function createHtml() {
     const start = document.createElement('button');
     start.className = 'btn-nav';
     start.id = 'start';
-    start.innerHTML = 'Start';
+    start.innerHTML = '<img src="./assets/start.svg" >';
     nav.append(start);
     const stop = document.createElement('button');
     stop.className = 'btn-nav';
@@ -163,6 +182,11 @@ function createHtml() {
     sound.id = 'sound';
     sound.innerHTML = '<img class="voice" src="./assets/voice.svg">';
     nav.append(sound);
+    const music = document.createElement('button');
+    music.className = 'btn-nav music';
+    music.id = 'music';
+    music.innerHTML = '<img class="voiceM" src="./assets/listen.svg">';
+    nav.append(music);
     header.append(nav);
 
     const section = document.createElement('section');
@@ -205,11 +229,18 @@ function createHtml() {
    
     const audio=document.createElement('audio');
     audio.src='./sound/sound.mp3';
+    audio.id='audioSound';
+
+    const audioM=document.createElement('audio');
+    audioM.src='./music/BND.mp3';
+    audioM.loop='loop';
+    audioM.id='audioMusic';
 
     document.body.append(header);
     document.body.append(main);
     document.body.append(section);
     document.body.append(audio);
+    document.body.append(audioM);
 }
 
 
@@ -598,3 +629,4 @@ class Puzzle {
         }
     }
 }
+

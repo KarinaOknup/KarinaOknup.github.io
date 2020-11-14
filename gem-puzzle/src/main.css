@@ -110,6 +110,13 @@ nav{
 .btn-nav:nth-child(5){
     background-color: rgb(231, 140, 20);
 }
+.btn-nav:nth-child(6){
+    background-color: rgb(228, 71, 71);
+}
+.btn-nav:nth-child(7){
+    background-color: rgb(219, 97, 209);
+}
+
 
 .item:hover {
     background-image: none;
