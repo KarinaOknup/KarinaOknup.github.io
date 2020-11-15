@@ -55,7 +55,7 @@ function soundState() {
     document.querySelector('.voice').src='./assets/noVoice.svg';
 }
 else{
-    document.querySelector('.voice').src='./assets/Voice.svg';
+    document.querySelector('.voice').src='./assets/voice.svg';
 } 
 document.getElementById('sound').classList.toggle('sound');
 }
@@ -71,7 +71,7 @@ audio.play();
 function musicState() {
     const audioM=document.querySelector('#audioMusic');
     if (document.getElementById('music').className.includes('music')){
-    document.querySelector('.voiceM').src='./assets/nolisten.svg';
+    document.querySelector('.voiceM').src='./assets/noListen.svg';
     audioM.pause();     
 }
 else{
