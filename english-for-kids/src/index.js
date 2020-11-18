@@ -1,3 +1,4 @@
+
 const cards = [ 
   ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
   [
@@ -301,9 +302,7 @@ const cards = [
     }
   ]
 ]
-
-
-
-
-
-export default cards;
+function d(){
+  console.log(cards + 'hey');
+}
+d();
