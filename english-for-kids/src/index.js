@@ -1,6 +1,25 @@
+const MODES={
+  train : 'train',
+  play : 'play'
+};
 
-const cards = [ 
-  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
+
+const mainPage = document.querySelector('#main');//Main Page
+const categoryPage = document.querySelector('#category');// Category Page
+
+const categoriesList = document.querySelector('#categoriesList')
+const wordsList = document.querySelector('#wordsList')
+
+
+
+// remove templates from DOM
+
+const container = document.querySelector('#container');//page container
+container.append(mainPage);
+
+//cards rendering
+const input = [ 
+   ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
   [
     {
       word: 'cry',
@@ -302,7 +321,51 @@ const cards = [
     }
   ]
 ]
-function d(){
-  console.log(cards + 'hey');
+const cardList = new CardList();
+document.querySelector('#switch').addEventListener('click',(event) => {
+  cardList.changeMode(MODES.play);
+});
+
+class CardList {
+  constructor(state) { // [{}, {}, ...{}]
+    this.state = state;
+    this.list = document.createElement();
+
+    this.state .forEach(singleState => {
+        const card = new Card(singleState);
+        this.wordsList.append(card.createElement);
+    });
+
+    this.cards =this.state.map(singleState => {
+      const card = new Card(singleState);
+      
+      this.wordsList.append(card.createElement);
+
+      return card;
+    });
+
+  }
+
+  changeMode(mode){
+    this.cards.forEach(card => card.changeMode(mode))
+  }
+
 }
-d();
+
+class Card {
+      constructor(state) {
+        this.state = state;
+        this.mode=MODES.play;
+
+      }
+      createCard(){
+        const cardElement = document.createElement('div');
+        cardElement.innerHTML(`<div style="background-image: url(${url})">${word}</div>`);
+
+        return cardElement;
+      }
+
+      setMode(mode){
+        this.mode = mode;
+      }
+}
