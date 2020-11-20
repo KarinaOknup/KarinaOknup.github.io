@@ -3,6 +3,39 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+const isDev = process.env.NODE_ENV === 'development'
+
+const babelOptions = preset => {
+    const opts = {
+      presets: [
+        '@babel/preset-env'
+      ],
+      plugins: [
+        '@babel/plugin-proposal-class-properties'
+      ]
+    }
+  
+    if (preset) {
+      opts.presets.push(preset)
+    }
+  
+    return opts
+  }
+   
+  const jsLoaders = () => {
+    const loaders = [{
+      loader: 'babel-loader',
+      options: babelOptions()
+    }]
+  
+    if (isDev) {
+      loaders.push('eslint-loader')
+    }
+  
+    return loaders
+  }
 
 module.exports = (env, options) => {
     const isProd = options.mode === 'production';
@@ -11,7 +44,7 @@ module.exports = (env, options) => {
         mode: isProd ? 'production' : 'development',
         devtool: isProd ? 'nosources-source-map' : 'source-map', 
         watch:!isProd,
-        entry: ['./src/index.js', './src/style.css'],
+        entry: ['./src/index.js', './src/style.scss'],
         output:{
             path: path.join(__dirname,'/dist'),
             filename: 'script.js'
@@ -19,21 +52,29 @@ module.exports = (env, options) => {
 
         module:{
             rules:[
+
                 {
                     test: /\.js$/,
                     exclude: /node_modules/,
-                    use: {
-                        loader: 'babel-loader',
-                        options: {
-                           presets: ['@babel/preset-env']
-                        }
-                    }
-                },
+                    use: jsLoaders()
+                  },
 
                 {
-                    test: /\.css$/,
-                    use: [MiniCssExtractPlugin.loader, "css-loader"],
-                  },
+                    test: /\.scss$/,
+                    use: [
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                publicPath: ''
+                            }
+                        },
+                        {
+                            loader: "css-loader"
+                        },{
+                            loader: "sass-loader"
+                        }
+                    ]
+                },
 
                 {
                     test: /\.(png|svg|mp3|jpe?g|gif)$/,
@@ -59,7 +100,8 @@ module.exports = (env, options) => {
             }),
             new MiniCssExtractPlugin({
                 filename:'style.css'
-            })            
+            }) ,
+            new ESLintPlugin()           
         ]
     }
 

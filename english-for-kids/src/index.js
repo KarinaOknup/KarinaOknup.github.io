@@ -360,7 +360,7 @@ class Card {
       }
       createCard(){
         const cardElement = document.createElement('div');
-        cardElement.innerHTML(`<div style="background-image: url(${url})">${word}</div>`);
+        cardElement.innerHTML(`<div>hey</div>`);
 
         return cardElement;
       }
