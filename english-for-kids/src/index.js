@@ -64,13 +64,30 @@ import {input}  from "./js/data";
 import 'bootstrap';
 //create card//
 for(let i = 0 ; i < 8 ; i++){
-  const card = document.createElement('div');
-card.innerHTML=`<div class="card" style="width: 18rem;"><img src="${input[1][i].image}" class="card-img-top" alt="..."><div class="card-body"><p class="card-text">${input[1][i].word}</p></div></div>`
+const card = document.createElement('div');
+card.innerHTML=`
+<div class="card" style="width: 18rem;">
+  <div class="front">
+    <img src="${input[1][i].image}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">${input[1][i].word}</p>
+    </div>
+  </div>
+  <div class="back">
+    <img src="${input[1][i].image}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">${input[1][i].translation}</p>
+    </div>
+  </div>
+</div>`
 document.querySelector('.main').appendChild(card);
 }
-//toogle//
-const toggleButton = document.querySelector('.navbar-toggler');
-const navBar = document.querySelector('.nav-bar');
-toggleButton.addEventListener('click', () => {
-  navBar.classList.toggle('toggle');
-});
+
+for (var i = 0; i < document.querySelectorAll('.card').length; i++) {
+  (function(e){
+    document.querySelectorAll('.card')[e].addEventListener('click', function() {
+      this.classList.toggle('flipped');
+    })
+
+  }(i))
+}

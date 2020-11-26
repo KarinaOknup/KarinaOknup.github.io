@@ -102,9 +102,9 @@ module.exports = (env, options) => {
         },
 
         plugins: [
-            new CleanWebpackPlugin(),
+            new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
             new HtmlWebpackPlugin({
-                template:'./index.html'
+                template:'./src/index.html',
             }),
             new MiniCssExtractPlugin({
                 filename:'style.css'
