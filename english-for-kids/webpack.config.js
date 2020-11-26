@@ -3,6 +3,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -16,24 +17,24 @@ const babelOptions = preset => {
         '@babel/plugin-proposal-class-properties'
       ]
     }
-  
+
     if (preset) {
       opts.presets.push(preset)
     }
-  
+
     return opts
   }
-   
+
   const jsLoaders = () => {
     const loaders = [{
       loader: 'babel-loader',
       options: babelOptions()
     }]
-  
+
     if (isDev) {
       loaders.push('eslint-loader')
     }
-  
+
     return loaders
   }
 
@@ -75,14 +76,21 @@ module.exports = (env, options) => {
                         }
                     ]
                 },
-
                 {
-                    test: /\.(png|svg|mp3|jpe?g|gif)$/,
+                  rules: [
+                    {
+                      test: /\.css$/,
+                      use: [ MiniCssExtractPlugin.loader, 'css-loader']
+                    }
+                  ]
+                },
+                {
+                    test: /\.(png|svg|mp3|jpg|gif)$/,
                     use: [
                       {
                         loader: 'file-loader',
                       },
-                    ] 
+                    ]
                 },
 
                 {
@@ -96,13 +104,19 @@ module.exports = (env, options) => {
         plugins: [
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
-                template:'index.html'
+                template:'./index.html'
             }),
             new MiniCssExtractPlugin({
                 filename:'style.css'
-            }) ,
-            new ESLintPlugin()           
-        ]
+            }),
+            new CopyPlugin({
+              patterns: [
+                { from: "./src/img", to: "./img" },
+                { from: "./src/audio", to: "./audio" },
+              ],
+            }),
+            new ESLintPlugin()
+        ],
     }
 
     return config;
