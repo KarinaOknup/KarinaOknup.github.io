@@ -66,7 +66,7 @@ import 'bootstrap';
 for(let i = 0 ; i < 8 ; i++){
 const card = document.createElement('div');
 card.innerHTML=`
-<div class="card" style="width: 18rem;">
+<div class="card">
   <div class="front">
     <img src="${input[1][i].image}" class="card-img-top" alt="...">
     <div class="card-body">
@@ -82,14 +82,30 @@ card.innerHTML=`
 </div>`
 document.querySelector('.main').appendChild(card);
 }
-
+//FLIP//
 for (var i = 0; i < document.querySelectorAll('.card').length; i++) {
   (function(e){
     document.querySelectorAll('.card')[e].addEventListener('click', function() {
       this.classList.toggle('flipped');
     });
-     document.querySelectorAll('.card')[e].addEventListener("mouseout", function() {
+     document.querySelectorAll('.card')[e].addEventListener("mouseleave", function() {
       this.classList.remove('flipped');
     });
     }(i))}
+//MENU//
+var checkbox = document.querySelector( '#myInput' );
+var icon = document.querySelector( '#menuToggle span' );
+var listener = function( e ) {
+  if( e.target != checkbox && e.target != icon ) {
+    checkbox.checked = false;
+    document.removeEventListener( 'click', listener );
+  }
+};
+
+checkbox.addEventListener( 'click', function(){
+  if( this.checked ) {
+    document.addEventListener( 'click', listener );
+  }
+});
+
 
