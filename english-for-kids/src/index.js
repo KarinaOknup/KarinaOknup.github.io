@@ -87,7 +87,9 @@ for (var i = 0; i < document.querySelectorAll('.card').length; i++) {
   (function(e){
     document.querySelectorAll('.card')[e].addEventListener('click', function() {
       this.classList.toggle('flipped');
-    })
+    });
+     document.querySelectorAll('.card')[e].addEventListener("mouseout", function() {
+      this.classList.remove('flipped');
+    });
+    }(i))}
 
-  }(i))
-}
