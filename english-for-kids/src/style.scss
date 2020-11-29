@@ -188,6 +188,30 @@ ul {
         }
       }
 }
+//SCALE//
+#scale{
+  background-color: brown;
+  height: 30px;
+  width: 310px;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  .star{
+   margin: 5px;
+   width: 20px;
+   height: 20px;
+   background-color: rgb(235, 235, 29);
+  }
+  .empty-star{
+   margin: 5px;
+   width: 20px;
+   height: 20px;
+   background-color: rgb(119, 119, 113); 
+  }
+}
+
 //SWITCH//
 // .body-switch {
 //   min-width: 100px;
