@@ -4,9 +4,10 @@ $font-familyENG :'Nerko One', cursive;
 $font-familyRU: 'Caveat', cursive;
 html {
   font-size: 20px;
+
 }
 
-.main{
+#main{
   top:70px;
   position: relative;
 }
@@ -20,7 +21,7 @@ html {
 //CARD//
 .card{
   margin: 1rem;
-  background-color: #dfdea1;
+  background-color: #657ad8;
   border: 4px solid rgb(78, 76, 76) ;
   color: rgb(36, 31, 42);
   -webkit-transition: -webkit-transform 0.4s;
@@ -37,6 +38,9 @@ html {
   text-align:center ;
   font-size: 2rem;
   font-family: $font-familyENG;
+}
+.play-text{
+visibility: hidden ;
 }
 //FlIP_CARD//
 .flipped{
@@ -60,7 +64,7 @@ html {
   font-family: $font-familyRU;
   font-size: 1.5rem;
   position: absolute;
-  background: rgb(144, 190, 146);
+  background: rgb(64, 204, 134);
   -webkit-transform: rotateY( 180deg );
   -moz-transform: rotateY( 180deg );
   -o-transform: rotateY( 180deg );
@@ -68,6 +72,7 @@ html {
 }
 //HEADER//
 .header{
+  font-family: $font-familyENG ;
   position: fixed;
   width:100%;
   height: 70px;
@@ -83,7 +88,7 @@ html {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 1; 
+  z-index: 1;
   -webkit-user-select: none;
   user-select: none;
   padding: 6px 4px 1.5px 4px;
@@ -174,7 +179,7 @@ ul {
       {
         padding: 10px 0;
         padding-left: 20px;
-        font-size: 22px;
+        font-size: 1.5rem;
         &:hover{
           margin-left: -50px;
           padding-left: 70px;
@@ -184,75 +189,72 @@ ul {
       }
 }
 //SWITCH//
-
-.body-switch {
-  min-width: 100px;
-  height: 100vh;
-  display: flexbox;
-  margin-right:20px;
-  margin-top: 10px;
-}
-$height: 40px;
-$width: $height * 2.5;
-.toggle-button {
-  position: relative;
-  cursor: pointer;
-  .toggle-content {
-    width: $width;
-    height: $height;
-    background: lighten(#c7d0d5, 10);
-    position: relative;
-    border-radius: $height/2;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 5px 10px rgba(darken(#c7d0d5, 50), .3);
-    &:before {
-      content: "";
-      position: absolute;
-      width: $width/2;
-      height: $height;
-      border-radius: $height/2;
-      background:  #f0523f;
-      transition: all .2s ease;
-      box-shadow: 0 2px 5px rgba( #f0523f, .5);
-    }
-    .icon {
-      flex: 1 1 $width/2;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      color: darken(#c7d0d5, 55);
-      font-size: $height/2.2;
-      transition: all .2s ease;
-    }
-  }
-  input {
-    &[type="checkbox"] {
-      display: none;
-      &:not(:checked) {
-        & + .toggle-content {
-          &:before {
-            transform: translatex(0);
-          }
-          .icon {
-            &.play {
-              color: lighten( #f0523f, 44);
-            }
-          }
-        }
-      }
-      &:checked {
-        & + .toggle-content {
-          &:before {
-            transform: translatex($width/2);
-          }
-          .icon {
-            &.learn {
-              color: lighten( #f0523f, 44);
-            }
-          }
-        }
-      }
-    }
-  }
-}
+// .body-switch {
+//   min-width: 100px;
+//   height: 100vh;
+//   display: flexbox;
+//   margin-right:20px;
+//   margin-top: 10px;
+// }
+// .toggle-button {
+//   position: relative;
+//   cursor: pointer;
+//   .toggle-content {
+//     width: 150px;
+//     height: 50px;
+//     background: lighten(#c7d0d5, 10);
+//     position: relative;
+//     border-radius: 1rem;
+//     display: flex;
+//     align-items: center;
+//     box-shadow: 0 5px 10px rgba(darken(#c7d0d5, 50), .3);
+//     &:before {
+//       content: "";
+//       position: absolute;
+//       width:75px;
+//       height: 50px;
+//       border-radius: 1rem;
+//       background:  #c83258;
+//       transition: all .2s ease;
+//       box-shadow: 0 2px 5px rgba( #c83258, .5);
+//     }
+//     .icon {
+//       flex: 1 1 75px;
+//       text-align: center;
+//       position: relative;
+//       z-index: 2;
+//       color: darken(#c7d0d5, 55);
+//       font-size: 1.5rem;
+//       transition: all .2s ease;
+//     }
+//   }
+//   input {
+//     &[type="checkbox"] {
+//       display: none;
+//       &:not(:checked) {
+//         & + .toggle-content {
+//           &:before {
+//             transform: translatex(0);
+//           }
+//           .icon {
+//             &.play {
+//               color: lighten( #c83258, 44);
+//             }
+//           }
+//         }
+//       }
+//       &:checked {
+//         & + .toggle-content {
+//           &:before {
+//             transform: translatex(75px);
+//           }
+//           .icon {
+//             &.learn {
+//               color: lighten( #c83258, 44);
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
