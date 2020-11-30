@@ -157,7 +157,7 @@ class Card {
       setMode(mode){
         this.mode = mode;
       }
-};
+}
 //SCALE//
 let star = {
   stars:0,
@@ -196,7 +196,12 @@ switch('play'){
   }
   break;
 }
-
+//SWITCHER//
+const switcher=document.querySelector('.switcher');
+switcher.addEventListener('click',function(){
+  switcher.classList.toggle('active');
+  Array.from(document.querySelectorAll('.switcher-label')).forEach(element=>element.classList.toggle('mode'))
+  });
 
 
 
