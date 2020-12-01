@@ -4,46 +4,6 @@ import 'bootstrap';
 
 const main = document.querySelector('#main');//Main Page
 const pageContainer=document.querySelector('#pageContainer');
-// const categoryPage = document.querySelector('#category');// Category Page
-
-// const categoriesList = document.querySelector('#categoriesList')
-// const wordsList = document.querySelector('#wordsList')
-
-
-
-// // remove templates from DOM
-
-// const container = document.querySelector('#container');//page container
-// container.append(mainPage);
-
-// const cardList = new CardList();
-// document.querySelector('#switch').addEventListener('click',(event) => {
-//   cardList.changeMode(MODES.play);
-// });
-
-// class CardList {
-//   constructor(state) { // [{}, {}, ...{}]
-//     this.state = state;
-//     this.list = document.createElement();
-
-//     this.state .forEach(singleState => {
-//         const card = new Card(singleState);
-//         this.wordsList.append(card.createElement);
-//     });
-
-//     this.cards =this.state.map(singleState => {
-//       const card = new Card(singleState);
-//       this.wordsList.append(card.createElement);
-
-//       return card;
-//     });
-
-//   }
-
-//   changeMode(mode){
-//     this.cards.forEach(card => card.changeMode(mode))
-//   }
-// }
 
 //MENU-NAV//
 var checkbox = document.querySelector( '#myInput' );
@@ -60,16 +20,9 @@ checkbox.addEventListener( 'click', function(){
   }
 });
 
-//CLEAR CONTAINER//
-function clearContainer()
-{
-  while(pageContainer.firstChild)pageContainer.removeChild(pageContainer.firstChild);
-}
-
 //CARD//
 class Card {
       constructor(theme,numberOfword) {
-        this.mode=MODES.play;
         this.theme=theme;
         this.numberOfword=numberOfword;
       }
@@ -151,57 +104,97 @@ class Card {
         card.addEventListener('click', function() {
           card.style='opacity:0.5;';
           text.style='visibility:visible;';
-          star.isCorrect();
+          const star=document.createElement('img');
+          star.className='star';
+          star.src='./img/star-win.svg'
+          document.querySelector('#scale').prepend(star);
           });
       }
-      setMode(mode){
-        this.mode = mode;
+      createMainPageCard(){
+        const card = document.createElement('div');
+        card.className='card';
+        card.style='background:rgb(148, 66, 195)';
+        //---------------///
+        const img=document.createElement('img');
+        img.src=`${input[this.numberOfword][0].image}`;
+        img.className='card-img-top';
+        img.alt=`${input[0][this.numberOfword]}`;
+        card.appendChild(img);
+        //---------------///
+        const cardBody=document.createElement('div')
+        cardBody.className='card-body';
+        const text=document.createElement('p');
+        //---------------///
+        text.className='card-text';
+        text.innerHTML=`${input[0][this.numberOfword-1]}`;
+        cardBody.appendChild(text);
+        card.appendChild(cardBody);
+        //---------------///
+        pageContainer.appendChild(card);
       }
 }
+//CONTAINER//
+class Container{
+  constructor(mode) {
+    this.mode=mode;
+  }
+  createContainerGame(theme){
+    switch(this.mode){
+      case MODES.train :
+        for(let i = 0 ; i < 8 ; i++){
+          let card = new Card(theme,i);
+          card.createTrainCard();
+        }
+      break;
+      case MODES.play :
+        createScale();
+        for(let i = 0 ; i < 8 ; i++){
+          let card = new Card(theme,i);
+          card.createPlayCard();
+        }
+      break;
+    }
+  }
+  createMainPage(theme){
+    for(let i = 1 ; i < 9 ; i++){
+      let card = new Card(theme,i);
+      card.createMainPageCard();
+      }
+  }
+  clearContainer() {
+    while(pageContainer.firstChild){
+      pageContainer.removeChild(pageContainer.firstChild);
+    }
+    if (this.mode==MODES.play) main.removeChild(document.querySelector('#scale'));
+  }
+}
 //SCALE//
-let star = {
-  stars:0,
-  createScale(){
+//   isUncorrect(){
+//     const star=document.createElement('div');
+//     star.className='empty-star';
+//     document.querySelector('#scale').prepend(star);
+//   }
+function createScale(){
   const scale = document.createElement('div');
   scale.id='scale';
   main.prepend(scale);
-  },
-  isCorrect(){
-  const star=document.createElement('div');
-  star.className='star';
-  document.querySelector('#scale').prepend(star);
-  this.stars++
-  },
-  isUncorrect(){
-    const star=document.createElement('div');
-    star.className='empty-star';
-    document.querySelector('#scale').prepend(star);
-    }
-  }
-
-//CREATE ELEMENT//
-// switch(card.mode){
-switch('play'){
-  case 'train' :
-  for(let i = 0 ; i < 8 ; i++){
-  let card = new Card(3,i);
-  card.createTrainCard();
-  }
-  break;
-  case 'play' :
-  star.createScale();
-  for(let i = 0 ; i < 8 ; i++){
-      let card = new Card(3,i);
-      card.createPlayCard();
-  }
-  break;
 }
+
+const page = new Container(MODES.train);
+page.createMainPage(6);
 //SWITCHER//
 const switcher=document.querySelector('.switcher');
 switcher.addEventListener('click',function(){
   switcher.classList.toggle('active');
   Array.from(document.querySelectorAll('.switcher-label')).forEach(element=>element.classList.toggle('mode'))
+  page.clearContainer();
+  page.mode==MODES.train ? page.mode=MODES.play : page.mode=MODES.train;
+  page.createContainerGame(6);
   });
+
+
+
+//CREATE MAIN PAGE//
 
 
 

@@ -1,5 +1,5 @@
-export const input = [ 
-  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
+export const input = [
+  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes (set A)', 'Clothes (set B)', 'Emotions (set A)', 'Emotions (set B)'],
   //Action (set A)
  [
    {
@@ -255,6 +255,57 @@ export const input = [
      audioSrc: 'audio/shoe.mp3'
    }
  ],
+ //Clothes (set B)--NOT READY
+  [
+    {
+      word: 'slippers',
+      translation: 'тапки',
+      image: 'img/slippers.jpg',
+      audioSrc: 'audio/slippers.mp3'
+    },
+    {
+      word: 'mantle',
+      translation: 'мантия',
+      image: 'img/mantle.jpg',
+      audioSrc: 'audio/mantle.mp3'
+    },
+    {
+      word: 'jacket',
+      translation: 'куртка',
+      image: 'img/jacket.jpg',
+      audioSrc: 'audio/jacket.mp3'
+    },
+    {
+      word: 'tie',
+      translation: 'галстук',
+      image: 'img/tie.jpg',
+      audioSrc: 'audio/tie.mp3'
+    },
+    {
+      word: 'gloves',
+      translation: 'перчатки',
+      image: 'img/gloves.jpg',
+      audioSrc: 'audio/gloves.mp3'
+    },
+    {
+      word: 'sundress',
+      translation: 'сарафан',
+      image: 'img/sundress.jpg',
+      audioSrc: 'audio/sundress.mp3'
+    },
+    {
+      word: 'sandals',
+      translation: 'босоножки',
+      image: 'img/sandals.jpg',
+      audioSrc: 'audio/sandals.mp3'
+    },
+    {
+      word: 'vest',
+      translation: 'жилет',
+      image: 'img/vest.jpg',
+      audioSrc: 'audio/vest.mp3'
+    }
+  ],
  //Emotions (set A)
  [
    {
@@ -305,5 +356,56 @@ export const input = [
      image: 'img/laugh.jpg',
      audioSrc: 'audio/laugh.mp3'
    }
- ]
+ ],
+  //Emotions (set B)--NOT READY
+  [
+    {
+      word: 'shy',
+      translation: 'застенчивый',
+      image: 'img/shy.jpg',
+      audioSrc: 'audio/shy.mp3'
+    },
+    {
+      word: 'guilty',
+      translation: 'виноватый',
+      image: 'img/guilty.jpg',
+      audioSrc: 'audio/guilty.mp3'
+    },
+    {
+      word: 'lonely',
+      translation: 'одинокий',
+      image: 'img/lonely.jpg',
+      audioSrc: 'audio/lonely.mp3'
+    },
+    {
+      word: 'suspicious',
+      translation: 'подозрительный',
+      image: 'img/suspicious.jpg',
+      audioSrc: 'audio/suspicious.mp3'
+    },
+    {
+      word: 'gloomy',
+      translation: 'xмурый',
+      image: 'img/gloomy.jpg',
+      audioSrc: 'audio/gloomy.mp3'
+    },
+    {
+      word: 'proud',
+      translation: 'гордый',
+      image: 'img/proud.jpg',
+      audioSrc: 'audio/proud.mp3'
+    },
+    {
+      word: 'tense',
+      translation: 'напряжённый',
+      image: 'img/tense.jpg',
+      audioSrc: 'audio/tense.mp3'
+    },
+    {
+      word: 'cheerful',
+      translation: 'бодрый',
+      image: 'img/cheerful.jpg',
+      audioSrc: 'audio/cheerful.mp3'
+    }
+  ]
 ]
