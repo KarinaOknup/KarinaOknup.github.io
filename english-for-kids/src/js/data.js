@@ -91,7 +91,7 @@ export const input = [
    },
    {
      word: 'skip',
-     translation: 'пропускать, прыгать',
+     translation: 'прыгать',
      image: 'img/skip.jpg',
      audioSrc: 'audio/skip.mp3'
    },
