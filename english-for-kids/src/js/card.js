@@ -12,47 +12,58 @@ export class Card {
     //FRONT//
     const front = document.createElement('div');
     front.className = 'front';
-    //---------------///
+    //---------------//
     const imgF = document.createElement('img');
     imgF.src = `${input[this.theme][this.numberOfword].image}`;
     imgF.className ='card-img-top';
     imgF.alt = `${input[this.theme][this.numberOfword].word}`;
     front.appendChild(imgF);
-    //---------------///
+    const imgFlip=document.createElement('img');
+    imgFlip.src='img/rotate.svg';
+    imgFlip.className='img-flip';
+    front.appendChild(imgFlip);
+    //---------------//
     const cardBody = document.createElement('div')
     cardBody.className = 'card-body';
-    //---------------///
+    //---------------//
     const text = document.createElement('p');
     text.className = 'card-text';
     text.innerHTML = `${input[this.theme][this.numberOfword].word}`;
+    //---------------//
     cardBody.appendChild(text);
     front.appendChild(cardBody);
     card.appendChild(front);
+
     //BACK//
     const back = document.createElement('div');
     back.className = 'back';
-    //---------------///
+    //---------------//
     const imgB = document.createElement('img');
     imgB.src = `${input[this.theme][this.numberOfword].image}`;
     imgB.className ='card-img-top';
     imgB.alt = `${input[this.theme][this.numberOfword].translation}`;
     back.appendChild(imgB);
-    //---------------///
+    //---------------//
     const cardBodyB = document.createElement('div')
     cardBodyB.className = 'card-body';
-    //---------------///
+    //---------------//
     const textB = document.createElement('p');
     textB.className = 'card-text';
     textB.innerHTML = `${input[this.theme][this.numberOfword].translation}`;
     cardBodyB.appendChild(textB);
     back.appendChild(cardBodyB);
     card.appendChild(back);
-    //---------------///
+    //
     pageContainer.appendChild(card);
-
+    //---------------//
+    let audioCard=new Audio(`${input[this.theme][this.numberOfword].audioSrc}`)
     //FLIP//
+    // imgFlip.addEventListener('click', function() {
+    //i tried to do even with imgFlip but it doesnt work
+    //i tried to use opacity and z-index but nothing help me
     card.addEventListener('click', function() {
     card.classList.toggle('flipped');
+    audioCard.play();
     });
     card.addEventListener("mouseleave", function() {
     card.classList.remove('flipped');

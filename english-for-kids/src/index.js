@@ -1,12 +1,18 @@
 import {MODES} from "./js/MODES";
 import {Container} from "./js/container"
-//guess this import is too big, but dont know now how to 
+//guess this import is too big, but dont know now how to
 //do it smaller(i use it for my cards only)
 import 'bootstrap';
 //i left this modules for future, if they wouldn't help me, i will delete them
 import {input} from "./js/data";
 import {Card} from "./js/card"
 
+// DONT FORGET
+// в футере приложения есть ссылка на гитхаб автора,
+// год создания приложения, логотип курса со
+//ссылкой на курс
+//
+//ссылка на текущую страницу внешне отличается от остальных
 
 const page = new Container(MODES.train);
 page.createMainPage();

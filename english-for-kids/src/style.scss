@@ -35,6 +35,14 @@ html {
   transform-style: preserve-3d;
   width: 300px;
 }
+
+.img-flip{
+  right: 10px;
+  top:220px;
+  width: 40px;
+  position: fixed;
+  z-index: 99999999999999999999;
+}
 .card-text{
   text-align:center ;
   font-size: 1.5rem;
