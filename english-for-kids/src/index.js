@@ -13,7 +13,7 @@ import {Card} from "./js/card"
 //ссылкой на курс
 //
 //ссылка на текущую страницу внешне отличается от остальных
-
+//
 const page = new Container(MODES.train);
 page.createMainPage();
 let numberOfTheme=0;
@@ -39,6 +39,10 @@ for (let i = 0, len = list.length; i < len; i++) {
     page.clearContainer();
     if (numberOfTheme==0) page.createMainPage();
     else  page.createContainerGame(numberOfTheme);
+    for (let i = 0, len = list.length; i < len; i++) {
+      list[i].classList.remove('mainPage')
+    }
+    list[i].classList.toggle('mainPage');
   })
 }//i don't know how to do moving by main-page cards,
 // tried to do 'a' from cards, but it didn't help me

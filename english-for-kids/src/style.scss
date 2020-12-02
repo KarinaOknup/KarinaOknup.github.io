@@ -107,6 +107,7 @@ visibility: hidden ;
     text-decoration: none;
     color: azure;
     transition: color 0.3s ease;
+
     }
     a:hover {
       color: rgb(224, 158, 219);
@@ -198,6 +199,11 @@ ul {
           background-color: rgba(108, 196, 199, 0.431);
         }
       }
+
+}
+.mainPage{
+  font-size: 1.8rem;
+  border-bottom: 2px dashed orange;
 }
 //SCALE//
 #scale{

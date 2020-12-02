@@ -31,6 +31,7 @@ __webpack_require__.r(__webpack_exports__);
 //ссылкой на курс
 //
 //ссылка на текущую страницу внешне отличается от остальных
+//
 
 var page = new _js_container__WEBPACK_IMPORTED_MODULE_1__.Container(_js_MODES__WEBPACK_IMPORTED_MODULE_0__.MODES.train);
 page.createMainPage();
@@ -59,6 +60,12 @@ var _loop = function _loop(i, len) {
     numberOfTheme = list[i].id;
     page.clearContainer();
     if (numberOfTheme == 0) page.createMainPage();else page.createContainerGame(numberOfTheme);
+
+    for (var _i = 0, _len = list.length; _i < _len; _i++) {
+      list[_i].classList.remove('mainPage');
+    }
+
+    list[i].classList.toggle('mainPage');
   });
 };
 
