@@ -11,9 +11,7 @@ import {Card} from "./js/card"
 // в футере приложения есть ссылка на гитхаб автора,
 // год создания приложения, логотип курса со
 //ссылкой на курс
-//
-//ссылка на текущую страницу внешне отличается от остальных
-//
+
 const page = new Container(MODES.train);
 page.createMainPage();
 let numberOfTheme=0;
@@ -40,9 +38,9 @@ for (let i = 0, len = list.length; i < len; i++) {
     if (numberOfTheme==0) page.createMainPage();
     else  page.createContainerGame(numberOfTheme);
     for (let i = 0, len = list.length; i < len; i++) {
-      list[i].classList.remove('mainPage')
+      list[i].classList.remove('currentPage')
     }
-    list[i].classList.toggle('mainPage');
+    list[i].classList.toggle('currentPage');
   })
 }//i don't know how to do moving by main-page cards,
 // tried to do 'a' from cards, but it didn't help me
