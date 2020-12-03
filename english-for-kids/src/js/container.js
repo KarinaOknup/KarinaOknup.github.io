@@ -1,6 +1,8 @@
 import {Card} from "./card"
 import {MODES} from "./MODES";
 import {createScale} from "./createScale";
+import {createButtonStart} from "./createButton";
+import { game } from "./game";
 const main=document.querySelector('#main');
 const pageContainer=document.querySelector('#pageContainer');
 export class Container{
@@ -17,11 +19,13 @@ export class Container{
       break;
       case MODES.play :
         createScale();
+        createButtonStart();
         for(let i = 0 ; i < 8 ; i++){
           let card = new Card(theme,i);
           main.className='play-main';
           card.createPlayCard();
-        }
+        };
+        game();
       break;
     }
   }
@@ -38,6 +42,7 @@ export class Container{
     if (main.classList.contains('play-main')){
       main.classList.remove('play-main')
       main.removeChild(document.querySelector('#scale'));
+      main.removeChild(document.querySelector('.btn'));
     }
   }
 }

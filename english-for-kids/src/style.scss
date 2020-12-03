@@ -35,6 +35,10 @@ html {
   transform-style: preserve-3d;
   width: 300px;
 }
+.card-play{
+  height: 270px;
+
+}
 
 .img-flip{
   right: 10px;
@@ -49,7 +53,7 @@ html {
   font-family: $font-familyENG;
 }
 .play-text{
-visibility: hidden ;
+  visibility: hidden ;
 }
 //FlIP_CARD//
 .flipped{
@@ -104,9 +108,9 @@ visibility: hidden ;
   user-select: none;
   padding: 6px 4px 1.5px 4px;
     a {
-    text-decoration: none;
-    color: azure;
-    transition: color 0.3s ease;
+      text-decoration: none;
+      color: azure;
+      transition: color 0.3s ease;
 
     }
     a:hover {
@@ -207,7 +211,8 @@ ul {
 //SCALE//
 #scale{
   background-color: brown;
-  height: 30px;
+  border-top: 10px solid orchid;
+  height: 40px;
   width: 310px;
   margin: auto;
   display: flex;
@@ -260,5 +265,39 @@ ul {
   margin: 5px;
 }
 .mode{
-color: rgb(17, 238, 135);
+  color: rgb(17, 238, 135);
+}
+//BUTTON//
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+outline: 0!important;
+outline-color: transparent!important;
+outline-width: 0!important;
+outline-style: none!important;
+box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+}
+.btn {
+  margin: auto ;
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  background-color: orchid;
+  font-size: 1.8rem;
 }

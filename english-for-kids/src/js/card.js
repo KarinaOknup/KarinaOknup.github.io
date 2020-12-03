@@ -71,7 +71,7 @@ export class Card {
   }
   createPlayCard(){
     const card = document.createElement('div');
-    card.className='card';
+    card.className='card card-play';
     card.style='background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);';
     //---------------///
     const img=document.createElement('img');
@@ -90,17 +90,7 @@ export class Card {
     card.appendChild(cardBody);
     //---------------///
     pageContainer.appendChild(card);
-    //OnClick-draft for game. Now play-cards always act like correct answer
-    //i want to do results when number of childs in scale  will be 8
-    card.addEventListener('click', function() {
-      card.style='opacity:0.5;';
-      text.style='visibility:visible;';
-      const star=document.createElement('img');
-      star.className='star';
-      star.src='./img/star-win.svg'
-      document.querySelector('#scale').prepend(star);
-      card.style.pointerEvents = 'none';
-      });
+
   }
   createMainPageCard(){
     const card = document.createElement('div');

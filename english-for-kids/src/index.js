@@ -2,7 +2,6 @@ import {MODES} from "./js/MODES";
 import {Container} from "./js/container"
 //guess this import is too big, but dont know now how to
 //do it smaller(i use it for my cards only)
-import 'bootstrap';
 //i left this modules for future, if they wouldn't help me, i will delete them
 import {input} from "./js/data";
 import {Card} from "./js/card"
