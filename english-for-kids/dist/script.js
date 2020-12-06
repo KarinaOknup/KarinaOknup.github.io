@@ -17,9 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/data */ "./src/js/data.js");
 /* harmony import */ var _js_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/card */ "./src/js/card.js");
 
- //guess this import is too big, but dont know now how to
-//do it smaller(i use it for my cards only)
-//i left this modules for future, if they wouldn't help me, i will delete them
+ //i left this modules for future, if they wouldn't help me, i will delete them
 
 
  // DONT FORGET
@@ -147,15 +145,16 @@ var Card = /*#__PURE__*/function () {
       var front = document.createElement('div');
       front.className = 'front'; //---------------//
 
+      var imgFlip = document.createElement('img');
+      imgFlip.src = 'img/rotate.svg';
+      imgFlip.className = 'img-flip';
+      front.appendChild(imgFlip);
       var imgF = document.createElement('img');
       imgF.src = "".concat(_data__WEBPACK_IMPORTED_MODULE_0__.input[this.theme][this.numberOfword].image);
       imgF.className = 'card-img-top';
       imgF.alt = "".concat(_data__WEBPACK_IMPORTED_MODULE_0__.input[this.theme][this.numberOfword].word);
-      front.appendChild(imgF);
-      var imgFlip = document.createElement('img');
-      imgFlip.src = 'img/rotate.svg';
-      imgFlip.className = 'img-flip';
-      front.appendChild(imgFlip); //---------------//
+      front.appendChild(imgF); // front.appendChild(imgFlip);
+      //---------------//
 
       var cardBody = document.createElement('div');
       cardBody.className = 'card-body'; //---------------//
@@ -190,12 +189,11 @@ var Card = /*#__PURE__*/function () {
       pageContainer.appendChild(card); //---------------//
 
       var audioCard = new Audio("".concat(_data__WEBPACK_IMPORTED_MODULE_0__.input[this.theme][this.numberOfword].audioSrc)); //FLIP//
-      // imgFlip.addEventListener('click', function() {
-      //i tried to do even with imgFlip but it doesnt work
-      //i tried to use opacity and z-index but nothing help me
 
-      card.addEventListener('click', function () {
+      imgFlip.addEventListener('click', function () {
         card.classList.toggle('flipped');
+      });
+      card.addEventListener('click', function () {
         audioCard.play();
       });
       card.addEventListener("mouseleave", function () {
@@ -273,16 +271,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/js/card.js");
 /* harmony import */ var _MODES__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MODES */ "./src/js/MODES.js");
-/* harmony import */ var _createScale__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createScale */ "./src/js/createScale.js");
-/* harmony import */ var _createButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createButton */ "./src/js/createButton.js");
-/* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./game */ "./src/js/game.js");
+/* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game */ "./src/js/game.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
 
 
 
@@ -309,19 +303,7 @@ var Container = /*#__PURE__*/function () {
           break;
 
         case _MODES__WEBPACK_IMPORTED_MODULE_1__.MODES.play:
-          (0,_createScale__WEBPACK_IMPORTED_MODULE_2__.createScale)();
-          (0,_createButton__WEBPACK_IMPORTED_MODULE_3__.createButtonStart)();
-
-          for (var _i = 0; _i < 8; _i++) {
-            var _card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card(theme, _i);
-
-            main.className = 'play-main';
-
-            _card.createPlayCard();
-          }
-
-          ;
-          (0,_game__WEBPACK_IMPORTED_MODULE_4__.game)();
+          (0,_game__WEBPACK_IMPORTED_MODULE_2__.game)(theme);
           break;
       }
     }
@@ -350,6 +332,35 @@ var Container = /*#__PURE__*/function () {
 
   return Container;
 }();
+
+/***/ }),
+
+/***/ "./src/js/createArrayAudio.js":
+/*!************************************!*\
+  !*** ./src/js/createArrayAudio.js ***!
+  \************************************/
+/*! namespace exports */
+/*! export createArrayAudio [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createArrayAudio": () => /* binding */ createArrayAudio
+/* harmony export */ });
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ "./src/js/data.js");
+
+function createArrayAudio(theme) {
+  var arr = [];
+
+  for (var i = 0; i < 8; i++) {
+    arr.push("".concat(_data__WEBPACK_IMPORTED_MODULE_0__.input[2][i].audioSrc));
+  }
+
+  console.log(arr);
+  return arr;
+}
 
 /***/ }),
 
@@ -384,15 +395,13 @@ function createButtonStart() {
 /*! namespace exports */
 /*! export createScale [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "createScale": () => /* binding */ createScale
 /* harmony export */ });
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ "./src/js/data.js");
-
 var main = document.querySelector('#main');
 function createScale() {
   var scale = document.createElement('div');
@@ -762,33 +771,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "game": () => /* binding */ game
 /* harmony export */ });
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ "./src/js/data.js");
+/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/js/card.js");
+/* harmony import */ var _createScale__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createScale */ "./src/js/createScale.js");
+/* harmony import */ var _createButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createButton */ "./src/js/createButton.js");
+/* harmony import */ var _createArrayAudio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createArrayAudio */ "./src/js/createArrayAudio.js");
+// import {input} from "./data";
+var main = document.querySelector('#main');
 
-function game() {
-  //OnClick-draft for game. Now play-cards always act like correct answer
-  //i want to do results when number of childs in scale  will be 8
-  document.querySelectorAll('.card').forEach(function (e) {
-    e.addEventListener('click', function () {
-      e.style = 'opacity:0.5;';
-      e.lastChild.firstChild.style = 'visibility:visible;';
-      var star = document.createElement('img');
-      star.className = 'star';
-      star.src = './img/star-win.svg';
-      document.querySelector('#scale').prepend(star);
-      e.style.pointerEvents = 'none';
-    });
-  });
+
+
+
+function game(theme) {
+  (0,_createScale__WEBPACK_IMPORTED_MODULE_1__.createScale)();
+  (0,_createButton__WEBPACK_IMPORTED_MODULE_2__.createButtonStart)();
+  var arrAudio = (0,_createArrayAudio__WEBPACK_IMPORTED_MODULE_3__.createArrayAudio)();
   var btn = document.querySelector('.btn-start');
+  var numberOfword = 2;
   btn.addEventListener('click', function () {
     btn.innerText = 'Repeat';
     btn.classList.remove('btn-start');
     btn.classList.add('btn-repeat');
-    var audioTest = new Audio("".concat(_data__WEBPACK_IMPORTED_MODULE_0__.input[1][5].audioSrc));
+    var audioTest = new Audio("".concat(arrAudio[numberOfword]));
     audioTest.play();
     document.querySelector('.btn-repeat').addEventListener('click', function () {
       audioTest.play();
     });
   });
+
+  var _loop = function _loop(i) {
+    var card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card(theme, i);
+    main.className = 'play-main';
+    card.createPlayCard();
+    card.addEventListener('click', function () {
+      var star = document.createElement('img');
+      star.className = 'star';
+      star.src = './img/star-win.svg';
+
+      if (card.numberOfword == numberOfword) {
+        card.style = 'opacity:0.5;';
+        card.lastChild.firstChild.style = 'visibility:visible;';
+        document.querySelector('#scale').prepend(star);
+        card.style.pointerEvents = 'none';
+      } else {
+        star.src = './img/star.svg';
+        document.querySelector('#scale').prepend(star);
+      }
+    });
+  };
+
+  for (var i = 0; i < 8; i++) {
+    _loop(i);
+  }
 }
 
 /***/ }),

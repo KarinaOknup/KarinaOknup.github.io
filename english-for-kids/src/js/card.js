@@ -13,15 +13,16 @@ export class Card {
     const front = document.createElement('div');
     front.className = 'front';
     //---------------//
+    const imgFlip=document.createElement('img');
+    imgFlip.src='img/rotate.svg';
+    imgFlip.className='img-flip';
+    front.appendChild(imgFlip);
     const imgF = document.createElement('img');
     imgF.src = `${input[this.theme][this.numberOfword].image}`;
     imgF.className ='card-img-top';
     imgF.alt = `${input[this.theme][this.numberOfword].word}`;
     front.appendChild(imgF);
-    const imgFlip=document.createElement('img');
-    imgFlip.src='img/rotate.svg';
-    imgFlip.className='img-flip';
-    front.appendChild(imgFlip);
+    // front.appendChild(imgFlip);
     //---------------//
     const cardBody = document.createElement('div')
     cardBody.className = 'card-body';
@@ -36,7 +37,7 @@ export class Card {
 
     //BACK//
     const back = document.createElement('div');
-    back.className = 'back';
+    back.className = 'back'; 
     //---------------//
     const imgB = document.createElement('img');
     imgB.src = `${input[this.theme][this.numberOfword].image}`;
@@ -58,12 +59,11 @@ export class Card {
     //---------------//
     let audioCard=new Audio(`${input[this.theme][this.numberOfword].audioSrc}`)
     //FLIP//
-    // imgFlip.addEventListener('click', function() {
-    //i tried to do even with imgFlip but it doesnt work
-    //i tried to use opacity and z-index but nothing help me
+    imgFlip.addEventListener('click', function() {
+      card.classList.toggle('flipped');
+      });
     card.addEventListener('click', function() {
-    card.classList.toggle('flipped');
-    audioCard.play();
+      audioCard.play();
     });
     card.addEventListener("mouseleave", function() {
     card.classList.remove('flipped');

@@ -68,6 +68,7 @@ html {
   padding: 5%; }
 
 .back {
+  backface-visibility: hidden;
   font-family: "Caveat", cursive;
   font-size: 1.5rem;
   position: absolute;

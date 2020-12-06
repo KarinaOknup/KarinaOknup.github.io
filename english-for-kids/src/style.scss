@@ -73,6 +73,7 @@ html {
   padding: 5%;
 }
 .back {
+  backface-visibility: hidden;
   font-family: $font-familyRU;
   font-size: 1.5rem;
   position: absolute;
