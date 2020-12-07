@@ -8,6 +8,7 @@ export class Container{
     this.mode=mode;
   }
   createContainerGame(theme){
+    let game = new Game(theme);
     switch(this.mode){
       case MODES.train :
         for(let i = 0 ; i < 8 ; i++){
@@ -16,7 +17,6 @@ export class Container{
         }
       break;
       case MODES.play :
-        let game= new Game(theme);
         game.createGame();
       break;
     }

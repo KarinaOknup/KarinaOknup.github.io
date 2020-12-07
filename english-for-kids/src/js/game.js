@@ -12,7 +12,6 @@ export class Game{
   this.arrAudio=createArrayAudio(theme);
   }
   createGame(){
-    console.log(this.iR);
     createScale();
     createButtonStart();
     let iRC=this.iR;
@@ -35,6 +34,11 @@ export class Game{
       card.createPlayCard(this.randomNumbers[this.iR]);
     }
   }
+   startGame(){
+      const star = document.createElement('img');
+      star.className ='star';
+      star.src = './img/star-win.svg';
+   }
 }
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
