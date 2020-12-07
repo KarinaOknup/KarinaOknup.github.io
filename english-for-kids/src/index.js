@@ -8,6 +8,7 @@ import {Container} from "./js/container"
 //ссылкой на курс
 
 const page = new Container(MODES.train);
+const pageContainer=document.querySelector('#pageContainer');
 page.createMainPage();
 let numberOfTheme=0;
 //MENU-NAV//
@@ -82,3 +83,13 @@ switcher.addEventListener('click',function(){
   else page.createMainPage();
   });
 
+    document.body.addEventListener('click',function(){
+      if(document.querySelectorAll('.win').length==8){
+        let success= new Audio('./audio/success.mp3')
+        success.play();
+        page.clearContainer();
+        const img=document.createElement('img');
+        img.src='./img/success.jpg';
+        pageContainer.appendChild(img);
+      }
+    })

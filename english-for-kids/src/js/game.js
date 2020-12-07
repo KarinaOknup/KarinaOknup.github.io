@@ -44,7 +44,6 @@ export class Game{
       star.className ='star';
       document.querySelectorAll('.card').forEach((e)=>{
       e.addEventListener('click',function(){
-      console.log('click');
       if(e.id==rN[iRC]){
           rN.splice(iRC,1);
           iRC=getRandomInt(rN.length);
@@ -52,7 +51,7 @@ export class Game{
           audioTest.play();
           correct.play();
           const star = document.createElement('img');
-          star.className ='star';
+          star.className ='star win';
           star.src ='./img/star-win.svg';
           e.style = 'opacity:0.5;';
           e.lastChild.firstChild.style = 'visibility:visible;';
@@ -72,7 +71,7 @@ export class Game{
         }
     })
     })
-    }
+}
 }
 
 function getRandomInt(max) {
