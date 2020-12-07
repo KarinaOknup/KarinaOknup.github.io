@@ -109,8 +109,10 @@ export class Card {
       else {
         wrong.play();
         star.src='./img/star.svg';
+        star.className='star wrong';
         document.querySelector('#scale').prepend(star);
       }
+     if(document.querySelectorAll('.star').length == 10) document.querySelectorAll('.wrong').forEach(e=>e.remove());
     }
     });
 

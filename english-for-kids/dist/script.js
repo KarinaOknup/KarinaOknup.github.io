@@ -277,8 +277,13 @@ var Card = /*#__PURE__*/function () {
           } else {
             wrong.play();
             star.src = './img/star.svg';
+            star.className = 'star wrong';
             document.querySelector('#scale').prepend(star);
           }
+
+          if (document.querySelectorAll('.star').length == 10) document.querySelectorAll('.wrong').forEach(function (e) {
+            return e.remove();
+          });
         }
       });
     }
@@ -881,13 +886,16 @@ function game(theme) {
   (0,_createScale__WEBPACK_IMPORTED_MODULE_1__.createScale)();
   (0,_createButton__WEBPACK_IMPORTED_MODULE_2__.createButtonStart)();
   var arrAudio = (0,_createArrayAudio__WEBPACK_IMPORTED_MODULE_3__.createArrayAudio)();
+  var randomNumbers = [0, 1, 2, 3, 4, 5, 6, 7];
+  var numberOfword = 2; /////
+
   var btn = document.querySelector('.btn-start');
-  var numberOfword = 2;
   btn.addEventListener('click', function () {
     btn.innerText = 'Repeat';
     btn.classList.remove('btn-start');
-    btn.classList.add('btn-repeat');
-    var audioTest = new Audio("".concat(arrAudio[numberOfword]));
+    btn.classList.add('btn-repeat'); /////
+
+    var audioTest = new Audio("".concat(arrAudio[randomNumbers[7]]));
     audioTest.play();
     document.querySelector('.btn-repeat').addEventListener('click', function () {
       audioTest.play();
