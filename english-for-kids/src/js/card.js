@@ -91,19 +91,23 @@ export class Card {
     //---------------///
     const numOfword = this.numberOfword;
     pageContainer.appendChild(card);
-    //Добавить звук выйгрыша и проигрыша 
+    let correct = new Audio('audio/correct.mp3');
+    let wrong = new Audio('audio/wrong.mp3')
+    //Добавить звук выйгрыша и проигрыша
     card.addEventListener('click',function (){
     if(document.querySelector('.btn').classList.contains('btn-repeat')){
       const star = document.createElement('img');
       star.className ='star';
       star.src = './img/star-win.svg';
       if(numOfword === numberOfword){
+      correct.play();
       card.style = 'opacity:0.5;';
       card.lastChild.firstChild.style = 'visibility:visible;';
       document.querySelector('#scale').prepend(star);
       card.style.pointerEvents = 'none';
       }
       else {
+        wrong.play();
         star.src='./img/star.svg';
         document.querySelector('#scale').prepend(star);
       }
