@@ -89,32 +89,9 @@ export class Card {
     cardBody.appendChild(text);
     card.appendChild(cardBody);
     //---------------///
-    const numOfword = this.numberOfword;
+    card.id=numberOfword;
     pageContainer.appendChild(card);
-    let correct = new Audio('audio/correct.mp3');
-    let wrong = new Audio('audio/wrong.mp3')
-    //-------------///
-    card.addEventListener('click',function (){
-    if(document.querySelector('.btn').classList.contains('btn-repeat')){
-      const star = document.createElement('img');
-      star.className ='star';
-      star.src = './img/star-win.svg';
-      if(numOfword === numberOfword){
-      correct.play();
-      card.style = 'opacity:0.5;';
-      card.lastChild.firstChild.style = 'visibility:visible;';
-      document.querySelector('#scale').prepend(star);
-      card.style.pointerEvents = 'none';
-      }
-      else {
-        wrong.play();
-        star.src='./img/star.svg';
-        star.className='star wrong';
-        document.querySelector('#scale').prepend(star);
-      }
-     if(document.querySelectorAll('.star').length == 10) document.querySelectorAll('.wrong').forEach(e=>e.remove());
-    }
-    });
+   
 
   }
   createMainPageCard(){

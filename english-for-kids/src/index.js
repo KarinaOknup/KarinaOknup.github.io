@@ -1,8 +1,6 @@
 import {MODES} from "./js/MODES";
 import {Container} from "./js/container"
 //i left this modules for future, if they wouldn't help me, i will delete them
-import {input} from "./js/data";
-import {Card} from "./js/card"
 
 // DONT FORGET
 // в футере приложения есть ссылка на гитхаб автора,
