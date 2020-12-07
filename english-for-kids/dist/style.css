@@ -36,6 +36,10 @@ html {
 .card-play {
   height: 270px; }
 
+.a-card {
+  border: none;
+  text-decoration: none; }
+
 .img-flip {
   right: 10px;
   top: 220px;

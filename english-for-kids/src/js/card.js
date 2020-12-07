@@ -111,7 +111,36 @@ export class Card {
     text.innerHTML=`${input[0][this.numberOfword-1]}`;
     cardBody.appendChild(text);
     card.appendChild(cardBody);
+    const a = document.createElement('a');
+    a.className='a-card';
+    switch (this.numberOfword-1){
+    case 0:
+    a.href='#action(setA)';
+    break;
+    case 1:
+    a.href='#action(setB)';
+    break;
+    case 2:
+    a.href='#animal(setA)';
+    break;
+    case 3:
+    a.href='#animal(setB)';
+    break;
+    case 4:
+    a.href='#clothes(setA)';
+    break;
+    case 5:
+    a.href='#clothes(setB)';
+    break;
+    case 6:
+    a.href='#emotions(setA)';
+    break;
+    case 7:
+    a.href='#emotions(setB)';
+    break;
+    }
+    a.appendChild(card);
     //---------------///
-    pageContainer.appendChild(card);
+    pageContainer.appendChild(a);
   }
 }

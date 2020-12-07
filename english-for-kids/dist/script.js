@@ -45,28 +45,63 @@ checkbox.addEventListener('click', function () {
   }
 }); //---------Menu(moving)-------------//
 
-var list = document.querySelectorAll('.menu-a');
+function locationHashChanged() {
+  page.clearContainer();
 
-var _loop = function _loop(i, len) {
-  list[i].addEventListener('click', function () {
-    numberOfTheme = list[i].id;
-    page.clearContainer();
-    if (numberOfTheme == 0) page.createMainPage();else page.createContainerGame(numberOfTheme);
+  switch (location.hash) {
+    case '#mainPage':
+      page.createMainPage();
+      numberOfTheme = 0;
+      break;
 
-    for (var _i = 0, _len = list.length; _i < _len; _i++) {
-      list[_i].classList.remove('currentPage');
-    }
+    case '#action(setA)':
+      page.createContainerGame(1);
+      numberOfTheme = 1;
+      break;
 
-    list[i].classList.toggle('currentPage');
+    case '#action(setB)':
+      page.createContainerGame(2);
+      numberOfTheme = 2;
+      break;
+
+    case '#animal(setA)':
+      page.createContainerGame(3);
+      numberOfTheme = 3;
+      break;
+
+    case '#animal(setB)':
+      page.createContainerGame(4);
+      numberOfTheme = 4;
+      break;
+
+    case '#clothes(setA)':
+      page.createContainerGame(5);
+      numberOfTheme = 5;
+      break;
+
+    case '#clothes(setB)':
+      page.createContainerGame(6);
+      numberOfTheme = 6;
+      break;
+
+    case '#emotions(setA)':
+      page.createContainerGame(7);
+      numberOfTheme = 7;
+      break;
+
+    case '#emotions(setB)':
+      page.createContainerGame(8);
+      numberOfTheme = 8;
+      break;
+  }
+
+  document.querySelectorAll('a').forEach(function (e) {
+    e.classList.remove('currentPage');
   });
-};
+  document.getElementById("".concat(numberOfTheme)).classList.add('currentPage');
+}
 
-for (var i = 0, len = list.length; i < len; i++) {
-  _loop(i, len);
-} //i don't know how to do moving by main-page cards,
-// tried to do 'a' from cards, but it didn't help me
-//SWITCHER//
-
+window.onhashchange = locationHashChanged; //SWITCHER//
 
 var switcher = document.querySelector('.switcher');
 switcher.addEventListener('click', function () {
@@ -244,9 +279,47 @@ var Card = /*#__PURE__*/function () {
       text.className = 'card-text';
       text.innerHTML = "".concat(_data__WEBPACK_IMPORTED_MODULE_0__.input[0][this.numberOfword - 1]);
       cardBody.appendChild(text);
-      card.appendChild(cardBody); //---------------///
+      card.appendChild(cardBody);
+      var a = document.createElement('a');
+      a.className = 'a-card';
 
-      pageContainer.appendChild(card);
+      switch (this.numberOfword - 1) {
+        case 0:
+          a.href = '#action(setA)';
+          break;
+
+        case 1:
+          a.href = '#action(setB)';
+          break;
+
+        case 2:
+          a.href = '#animal(setA)';
+          break;
+
+        case 3:
+          a.href = '#animal(setB)';
+          break;
+
+        case 4:
+          a.href = '#clothes(setA)';
+          break;
+
+        case 5:
+          a.href = '#clothes(setB)';
+          break;
+
+        case 6:
+          a.href = '#emotions(setA)';
+          break;
+
+        case 7:
+          a.href = '#emotions(setB)';
+          break;
+      }
+
+      a.appendChild(card); //---------------///
+
+      pageContainer.appendChild(a);
     }
   }]);
 
@@ -798,29 +871,25 @@ function game(theme) {
     });
   });
 
-  var _loop = function _loop(i) {
+  for (var i = 0; i < 8; i++) {
     var card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card(theme, i);
     main.className = 'play-main';
-    card.createPlayCard();
-    card.addEventListener('click', function () {
-      var star = document.createElement('img');
-      star.className = 'star';
-      star.src = './img/star-win.svg';
-
-      if (card.numberOfword == numberOfword) {
-        card.style = 'opacity:0.5;';
-        card.lastChild.firstChild.style = 'visibility:visible;';
-        document.querySelector('#scale').prepend(star);
-        card.style.pointerEvents = 'none';
-      } else {
-        star.src = './img/star.svg';
-        document.querySelector('#scale').prepend(star);
-      }
-    });
-  };
-
-  for (var i = 0; i < 8; i++) {
-    _loop(i);
+    card.createPlayCard(); //   card.addEventListener('click',function (){
+    //     const star=document.createElement('img');
+    //     star.className='star';
+    //     star.src='./img/star-win.svg'
+    //     if(card.numberOfword==numberOfword){
+    //     card.style='opacity:0.5;';
+    //     card.lastChild.firstChild.style='visibility:visible;';
+    //     document.querySelector('#scale').prepend(star);
+    //     card.style.pointerEvents = 'none';
+    //     }
+    //     else {
+    //       star.src='./img/star.svg';
+    //       document.querySelector('#scale').prepend(star);
+    //     }
+    //   });
+    // }
   }
 }
 

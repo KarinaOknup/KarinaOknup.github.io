@@ -27,21 +27,50 @@ checkbox.addEventListener( 'click', function(){
   }
 });
 //---------Menu(moving)-------------//
-let list = document.querySelectorAll('.menu-a');
-for (let i = 0, len = list.length; i < len; i++) {
-  list[i].addEventListener('click', function(){
-    numberOfTheme = list[i].id;
-    page.clearContainer();
-    if (numberOfTheme==0) page.createMainPage();
-    else  page.createContainerGame(numberOfTheme);
-    for (let i = 0, len = list.length; i < len; i++) {
-      list[i].classList.remove('currentPage')
-    }
-    list[i].classList.toggle('currentPage');
-  })
-}//i don't know how to do moving by main-page cards,
-// tried to do 'a' from cards, but it didn't help me
-
+function locationHashChanged() {
+  page.clearContainer();
+  switch (location.hash){
+    case'#mainPage':
+    page.createMainPage();
+    numberOfTheme=0;
+    break;
+    case'#action(setA)':
+    page.createContainerGame(1);
+    numberOfTheme=1;
+    break;
+    case'#action(setB)':
+    page.createContainerGame(2);
+    numberOfTheme=2;
+    break;
+    case'#animal(setA)':
+    page.createContainerGame(3);
+    numberOfTheme=3;
+    break;
+    case'#animal(setB)':
+    page.createContainerGame(4);
+    numberOfTheme=4;
+    break;
+    case'#clothes(setA)':
+    page.createContainerGame(5);
+    numberOfTheme=5;
+    break;
+    case'#clothes(setB)':
+    page.createContainerGame(6);
+    numberOfTheme=6;
+    break;
+    case'#emotions(setA)':
+    page.createContainerGame(7);
+    numberOfTheme=7;
+    break;
+    case'#emotions(setB)':
+    page.createContainerGame(8);
+    numberOfTheme=8;
+    break;
+  }
+  document.querySelectorAll('a').forEach(e=>{e.classList.remove('currentPage')});
+  document.getElementById(`${numberOfTheme}`).classList.add('currentPage');
+}
+window.onhashchange = locationHashChanged;
 //SWITCHER//
 const switcher=document.querySelector('.switcher');
 switcher.addEventListener('click',function(){

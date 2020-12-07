@@ -4,9 +4,7 @@ $font-familyENG :'Nerko One', cursive;
 $font-familyRU: 'Caveat', cursive;
 html {
   font-size: 18px;
-
 }
-
 
 #main{
   top:70px;
@@ -39,7 +37,10 @@ html {
   height: 270px;
 
 }
-
+.a-card{
+  border: none;
+  text-decoration: none;
+}
 .img-flip{
   right: 10px;
   top:220px;
