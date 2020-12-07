@@ -260,7 +260,7 @@ var Card = /*#__PURE__*/function () {
       var numOfword = this.numberOfword;
       pageContainer.appendChild(card);
       var correct = new Audio('audio/correct.mp3');
-      var wrong = new Audio('audio/wrong.mp3'); //Добавить звук выйгрыша и проигрыша
+      var wrong = new Audio('audio/wrong.mp3'); //-------------///
 
       card.addEventListener('click', function () {
         if (document.querySelector('.btn').classList.contains('btn-repeat')) {
@@ -404,7 +404,8 @@ var Container = /*#__PURE__*/function () {
           break;
 
         case _MODES__WEBPACK_IMPORTED_MODULE_1__.MODES.play:
-          (0,_game__WEBPACK_IMPORTED_MODULE_2__.game)(theme);
+          var game = new _game__WEBPACK_IMPORTED_MODULE_2__.Game(theme);
+          game.createGame();
           break;
       }
     }
@@ -456,10 +457,9 @@ function createArrayAudio(theme) {
   var arr = [];
 
   for (var i = 0; i < 8; i++) {
-    arr.push("".concat(_data__WEBPACK_IMPORTED_MODULE_0__.input[2][i].audioSrc));
+    arr.push("".concat(_data__WEBPACK_IMPORTED_MODULE_0__.input[theme][i].audioSrc));
   }
 
-  console.log(arr);
   return arr;
 }
 
@@ -863,50 +863,75 @@ var input = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   !*** ./src/js/game.js ***!
   \************************/
 /*! namespace exports */
-/*! export game [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export Game [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "game": () => /* binding */ game
+/* harmony export */   "Game": () => /* binding */ Game
 /* harmony export */ });
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/js/card.js");
 /* harmony import */ var _createScale__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createScale */ "./src/js/createScale.js");
 /* harmony import */ var _createButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createButton */ "./src/js/createButton.js");
 /* harmony import */ var _createArrayAudio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createArrayAudio */ "./src/js/createArrayAudio.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 // import {input} from "./data";
 var main = document.querySelector('#main');
 
 
 
 
-function game(theme) {
-  (0,_createScale__WEBPACK_IMPORTED_MODULE_1__.createScale)();
-  (0,_createButton__WEBPACK_IMPORTED_MODULE_2__.createButtonStart)();
-  var arrAudio = (0,_createArrayAudio__WEBPACK_IMPORTED_MODULE_3__.createArrayAudio)();
-  var randomNumbers = [0, 1, 2, 3, 4, 5, 6, 7];
-  var numberOfword = 2; /////
+var Game = /*#__PURE__*/function () {
+  function Game(theme) {
+    _classCallCheck(this, Game);
 
-  var btn = document.querySelector('.btn-start');
-  btn.addEventListener('click', function () {
-    btn.innerText = 'Repeat';
-    btn.classList.remove('btn-start');
-    btn.classList.add('btn-repeat'); /////
-
-    var audioTest = new Audio("".concat(arrAudio[randomNumbers[7]]));
-    audioTest.play();
-    document.querySelector('.btn-repeat').addEventListener('click', function () {
-      audioTest.play();
-    });
-  });
-
-  for (var i = 0; i < 8; i++) {
-    var card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card(theme, i);
-    main.className = 'play-main';
-    card.createPlayCard(numberOfword);
+    this.theme = theme;
+    this.randomNumbers = [0, 1, 2, 3, 4, 5, 6, 7];
+    this.iR = getRandomInt(this.randomNumbers.length);
+    this.arrAudio = (0,_createArrayAudio__WEBPACK_IMPORTED_MODULE_3__.createArrayAudio)(theme);
   }
+
+  _createClass(Game, [{
+    key: "createGame",
+    value: function createGame() {
+      console.log(this.iR);
+      (0,_createScale__WEBPACK_IMPORTED_MODULE_1__.createScale)();
+      (0,_createButton__WEBPACK_IMPORTED_MODULE_2__.createButtonStart)();
+      var iRC = this.iR;
+      var rN = this.randomNumbers;
+      var arrA = this.arrAudio;
+      var btn = document.querySelector('.btn-start');
+      btn.addEventListener('click', function () {
+        btn.innerText = 'Repeat';
+        btn.classList.remove('btn-start');
+        btn.classList.add('btn-repeat');
+        var audioTest = new Audio("".concat(arrA[rN[iRC]]));
+        audioTest.play();
+        document.querySelector('.btn-repeat').addEventListener('click', function () {
+          audioTest.play();
+        });
+      });
+
+      for (var i = 0; i < 8; i++) {
+        var card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card(this.theme, i);
+        main.className = 'play-main';
+        card.createPlayCard(this.randomNumbers[this.iR]);
+      }
+    }
+  }]);
+
+  return Game;
+}();
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
 
 /***/ }),

@@ -37,7 +37,7 @@ export class Card {
 
     //BACK//
     const back = document.createElement('div');
-    back.className = 'back'; 
+    back.className = 'back';
     //---------------//
     const imgB = document.createElement('img');
     imgB.src = `${input[this.theme][this.numberOfword].image}`;
@@ -93,7 +93,7 @@ export class Card {
     pageContainer.appendChild(card);
     let correct = new Audio('audio/correct.mp3');
     let wrong = new Audio('audio/wrong.mp3')
-    //Добавить звук выйгрыша и проигрыша
+    //-------------///
     card.addEventListener('click',function (){
     if(document.querySelector('.btn').classList.contains('btn-repeat')){
       const star = document.createElement('img');
