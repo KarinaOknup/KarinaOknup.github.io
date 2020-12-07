@@ -83,3 +83,4 @@ switcher.addEventListener('click',function(){
   if(numberOfTheme != 0) page.createContainerGame(numberOfTheme);
   else page.createMainPage();
   });
+

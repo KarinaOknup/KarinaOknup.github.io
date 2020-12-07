@@ -1,6 +1,6 @@
 import {Card} from "./card";
 import {MODES} from "./MODES";
-import { game } from "./game";
+import {Game} from "./game";
 const main=document.querySelector('#main');
 const pageContainer=document.querySelector('#pageContainer');
 export class Container{
@@ -16,7 +16,8 @@ export class Container{
         }
       break;
       case MODES.play :
-        game(theme);
+        let game= new Game(theme);
+        game.createGame();
       break;
     }
   }
