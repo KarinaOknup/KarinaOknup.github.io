@@ -23,22 +23,6 @@ export function game(theme){
     for(let i = 0 ; i < 8 ; i++){
     let card = new Card(theme,i);
     main.className='play-main';
-    card.createPlayCard();
-  //   card.addEventListener('click',function (){
-  //     const star=document.createElement('img');
-  //     star.className='star';
-  //     star.src='./img/star-win.svg'
-  //     if(card.numberOfword==numberOfword){
-  //     card.style='opacity:0.5;';
-  //     card.lastChild.firstChild.style='visibility:visible;';
-  //     document.querySelector('#scale').prepend(star);
-  //     card.style.pointerEvents = 'none';
-  //     }
-  //     else {
-  //       star.src='./img/star.svg';
-  //       document.querySelector('#scale').prepend(star);
-  //     }
-  //   });
-  // }
-}
+    card.createPlayCard(numberOfword);
+  }
 }

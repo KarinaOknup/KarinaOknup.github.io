@@ -237,7 +237,7 @@ var Card = /*#__PURE__*/function () {
     }
   }, {
     key: "createPlayCard",
-    value: function createPlayCard() {
+    value: function createPlayCard(numberOfword) {
       var card = document.createElement('div');
       card.className = 'card card-play';
       card.style = 'background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);'; //---------------///
@@ -257,7 +257,26 @@ var Card = /*#__PURE__*/function () {
       cardBody.appendChild(text);
       card.appendChild(cardBody); //---------------///
 
-      pageContainer.appendChild(card);
+      var numOfword = this.numberOfword;
+      pageContainer.appendChild(card); //Добавить звук выйгрыша и проигрыша 
+
+      card.addEventListener('click', function () {
+        if (document.querySelector('.btn').classList.contains('btn-repeat')) {
+          var star = document.createElement('img');
+          star.className = 'star';
+          star.src = './img/star-win.svg';
+
+          if (numOfword === numberOfword) {
+            card.style = 'opacity:0.5;';
+            card.lastChild.firstChild.style = 'visibility:visible;';
+            document.querySelector('#scale').prepend(star);
+            card.style.pointerEvents = 'none';
+          } else {
+            star.src = './img/star.svg';
+            document.querySelector('#scale').prepend(star);
+          }
+        }
+      });
     }
   }, {
     key: "createMainPageCard",
@@ -874,22 +893,7 @@ function game(theme) {
   for (var i = 0; i < 8; i++) {
     var card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card(theme, i);
     main.className = 'play-main';
-    card.createPlayCard(); //   card.addEventListener('click',function (){
-    //     const star=document.createElement('img');
-    //     star.className='star';
-    //     star.src='./img/star-win.svg'
-    //     if(card.numberOfword==numberOfword){
-    //     card.style='opacity:0.5;';
-    //     card.lastChild.firstChild.style='visibility:visible;';
-    //     document.querySelector('#scale').prepend(star);
-    //     card.style.pointerEvents = 'none';
-    //     }
-    //     else {
-    //       star.src='./img/star.svg';
-    //       document.querySelector('#scale').prepend(star);
-    //     }
-    //   });
-    // }
+    card.createPlayCard(numberOfword);
   }
 }
 
