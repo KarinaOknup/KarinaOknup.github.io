@@ -32,9 +32,13 @@ html {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   width: 300px; }
+  .card:hover {
+    box-shadow: 10px 10px 15px rgba(33, 168, 146, 0.698); }
 
 .card-play {
   height: 270px; }
+  .card-play:hover {
+    box-shadow: 10px 10px 15px rgba(112, 57, 175, 0.698); }
 
 .a-card {
   border: none;
@@ -182,6 +186,9 @@ ul {
 .currentPage {
   border-bottom: 2px dashed orange; }
 
+#pageContainer a {
+  text-decoration: none; }
+
 #scale {
   background-color: brown;
   border-top: 10px solid orchid;
@@ -261,6 +268,24 @@ button:focus,
   justify-content: center;
   background-color: orchid;
   font-size: 1.8rem; }
+
+.footer {
+  width: 100%;
+  background: #232323;
+  position: fixed;
+  bottom: 0px;
+  height: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .footer .year {
+    color: #eee6ea;
+    margin: 15px; }
+  .footer a {
+    text-decoration: none;
+    outline: none; }
 
 
 /*# sourceMappingURL=style.css.map*/

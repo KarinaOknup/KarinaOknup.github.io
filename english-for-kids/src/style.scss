@@ -1,5 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
-
+$mainColor:#232323;
 $font-familyENG :'Nerko One', cursive;
 $font-familyRU: 'Caveat', cursive;
 html {
@@ -32,10 +32,15 @@ html {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   width: 300px;
+  &:hover{
+    box-shadow: 10px 10px 15px rgba(33, 168, 146, 0.698);
+  }
 }
 .card-play{
   height: 270px;
-
+  &:hover{
+    box-shadow: 10px 10px 15px rgba(112, 57, 175, 0.698);
+  }
 }
 .a-card{
   border: none;
@@ -90,7 +95,7 @@ html {
   position: fixed;
   width:100%;
   height: 70px;
-  background-color: #232323;
+  background-color: $mainColor;
   z-index: 9999;
   display: flex;
   flex-flow: row;
@@ -184,7 +189,7 @@ ul {
   padding: 50px;
   padding-top: 75px;
   padding-bottom: 20px;
-  background: #232323;
+  background: $mainColor;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
@@ -209,6 +214,11 @@ ul {
 }
 .currentPage{
   border-bottom: 2px dashed orange;
+}
+#pageContainer{
+  a{
+    text-decoration: none;
+  }
 }
 //SCALE//
 #scale{
@@ -302,4 +312,25 @@ box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
   justify-content: center;
   background-color: orchid;
   font-size: 1.8rem;
+}
+//FOOTER//
+.footer{
+  width: 100%;
+  background: $mainColor;
+  position: fixed;
+  bottom: 0px;
+  height: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .year{
+    color: #eee6ea;
+    margin: 15px;
+  }
+  a{
+  text-decoration: none;
+  outline: none;
+  }
 }
