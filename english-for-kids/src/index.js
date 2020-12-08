@@ -6,7 +6,6 @@ import {Container} from "./js/container"
 // в футере приложения есть ссылка на гитхаб автора,
 // год создания приложения, логотип курса со
 //ссылкой на курс
-
 const page = new Container(MODES.train);
 const pageContainer=document.querySelector('#pageContainer');
 page.createMainPage();
@@ -65,6 +64,10 @@ function locationHashChanged() {
     page.createContainerGame(8);
     numberOfTheme=8;
     break;
+    default:
+    page.createMainPage();
+    numberOfTheme=0;
+    break;
   }
   document.querySelectorAll('a').forEach(e=>{e.classList.remove('currentPage')});
   document.getElementById(`${numberOfTheme}`).classList.add('currentPage');
@@ -84,12 +87,23 @@ switcher.addEventListener('click',function(){
   });
 
     document.body.addEventListener('click',function(){
+      if(document.querySelectorAll('.star').length >= 10) document.querySelectorAll('.wrong').forEach(e=>e.remove());
       if(document.querySelectorAll('.win').length==8){
+        if(document.querySelector('#scale').classList.contains('wrong')){
         let success= new Audio('./audio/success.mp3')
         success.play();
         page.clearContainer();
         const img=document.createElement('img');
         img.src='./img/success.jpg';
         pageContainer.appendChild(img);
-      }
+        }
+        else {
+          let failure= new Audio('./audio/failure.mp3')
+          failure.play();
+          page.clearContainer();
+          const img=document.createElement('img');
+          img.src='./img/failure.jpg';
+          pageContainer.appendChild(img);
+          }
+        }
     })

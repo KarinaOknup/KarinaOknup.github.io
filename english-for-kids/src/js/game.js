@@ -22,7 +22,6 @@ export class Game{
     let rN=this.randomNumbers;
     let arrA=this.arrAudio;
     let audioTest = new Audio(`${arrA[rN[iRC]]}`);
-    let numberOfStar = document.querySelectorAll('.star').length;
     let btn=document.querySelector('.btn-start');
     pageContainer.style='pointer-events: none';
     btn.addEventListener('click',function(){
@@ -58,16 +57,15 @@ export class Game{
           document.querySelector('#scale').prepend(star);
           e.style.pointerEvents = 'none';
           document.querySelector('#scale').prepend(star);
-         if(document.querySelectorAll('.star').length == 10) document.querySelectorAll('.wrong').forEach(e=>e.remove());
         }
         else {
           wrong.play();
+          document.querySelector('#pageContainer').classList.add('wrong');
           const star = document.createElement('img');
           star.className ='star wrong';
           star.src='./img/star.svg';
-          star.className='star';
+          star.className='star wrong';
           document.querySelector('#scale').prepend(star);
-         if(document.querySelectorAll('.star').length == 10) document.querySelectorAll('.wrong').forEach(e=>e.remove());
         }
     })
     })
