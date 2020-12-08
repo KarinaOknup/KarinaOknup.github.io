@@ -60,7 +60,7 @@ export class Game{
         }
         else {
           wrong.play();
-          document.querySelector('#pageContainer').classList.add('wrong');
+          document.querySelector('#pageContainer').classList.add('fail');
           const star = document.createElement('img');
           star.className ='star wrong';
           star.src='./img/star.svg';
