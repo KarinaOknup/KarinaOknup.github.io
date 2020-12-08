@@ -36,5 +36,6 @@ export class Container{
       main.removeChild(document.querySelector('#scale'));
       main.removeChild(document.querySelector('.btn'));
     }
+    pageContainer.style='pointer-events: auto';
   }
 }
