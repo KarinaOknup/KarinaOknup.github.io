@@ -89,21 +89,31 @@ switcher.addEventListener('click',function(){
     document.body.addEventListener('click',function(){
       if(document.querySelectorAll('.star').length >= 10) document.querySelectorAll('.wrong').forEach(e=>e.remove());
       if(document.querySelectorAll('.win').length==8){
-        if(document.querySelector('#scale').classList.contains('wrong')){
-        let success= new Audio('./audio/success.mp3')
-        success.play();
-        page.clearContainer();
-        const img=document.createElement('img');
-        img.src='./img/success.jpg';
-        pageContainer.appendChild(img);
-        }
-        else {
+        if(document.querySelector('#pageContainer').classList.contains('fail')){
           let failure= new Audio('./audio/failure.mp3')
           failure.play();
           page.clearContainer();
           const img=document.createElement('img');
           img.src='./img/failure.jpg';
           pageContainer.appendChild(img);
+          setTimeout(function(){
+            page.clearContainer();
+            page.createMainPage();
+            numberOfTheme=0;
+          },3000)
+        }
+        else {
+        let success= new Audio('./audio/success.mp3')
+        success.play();
+        page.clearContainer();
+        const img=document.createElement('img');
+        img.src='./img/success.jpg';
+        pageContainer.appendChild(img);
+        setTimeout(function(){
+          page.clearContainer();
+          page.createMainPage();
+          numberOfTheme=0;
+        },3000)
           }
         }
     })

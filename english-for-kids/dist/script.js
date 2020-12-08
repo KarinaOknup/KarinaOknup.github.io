@@ -123,22 +123,32 @@ document.body.addEventListener('click', function () {
   });
 
   if (document.querySelectorAll('.win').length == 8) {
-    if (document.querySelector('#scale').classList.contains('wrong')) {
-      var success = new Audio('./audio/success.mp3');
-      success.play();
-      page.clearContainer();
-      var img = document.createElement('img');
-      img.src = './img/success.jpg';
-      pageContainer.appendChild(img);
-    } else {
+    if (document.querySelector('#pageContainer').classList.contains('fail')) {
       var failure = new Audio('./audio/failure.mp3');
       failure.play();
+      page.clearContainer();
+      var img = document.createElement('img');
+      img.src = './img/failure.jpg';
+      pageContainer.appendChild(img);
+      setTimeout(function () {
+        page.clearContainer();
+        page.createMainPage();
+        numberOfTheme = 0;
+      }, 3000);
+    } else {
+      var success = new Audio('./audio/success.mp3');
+      success.play();
       page.clearContainer();
 
       var _img = document.createElement('img');
 
-      _img.src = './img/failure.jpg';
+      _img.src = './img/success.jpg';
       pageContainer.appendChild(_img);
+      setTimeout(function () {
+        page.clearContainer();
+        page.createMainPage();
+        numberOfTheme = 0;
+      }, 3000);
     }
   }
 });
@@ -952,7 +962,7 @@ var Game = /*#__PURE__*/function () {
             document.querySelector('#scale').prepend(_star);
           } else {
             wrong.play();
-            document.querySelector('#pageContainer').classList.add('wrong');
+            document.querySelector('#pageContainer').classList.add('fail');
 
             var _star2 = document.createElement('img');
 
