@@ -1,11 +1,7 @@
 import {MODES} from "./js/MODES";
-import {Container} from "./js/container"
-//i left this modules for future, if they wouldn't help me, i will delete them
+import {Container} from "./js/container";
 
-// DONT FORGET
-// в футере приложения есть ссылка на гитхаб автора,
-// год создания приложения, логотип курса со
-//ссылкой на курс
+window.mistakes=0;
 const page = new Container(MODES.train);
 const pageContainer=document.querySelector('#pageContainer');
 page.createMainPage();
@@ -93,26 +89,41 @@ switcher.addEventListener('click',function(){
           let failure= new Audio('./audio/failure.mp3')
           failure.play();
           page.clearContainer();
-          const img=document.createElement('img');
-          img.src='./img/failure.jpg';
-          pageContainer.appendChild(img);
+          const div = document.createElement('div')
+          div.className='div-message';
+          const img = document.createElement('img');
+          img.src = './img/failure.jpg';
+          const message = document.createElement('div');
+          message.className = 'message';
+          message.innerHTML = `Now your result: ${window.mistakes} mistakes. Let's try again!`;
+          div.appendChild(img);
+          div.appendChild(message);
+          pageContainer.appendChild(div);
           setTimeout(function(){
             page.clearContainer();
-            page.createMainPage();
-            numberOfTheme=0;
+            numberOfTheme = 0;
+            document.querySelector('#pageContainer').classList.remove('fail')
+            location.hash='#mainPage';
           },3000)
         }
         else {
         let success= new Audio('./audio/success.mp3')
         success.play();
         page.clearContainer();
+        const div = document.createElement('div')
+        div.className='div-message';
         const img=document.createElement('img');
         img.src='./img/success.jpg';
-        pageContainer.appendChild(img);
+        const message=document.createElement('div');
+        message.className='message';
+        message.innerHTML=`It's so cool. Now try to solve new theme!`;
+        div.appendChild(img);
+        div.appendChild(message);
+        pageContainer.appendChild(div);
         setTimeout(function(){
           page.clearContainer();
-          page.createMainPage();
           numberOfTheme=0;
+          location.hash='#mainPage';
         },3000)
           }
         }

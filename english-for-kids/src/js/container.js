@@ -6,6 +6,7 @@ const pageContainer=document.querySelector('#pageContainer');
 export class Container{
   constructor(mode) {
     this.mode=mode;
+    this.mistakes=0;
   }
   createContainerGame(theme){
     let game = new Game(theme);
