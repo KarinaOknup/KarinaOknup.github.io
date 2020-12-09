@@ -124,7 +124,6 @@ switcher.addEventListener('click',function(){
           page.clearContainer();
           numberOfTheme=0;
           location.hash='#mainPage';
-
         },3000)
           }
         }
