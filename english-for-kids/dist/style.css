@@ -287,5 +287,14 @@ button:focus,
     text-decoration: none;
     outline: none; }
 
+.message {
+  width: 250px;
+  height: auto;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  color: #232323;
+  background-color: #e9e060; }
+
 
 /*# sourceMappingURL=style.css.map*/

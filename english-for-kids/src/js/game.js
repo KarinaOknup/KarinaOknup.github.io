@@ -1,4 +1,3 @@
-// import {input} from "./data";
 const main=document.querySelector('#main');
 const pageContainer=document.querySelector('#pageContainer');
 
@@ -60,6 +59,7 @@ export class Game{
         }
         else {
           wrong.play();
+          window.mistakes++;
           document.querySelector('#pageContainer').classList.add('fail');
           const star = document.createElement('img');
           star.className ='star wrong';

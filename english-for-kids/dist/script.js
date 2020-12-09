@@ -15,12 +15,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_MODES__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/MODES */ "./src/js/MODES.js");
 /* harmony import */ var _js_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/container */ "./src/js/container.js");
 
- //i left this modules for future, if they wouldn't help me, i will delete them
-// DONT FORGET
-// в футере приложения есть ссылка на гитхаб автора,
-// год создания приложения, логотип курса со
-//ссылкой на курс
 
+window.mistakes = 0;
 var page = new _js_container__WEBPACK_IMPORTED_MODULE_1__.Container(_js_MODES__WEBPACK_IMPORTED_MODULE_0__.MODES.train);
 var pageContainer = document.querySelector('#pageContainer');
 page.createMainPage();
@@ -127,9 +123,16 @@ document.body.addEventListener('click', function () {
       var failure = new Audio('./audio/failure.mp3');
       failure.play();
       page.clearContainer();
+      var div = document.createElement('div');
+      div.className = 'div-message';
       var img = document.createElement('img');
       img.src = './img/failure.jpg';
-      pageContainer.appendChild(img);
+      var message = document.createElement('div');
+      message.className = 'message';
+      message.innerHTML = "Now your result: ".concat(window.mistakes, " mistakes. Let's try again!");
+      div.appendChild(img);
+      div.appendChild(message);
+      pageContainer.appendChild(div);
       setTimeout(function () {
         page.clearContainer();
         numberOfTheme = 0;
@@ -141,10 +144,24 @@ document.body.addEventListener('click', function () {
       success.play();
       page.clearContainer();
 
+      var _div = document.createElement('div');
+
+      _div.className = 'div-message';
+
       var _img = document.createElement('img');
 
       _img.src = './img/success.jpg';
-      pageContainer.appendChild(_img);
+
+      var _message = document.createElement('div');
+
+      _message.className = 'message';
+      _message.innerHTML = "It's so cool. Now try to solve new theme!";
+
+      _div.appendChild(_img);
+
+      _div.appendChild(_message);
+
+      pageContainer.appendChild(_div);
       setTimeout(function () {
         page.clearContainer();
         numberOfTheme = 0;
@@ -400,6 +417,7 @@ var Container = /*#__PURE__*/function () {
     _classCallCheck(this, Container);
 
     this.mode = mode;
+    this.mistakes = 0;
   }
 
   _createClass(Container, [{
@@ -896,7 +914,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-// import {input} from "./data";
 var main = document.querySelector('#main');
 var pageContainer = document.querySelector('#pageContainer');
 
@@ -965,6 +982,7 @@ var Game = /*#__PURE__*/function () {
             document.querySelector('#scale').prepend(_star);
           } else {
             wrong.play();
+            window.mistakes++;
             document.querySelector('#pageContainer').classList.add('fail');
 
             var _star2 = document.createElement('img');
