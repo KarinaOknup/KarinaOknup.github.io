@@ -98,8 +98,9 @@ switcher.addEventListener('click',function(){
           pageContainer.appendChild(img);
           setTimeout(function(){
             page.clearContainer();
-            page.createMainPage();
             numberOfTheme=0;
+            document.querySelector('#pageContainer').classList.remove('fail')
+            location.hash='#mainPage';
           },3000)
         }
         else {
@@ -111,8 +112,9 @@ switcher.addEventListener('click',function(){
         pageContainer.appendChild(img);
         setTimeout(function(){
           page.clearContainer();
-          page.createMainPage();
           numberOfTheme=0;
+          location.hash='#mainPage';
+
         },3000)
           }
         }
