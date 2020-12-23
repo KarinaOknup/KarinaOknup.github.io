@@ -1,0 +1,34 @@
+@import '../utils/colors';
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  justify-items: center;
+  font-size: 2rem;
+  font-family: 'Oswald', sans-serif;
+  grid-area: foot;
+  color:$clHeadFoot;
+  background-color: $clBlue;
+  text-align: center;
+  padding: 5px 0;
+  &-link {
+    grid-column: span 1;
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.7em;
+    padding: 0 20px;
+    margin: 0 10px;
+    img {
+      width: 80px;
+    }
+  }
+  span {
+    grid-column-start: -4;
+    grid-column-end: -1;
+  }
+}
+.footer-link:nth-of-type(4) {
+  grid-column-end: -4;
+}
