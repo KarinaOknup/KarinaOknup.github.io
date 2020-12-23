@@ -1,0 +1,167 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+button:active,
+button:focus {
+  outline: none;
+}
+
+
+body {
+  background-color: $clBack;
+}
+
+html {
+  font-size: 18px;
+  color: rgb(209, 234, 240);
+}
+
+.case {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  background-color: $clBlocks;
+  box-shadow: 2px 3px 5px 0px #4d3c81;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.container {
+  padding: 10px;
+  background-color: $clBack;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    'head head head head head head'
+    'glCase map map map glDeath recover'
+    'caseBy map map map glDeath recover'
+    'caseBy map map map glDeath recover'
+    'caseBy map map map graph graph'
+    'caseBy map map map graph graph'
+    'foot foot foot foot foot foot';
+}
+
+.global-cases {
+  grid-area: glCase;
+
+  &:nth-child(2) {
+    color: $clRed;
+    font-size: 2.5rem;
+  }
+}
+
+.cases-by {
+  grid-area: caseBy;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr;
+  grid-gap: 2px;
+  grid-template-areas:
+    'cases-title'
+    'cases-country-data';
+}
+
+.btn {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: $clHeadFoot;
+  height: 25px;
+  border: none;
+
+  &:hover {
+    box-shadow: 3px 2px #720d80;
+  }
+}
+
+.deaths {
+  grid-area: glDeath;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 0.4fr;
+  grid-gap: 2px;
+  grid-template-areas:
+    'deaths-title'
+    'containerAllCountry'
+    'btn-global';
+}
+
+.btn-global {
+  grid-area: btn-global;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'deaths-change-inf deaths-change-coef';
+}
+
+.deaths-change-coef {
+  grid-area: deaths-change-coef;
+}
+
+.deaths-change-inf {
+  grid-area: deaths-change-inf;
+}
+
+.death-recovered {
+  grid-area: recover;
+}
+
+.graph {
+  grid-area: graph;
+}
+
+.deaths-title {
+  grid-area: deaths-title;
+}
+
+hr {
+  color: #112061;
+}
+
+.cases-country-data,
+.containerAllCountry {
+  padding-left: 5px;
+  grid-area: containerAllCountry;
+  text-align: left;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.cases-country-data {
+  grid-area: cases-country-data;
+}
+
+.cases-title {
+  grid-area: cases-title;
+  padding: 5px;
+}
+
+.deathsNumber {
+  font-size: 1rem;
+  margin: 0;
+  text-align: left;
+}
+
+.title {
+  color: aliceblue;
+  font-size: 1.2rem;
+}
+
+.cases-country-numbers {
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($clBlue, 10%);
+  }
+}

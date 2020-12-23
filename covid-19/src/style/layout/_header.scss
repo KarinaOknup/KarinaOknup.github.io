@@ -1,0 +1,15 @@
+@import '../utils/colors';
+
+h1{
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+.header{
+  grid-area: head;
+  background-color: $clBlue;
+  color:$clHeadFoot;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
