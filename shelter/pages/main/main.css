@@ -1,10 +1,9 @@
+@import "normalize";
+
 #menu__toggle{
    display: none;
 }
-@media (min-width: 1280px) {
- 
 body {
-    width: 1280px;
     margin: auto;
      }
 .wrapper {
@@ -20,7 +19,6 @@ a{
    font-weight: normal;
    font-size: 15px;
    line-height: 160%;
-  
 }
 .active{
    border-bottom:4px solid #F1CDB3;
@@ -35,7 +33,7 @@ h1{
    font-style: normal;
    font-weight: normal;
    font-size: 32px;
-   line-height: 35px; 
+   line-height: 35px;
    letter-spacing: 0.06em;
    color: #F1CDB3;
    margin-bottom: 0;
@@ -64,7 +62,7 @@ ul{
 .header{
    display: grid;
    grid-template-columns:auto auto;
-  } 
+  }
 .about{
    margin: 0px;
    height: 588px;
@@ -88,10 +86,10 @@ ul{
    background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
    }
 .name-logo{
-   margin-top: 38px; 
+   margin-top: 38px;
 }
 .nav-menu{
-   margin-top: 60px; 
+   margin-top: 60px;
    text-align: right;
 }
 .nav-items{
@@ -103,24 +101,18 @@ ul{
 .start-screen{
    display: grid;
    grid-template-columns: auto auto;
-   margin-top: 48px;
+   margin-top: 12px;
 }
-div.start-screen>div.info>h2{
-   width: 310px;  
-
-   font-family: Georgia;
-   font-style: normal;
-   font-weight: normal;
-   font-size: 44px;
-   line-height: 130%;
-
+.start-screen>.info>h2{
+   width: 310px;
    color: #FFFFFF;
 }
-div.start-screen>div.info{
+.start-screen>.info{
    margin-top:126px;
 }
 p{
    margin-top:46px;
+   margin-bottom: 50px;
    width:92% ;
 
    font-family: Arial;
@@ -133,36 +125,42 @@ p{
 
 }
 .btn{
-   width: 207px;
-   height: 52px;
    border: 2px solid #F1CDB3;
    border-radius: 100px;
    font-family: Georgia;
-   font-style: normal;
-   font-weight: normal;
    font-size: 17px;
-   line-height: 130%;
    letter-spacing: 0.06em;
    color: #292929;
    margin-top: 28px;
    }
+.btn-secondary{
+      width: 207px;
+      height: 52px;
+   }
 .btn:hover{
    background-color: #FDDCC4;
-   border: none;  
+   border: none;
    cursor: pointer;
 }
 .btn-primary{
+   height: 40px;
+   width: 80px;
    background: #F1CDB3;
+   text-align: center;
 }
-div.about>div.wrapper{
+#makeF{
+   padding: 10px;
+}
+.about>.wrapper{
    display: grid;
-   grid-template-columns: 50% 50%;
+   grid-template-areas:"img-catDog inf-about";
    }
 .img-about-pets{
-   margin-left: 175px;
+   grid-area: img-catDog;
    margin-top: 80px;
+   margin-left: 200px;
 }
-div.about>div.wrapper>div.info>h2, div.donation>div.wrapper>div.info>h2 {
+.info>h2{
    font-family: Georgia;
    font-style: normal;
    font-weight: normal;
@@ -170,26 +168,27 @@ div.about>div.wrapper>div.info>h2, div.donation>div.wrapper>div.info>h2 {
    line-height: 130%;
    letter-spacing: 0.06em;
 
-   color: #545454; 
+   color: #545454;
 
    width: 370px;
    margin-top: 20px;
    }
-div.about>div.wrapper>div.info{
-   margin-left: -5px;
-   margin-top: 75px;
+.about>.wrapper>.info{
+   grid-area: "inf-about";
+   margin-left:100px;
+   margin-top: 50px;
 }
-div.about>div.wrapper>div.info>div.text{
- margin-top:-20px;  
+.info>.text{
+ margin-top:-20px;
 }
-div.text>p{
+.text>p{
    margin-bottom: -16px;
    width: 70%;
 
    color: #4C4C4C;
 }
 
-div.pets>div.wrapper{
+.pets>.wrapper{
    display: grid;
    grid-template-rows:26.7% 49% auto ;
 }
@@ -199,7 +198,7 @@ div.pets>div.wrapper{
    align-content: space-around;
    justify-content: space-around;
 }
-div.pets>div.wrapper>button{
+.pets>.wrapper>.btn{
   margin:5.3% auto;
   width:260px;
 }
@@ -217,10 +216,10 @@ div.pets>div.wrapper>button{
    align-content: flex-start;
    justify-content: flex-start;
   }
-div.slide-items:hover{
+.slide-items:hover{
    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
-div.slide>button.slide-nav{
+.slide>.slide-nav{
    margin: auto;
    border: 2px solid #F1CDB3;
    box-sizing: border-box;
@@ -243,7 +242,7 @@ div.slide>button.slide-nav{
    margin-top: 4.5%;
    width: 70%;
 }
-div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
+.pets>.wrapper>h2 , .help>.wrapper>h2 {
    font-family: Georgia;
    font-style: normal;
    font-weight: normal;
@@ -264,7 +263,6 @@ div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
 .slide-nav{
    padding: 0%;
 }
-
 
 .help-example{
    display: flex;
@@ -296,25 +294,24 @@ align-content: flex-end;
    color: #545454;
    display: flexbox;
    }
-
-
-div.donation>div.wrapper{ 
+.donation>.wrapper{
    display: grid;
-   grid-template-columns: 54% auto;
+   grid-template-areas: "dog donation";
 }
-div.donation>div.wrapper>img{
-   display: flex;
-   margin: 14% 0.2% auto auto ;
+.donation>.wrapper>img{
+grid-area: dog;
+margin-top: 50px;
 }
-div.donation>div.wrapper>div.info{
-   margin: 11% 5%;
-   width: 75%;
+.donation>.wrapper>.info{
+grid-area: donation;
+margin-top: 50px;
+width: 450px;
 }
-div.donation>div.wrapper>div.info>h2{
+.donation>.wrapper>.info>h2{
    width: 70%;
    margin-bottom: 5%;
 }
-div.donation>div.wrapper>div.info>span{
+.donation>.wrapper>.info>span{
 font-family: Georgia;
 font-style: normal;
 font-weight: normal;
@@ -325,7 +322,7 @@ letter-spacing: 0.06em;
 
 color: #545454;
 }
-div.donation>div.wrapper>div.info>p{
+.donation>.wrapper>.info>p{
 font-family: Arial;
 font-style: italic;
 font-weight: normal;
@@ -391,10 +388,10 @@ color: #F1CDB3;
 a.a-footer:hover{
    border:none;
 }
-footer>div.wrapper>div{
+footer>.wrapper>div{
    margin-top: 5%;
 }
-footer>div.wrapper>img{
+footer>.wrapper>img{
    margin-top: 12%;
 }
 .a-footer{
@@ -404,116 +401,66 @@ footer>div.wrapper>img{
 .footer-span{
 margin-left: 1.2%;
 }
-div.place>a{
+.place>a{
    margin-top:-0.6%;
    margin-bottom: 8%;
 }
-div.contacts>a{
+.contacts>a{
    margin-top:9.5%;
    margin-bottom: 8%;
 }
-}
-/* 
-
-THERE ARE ADDAPTIVE
-
- */
-
 @media (max-width: 1279px) {
    body {
-      width: 768px;
       margin: auto;
        }
   .wrapper {
         max-width: 708px;
-        height: 100%;
-        margin: 0 auto 0;
-        display: inline-block;
-        }
+      }
   a{
-     text-decoration: none;
-     color: #CDCDCD ;
-     font-family: Arial;
-     font-style: normal;
-     font-weight: normal;
      font-size: 15px;
      line-height: 160%;
-    
-  }
-  .active{
-     border-bottom:4px solid #F1CDB3;
-     cursor: pointer;
-  }
-  a:hover{
-     border-bottom: 4px solid #F1CDB3;
-     cursor: pointer;
   }
   h1{
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
      font-size: 32px;
-     line-height: 35px; 
-     letter-spacing: 0.06em;
-     color: #F1CDB3;
      margin-bottom: 0;
     }
   .name-logo > p {
-     font-family: Arial;
-     font-style: normal;
-     font-weight: normal;
      font-size: 13px;
      line-height: 15px;
      letter-spacing: 0.1em;
-  
-     color:#FFFFFF;
      width: 100%;
      margin-top: 10px;
      margin-left: 5px;
   }
-  ul{
-     display: inline-flex;
-      }
+
   .top-main{
-     width: 100%;
      height: 1165px;
-     background:  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-    display: flex;
    }
-  .header{
-     display: grid;
-     grid-template-columns:auto auto;
-    } 
   .about{
      margin: 0px;
      height: 1048px;
-     background: #FFFFFF;
   }
   .pets{
      height: 877px;
-     background: #F6F6F6;
      margin-top: 0px;
   }
   .help{
      height: 779px;
-     background: #FFFFFF;
      margin: 0px;
   }
   .donation{
       height: 783px;
-      background: #F6F6F6;
       margin: 0px;
   }
   .footer{
      height: 639px;
-     background:  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
      margin: 0px;
      }
   .name-logo{
-     margin-top: 10px; 
+     margin-top: 10px;
   }
   .nav-menu{
-     margin-top: 30px; 
+     margin-top: 30px;
      text-align: right;
   }
   .nav-items{
@@ -523,104 +470,66 @@ THERE ARE ADDAPTIVE
      margin-left: 18px;
   }
   .start-screen{
+     margin-top: -33px;
      display: grid;
      height: 100%;
-     grid-template-rows: auto auto;
-     margin-top: 10px;
+     grid-template-areas: "info"
+                           "img";
   }
-  div.start-screen>div.info>h2{
-     width: 310px;  
-  
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
+  .start-screen>.info>h2{
+     width: 310px;
      font-size: 44px;
      line-height: 130%;
-  
-     color: #FFFFFF;
   }
-  div.start-screen>div.info{
+  .start-screen>.info{
    margin-left: 125px;
+   grid-area: info;
+  }
+  .img-start-screen-puppy{
+     grid-area: img;
+     width:60%;
+     margin-left: 20%;
   }
   p{
      margin-top:44px;
-     width: 80%;  
-     font-family: Arial;
-     font-style: normal;
-     font-weight: normal;
+     width: 80%;
      font-size: 15px;
      line-height: 160%;
-  
      color: #CDCDCD;
-  
   }
   .btn{
-     width: 207px;
-     height: 52px;
-     border: 2px solid #F1CDB3;
-     border-radius: 100px;
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
      font-size: 17px;
-     line-height: 130%;
-     letter-spacing: 0.06em;
-     color: #292929;
      }
-div.info>button.btn{
+.info>.btn{
         margin-top: 4.6%;
         margin-left: 21.5%;
-     }  
+     }
   .btn:hover{
      background-color: #FDDCC4;
-     border: none;  
+     border: none;
      cursor: pointer;
   }
   .btn-primary{
      background: #F1CDB3;
   }
-  .img-start-screen-puppy{
-   width:80%;   
-   margin-bottom: 1.5%;
-   margin-left: 20%;
-}
-  div.about>div.wrapper{
+  .about>.wrapper{
      display: grid;
-     grid-template-rows: 50% 50%;
+     grid-template-areas: "inf-about"
+     "img-catDog"   ;
      }
-  .img-about-pets{
-     margin: 2%  auto;
-     order: 2;
-  }
-  div.about>div.wrapper>div.info>h2, div.donation>div.wrapper>div.info>h2 {
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
+  .about>.wrapper>.info>h2, .donation>.wrapper>.info>h2 {
      font-size: 35px;
-     line-height: 130%;
-     letter-spacing: 0.06em;
-  
-     color: #545454; 
-  
      width: 370px;
      margin-top: 20px;
      }
-  div.about>div.wrapper>div.info{
-     margin:8.5% auto auto 19.5%;
-     order:1;
-  }
-  div.about>div.wrapper>div.info>div.text{
+  .about>.wrapper>.info>.text{
   margin-top: -3%;
   }
-  div.text>p{
+  .text>p{
      margin-bottom: -16px;
      width: 75%;
-     color: #4C4C4C;
   }
-  
-
-
-  div.pets>div.wrapper{
+  .pets>.wrapper{
      display: grid;
      grid-template-rows:26.7% 49% auto ;
   }
@@ -629,13 +538,11 @@ div.info>button.btn{
      grid-template-columns: auto auto auto auto;
      margin-top: -0.5%;
      }
- 
-  div.pets>div.wrapper>button{
+  .pets>.wrapper>.btn{
     margin:8.6% auto;
     width:260px;
   }
   .slide-items{
-   background-color: #FAFAFA;
    border-radius: 9px;
    width: 270px;
    height: 435px;
@@ -649,7 +556,7 @@ div.info>button.btn{
    justify-content: flex-start;
    overflow: hidden;
   }
-div.slide>button.slide-nav{
+.slide>.slide-nav{
    margin: auto;
    border: 2px solid #F1CDB3;
    box-sizing: border-box;
@@ -657,47 +564,6 @@ div.slide>button.slide-nav{
    height:52px;
    width:52px;
 }
-  div.slide-items:hover{
-     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-  }
- 
-  .pet-name{
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
-     font-size: 20px;
-     line-height: 23px;
-     text-align: center;
-     letter-spacing: 0.06em;
-     color: #545454;
-     margin: 10% auto;
-  }
-  .btn-secondary{
-     margin-top: 1%;
-     width: 70%;
-  }
-  div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
-     font-size: 35px;
-     line-height: 130%;
-  
-     align-items: center;
-     text-align: center;
-     letter-spacing: 0.06em ;
-  
-     color: #545454;
-  
-     margin: 11.5% auto;
-  }
-  .slide-nav-next{
-     transform: rotate(-180deg);
-  }
-  .slide-nav{
-     padding: 0%;
-  }
-
   .help{
      display: flex;
   }
@@ -708,7 +574,6 @@ div.slide>button.slide-nav{
      align-content: space-around;
      margin-top:-50px;
      }
-  
   .help-items{
   margin:10px 10px;
   width: 210px;
@@ -736,53 +601,43 @@ div.slide>button.slide-nav{
      text-align: center;
      flex-flow: nowrap;
      }
-  
-  
-  div.donation>div.wrapper{ 
+
+  .donation>.wrapper{
      display: grid;
-     grid-template-rows: auto auto;
+     grid-template-areas: "donation"
+                           "dog";
   }
-  div.donation>div.wrapper>img{
-     display: flex;
-     order:2;
-     margin: -5% auto auto auto;
+  .donation>.wrapper>img{
+     margin: auto;
   }
-  div.donation>div.wrapper>div.info{
-     margin-left:23%;
-     margin-top: 8.8%;
-     order:1;
+  .donation>.wrapper>.info{
+     margin-left: 150px;
+     width: 550px;
   }
-  div.donation>div.wrapper>div.info>h2{
+  .donation>.wrapper>.info>h2{
     margin-bottom: 3%;
     width: 55%;
   }
-  div.donation>div.wrapper>div.info>span{
+  .donation>.wrapper>.info>span{
   font-family: Georgia;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
   line-height: 110%;
-  
   letter-spacing: 0.06em;
-  
   color: #545454;
   }
-  div.donation>div.wrapper>div.info>p{
-  font-family: Arial;
-  font-style: italic;
-  font-weight: normal;
+  .donation>.wrapper>.info>p{
   font-size: 12px;
-  line-height: 150%;
   margin-top: 3.5%;
   color: #B2B2B2;
   width: 70%;
   }
   .card{
-  margin-top: 4.2%;
+  margin-top: 10px;
   display: flex;
-  height: 10.5%;
-  width: 64.5%;
-  background: #F1CDB3;
+  height: 43px;
+  width: 350px;
   border-radius: 9px;
   }
   a.card>span{
@@ -800,11 +655,6 @@ div.slide>button.slide-nav{
   a.card>img{
   margin-left: 5%;
   }
-  a.card:hover{
-     border: none;
-     background: #FDDCC4;
-  }
-
   .footer>.wrapper{
    display: flex;
    flex-flow: row wrap;
@@ -812,9 +662,6 @@ div.slide>button.slide-nav{
    align-content: space-around;
     }
   h3{
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
   font-size: 35px;
   line-height: 130%;
   width: 100%;
@@ -822,9 +669,6 @@ div.slide>button.slide-nav{
   color: #FFFFFF;
   }
   .footer-span{
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 115%;
   padding-left: 5%;
@@ -836,9 +680,8 @@ div.slide>button.slide-nav{
   a.a-footer:hover{
      border:none;
   }
-  footer>div.wrapper>div{
+  footer>.wrapper>div{
     width: 300px;
-    
     }
   .a-footer{
      display: flex;
@@ -846,18 +689,18 @@ div.slide>button.slide-nav{
   .footer-span{
   margin-left: 1.2%;
   }
-  div.place>a{
+  .place>a{
      margin-top:-0.6%;
      margin-bottom: 12%;
   }
-  div.contacts>a{
+  .contacts>a{
      margin-top:15%;
      margin-bottom: -2%;
   }
-  div.contacts{
+  .contacts{
    margin-left:-0.5%;
   }
-  div.place{
+  .place{
      margin-left: -4.5%;
   }
   .footer-puppy{
@@ -870,82 +713,43 @@ div.slide>button.slide-nav{
    display: none;
 }
 }
-
-/* 
-
+/*
 ADDAPTIVE
  */
 
 @media (max-width: 767px) {
-   body {
-      width: 320px;
-      margin: auto;
-       }
+   body{
+      overflow-x: hidden;
+   }
   .wrapper {
         max-width: 300px;
-        height: 100%;
-        margin: 0 auto 0;
-        display: inline-block;
         }
   a{
-     text-decoration: none;
-     color: #CDCDCD ;
-     font-family: Arial;
-     font-style: normal;
-     font-weight: normal;
      font-size: 15px;
-     line-height: 160%;
-    
-  }
-  .active{
-     border-bottom:4px solid #F1CDB3;
-     cursor: pointer;
-  }
-  a:hover{
-     border-bottom: 4px solid #F1CDB3;
-     cursor: pointer;
   }
   h1{
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
      font-size: 32px;
-     line-height: 35px; 
+     line-height: 35px;
      letter-spacing: 0.06em;
-     color: #F1CDB3;
      margin-bottom: 0;
     }
   .name-logo > p {
-     font-family: Arial;
-     font-style: normal;
-     font-weight: normal;
      font-size: 13px;
      line-height: 15px;
-     letter-spacing: 0.1em;
-  
-     color:#FFFFFF;
-     width: 100%;
      margin-top: 10px;
      margin-left: 5px;
   }
   .top-main{
-     width: 100%;
      height: 823px;
-     background:  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-    display: flex;
-     overflow: hidden;
-     margin: 0;
-     padding: 0;
    }
   .header{
      display: grid;
      grid-template-columns:auto auto;
-    } 
+    }
   .about{
      margin: 0px;
      height: 974px;
      background: #FFFFFF;
-    
   }
   .pets{
      height: 791px;
@@ -964,110 +768,73 @@ ADDAPTIVE
   }
   .footer{
      height: 809px;
-     background:  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
      margin: 0px;
      }
   .name-logo{
-     margin-top: 10px; 
+     margin-top: 10px;
   }
-  div.name-logo>p{
+  .name-logo>p{
      text-align: left;
   }
   .start-screen{
      display: grid;
-     height: 100%;
-     grid-template-rows: auto auto;
+     grid-template-areas: "info"
+     "img";
+     margin-top: -23px;
        }
-  div.start-screen>div.info>h2{
-     width:80%;  
+  .start-screen>.info>h2{
+     width:80%;
      text-align: center;
      margin-left:10%;
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
      font-size: 25px;
      letter-spacing: 0.06em;
-
      line-height: 130%;
-  
      color: #FFFFFF;
   }
-  div.start-screen>div.info{
+  .start-screen>.info{
      width: 100%;
      margin-top: 5%;
-    margin-left: 0%;
+     margin-left: 0%;
+     grid-area: info;
+  }
+  .img-start-screen-puppy{
+     grid-area: img;
   }
   p{
      margin-top:44px;
-     width: 100%;  
-     font-family: Arial;
-     font-style: normal;
-     font-weight: normal;
+     width: 100%;
      font-size: 15px;
      line-height: 160%;
-     color: #CDCDCD;
      justify-content: center;
      text-align: center;
-  
-  }
-  .btn{
-     width: 207px;
-     height: 52px;
-     border: 2px solid #F1CDB3;
-     border-radius: 100px;
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
-     font-size: 17px;
-     line-height: 130%;
-     letter-spacing: 0.06em;
-     color: #292929;
-     }
-div.info>button.btn{
-        margin-top: 9.6%;
-        margin-left: 15.5%;
-     }  
-  .btn:hover{
-     background-color: #FDDCC4;
-     border: none;  
-     cursor: pointer;
-  }
-  .btn-primary{
-     background: #F1CDB3;
   }
   .img-start-screen-puppy{
-   width:90%;   
+   width:90%;
    margin-bottom: 2%;
    margin-left: 12%;
    }
-  div.about>div.wrapper{
+  .about>.wrapper{
      display: grid;
-     grid-template-rows: 50% 50%;
+     grid-template-areas: "inf-about"
+                           "img-catDog"   ;
+     min-width:320px;
      }
   .img-about-pets{
-     width: 86%;
-     margin: 30%  auto;
-     order: 2;
+     grid-area:img-catDog ;
+     margin-left: 30px;
+     width: 225px;
   }
-  div.about>div.wrapper>div.info>h2, div.donation>div.wrapper>div.info>h2 {
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
+  .about>.wrapper>.info>h2, .donation>.wrapper>.info>h2 {
      font-size: 25px;
-     line-height: 130%;
-     letter-spacing: 0.06em;
-    
-     color: #545454; 
      text-align: center;
      width: 100%;
-     margin-left: -2.5%;
      }
-  div.about>div.wrapper>div.info{
-     margin-left: 5%;
-     margin-top: 7%;
-     order:1;
-  }
-   div.text>p{
+  .about>.wrapper>.info{
+     grid-area: inf-about;
+     width: 270px;
+     margin-left: 30px;
+     }
+   .text>p{
      text-align: justify;
      width: 95%;
      margin-top: 12.5%;
@@ -1075,10 +842,10 @@ div.info>button.btn{
      color: #4C4C4C;
      font-size: 15px;
   }
-  div.donation>div.wrapper>div.info>h2{
+  .donation>.wrapper>.info>h2{
      margin-left: 20%;
   }
-  div.pets>div.wrapper{
+  .pets>.wrapper{
      display: grid;
      grid-template-rows:26.7% 55% auto ;
   }
@@ -1098,26 +865,19 @@ div.info>button.btn{
    align-items: center;
    align-content: space-around;
   }
-  div.pets>div.wrapper>button{
+  .pets>.wrapper>.btn{
     margin:8.6% auto;
     width:260px;
   }
   .slide-items{
-     background-color: #FAFAFA;
-     border-radius: 9px;
      width: 270px;
      height: 435px;
      margin-left: 3.6%;
      order: 1;
      text-align:center;
-    
   }
-  div.slide-items:hover{
-     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-  }
-  div.slide>button.slide-nav{
+  .slide>.slide-nav{
      margin: auto 0;
-     border: 2px solid #F1CDB3;
      box-sizing: border-box;
      border-radius: 100px;
      height:52px;
@@ -1125,9 +885,6 @@ div.info>button.btn{
      order: 2;
       }
   .pet-name{
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
      font-size: 20px;
      line-height: 23px;
      text-align: center;
@@ -1139,19 +896,13 @@ div.info>button.btn{
      margin-top: 1%;
      width: 70%;
   }
-  div.pets>div.wrapper>h2 , div.help>div.wrapper>h2 {
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
+  .pets>.wrapper>h2 , .help>.wrapper>h2 {
      font-size: 25px;
      line-height: 130%;
-  
      align-items: center;
      text-align: center;
      letter-spacing: 0.06em ;
-  
      color: #545454;
-  
      margin: 14% auto;
   }
   .slide-nav-next{
@@ -1170,7 +921,6 @@ div.info>button.btn{
      align-content: flex-end;
      margin-top: 0;
            }
-  
   .help-items{
   margin: 0;
   display: flex;
@@ -1186,9 +936,6 @@ div.info>button.btn{
      }
   .help-name{
      width:150px;
-     font-family: Georgia;
-     font-style: normal;
-     font-weight: normal;
      font-size: 15px;
      line-height: 110%;
      letter-spacing: 0.06em;
@@ -1196,47 +943,26 @@ div.info>button.btn{
      display: flexbox;
      margin-top: 20px;
      }
-  div.donation>div.wrapper{ 
-     display: grid;
-     grid-template-rows: auto auto;
+  .donation>.wrapper{
+     margin: 0;
   }
-  div.donation>div.wrapper>img{
-     display: flex;
-     order:2;
-     margin: auto auto 40px;
-     width: 90%;
+  .donation>.wrapper>img{
+     width: 350px;
+     margin-left:25%;
   }
-  div.donation>div.wrapper>div.info{
-     margin: 40px auto auto;
-     order:1;
+  .donation>.wrapper>.info{
+     width: 350px;
+     margin-left:25%;
   }
-  div.donation>div.wrapper>div.info>h2{
+  .donation>.wrapper>.info>h2{
     margin: auto auto 7%;
     width: 70%;
     text-align: center;
     justify-content: center;
   }
-  div.donation>div.wrapper>div.info>span{
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 160%;
-  text-align: center;
-  justify-content: center;
-  letter-spacing: 0.005em;
-  margin-left: 13px;
-  margin-bottom: 20px;
-  color: #545454;
-  }
-  div.donation>div.wrapper>div.info>p{
-  font-family: Arial;
-  font-style: italic;
-  font-weight: normal;
+  .donation>.wrapper>.info>p{
   font-size: 12px;
-  line-height: 150%;
   margin: 3.5% auto;
-  color: #B2B2B2;
   width: 95%;
   text-align: justify;
   }
@@ -1248,13 +974,8 @@ div.info>button.btn{
   border-radius: 9px;
   }
   a.card>span{
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
   font-size: 15px;
   line-height: 110%;
-  letter-spacing: 0.06em;
-  color: #545454;
   padding-left: 5%;
   margin-top: auto;
   margin-bottom: auto;
@@ -1275,52 +996,43 @@ div.info>button.btn{
    height: 100%;
     }
   h3{
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
   font-size: 25px;
   line-height: 130%;
   width: 90%;
   margin: auto;
   text-align: center;
-  letter-spacing: 0.06em;
-  color: #FFFFFF;
   }
   .footer-span{
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 115%;
   padding-left: 6%;
   margin-top: auto;
   margin-bottom: auto;
   letter-spacing: 0.06em;
-  color: #F1CDB3;
   }
   a.a-footer:hover{
      border:none;
   }
-  footer>div.wrapper>div{
+  footer>.wrapper>div{
     width: 100%;
     margin-top: 0.5%;
     }
-  div.place>a{
+  .place>a{
      margin-top:35px;
      margin-bottom: auto;
   }
-  div.contacts>a{
+  .contacts>a{
      margin-top:15%;
      margin-left: 25px;
      margin-bottom: -2%;
   }
-  div.contacts{
+  .contacts{
    margin-left:auto;
   }
-  div.place{
+  .place{
      margin-left: auto;
   }
-   footer>div.wrapper>img{
+   footer>.wrapper>img{
      margin-top: auto;
      margin-bottom: -8%;
      width: 85%;
@@ -1328,29 +1040,23 @@ div.info>button.btn{
   }
   .footer{
    height: 809px;
-   background:  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
    margin: 0;
    padding: 0;
    overflow: hidden;
    }
    .a-footer{
      width: 100%;
-   } 
-
-
+   }
    #menu__toggle {
       opacity: 0;
     }
-    
     #menu__toggle:checked ~ .menu__btn > span {
       transform: rotate(90deg);
     }
- 
     #menu__toggle:checked ~ .nav-menu {
       visibility: visible;
       right: 0;
     }
-    
     .menu__btn {
       display: flex;
       align-items: center;
@@ -1366,12 +1072,9 @@ div.info>button.btn{
     .menu__btn > span::after {
       display: block;
       position: absolute;
-     
       width: 100%;
       height: 2px;
-    
       background-color: #F1CDB3;
-    
       transition-duration: .25s;
     }
     .menu__btn > span::before {
@@ -1397,378 +1100,23 @@ div.info>button.btn{
        padding: 0;
     }
     .nav-menu {
-      
       position: fixed;
       visibility: hidden;
       top: 0;
       right: -100%;
-    
       width: 320px;
       height: 100%;
-    
       margin: 0;
       padding: 0;
-    
       list-style: none;
-    
       background-color: #292929;
       box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-    
       transition-duration: .25s;
     }
-    
     .nav-items {
       display: flex;
       font-size: 20px;
       font-weight: 600;
       transition-duration: .25s;
     }
-
 }
-/* 
-
-
-NORMALIZE
-
-
- */
-
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
- html {
-   line-height: 1.15; /* 1 */
-   -webkit-text-size-adjust: 100%; /* 2 */
- }
- 
- /* Sections
-    ========================================================================== */
- 
- 
- /**
-  * Render the `main` element consistently in IE.
-  */
- 
- main {
-   display: block;
- }
- 
- /**
-  * Correct the font size and margin on `h1` elements within `section` and
-  * `article` contexts in Chrome, Firefox, and Safari.
-  */
- 
- h1 {
-   font-size: 2em;
-    }
- 
- /* Grouping content
-    ========================================================================== */
- 
- /**
-  * 1. Add the correct box sizing in Firefox.
-  * 2. Show the overflow in Edge and IE.
-  */
- 
- hr {
-   box-sizing: content-box; /* 1 */
-   height: 0; /* 1 */
-   overflow: visible; /* 2 */
- }
- 
- /**
-  * 1. Correct the inheritance and scaling of font size in all browsers.
-  * 2. Correct the odd `em` font sizing in all browsers.
-  */
- 
- pre {
-   font-family: monospace, monospace; /* 1 */
-   font-size: 1em; /* 2 */
- }
- 
- /* Text-level semantics
-    ========================================================================== */
- 
- /**
-  * Remove the gray background on active links in IE 10.
-  */
- 
- a {
-   background-color: transparent;
- }
- 
- /**
-  * 1. Remove the bottom border in Chrome 57-
-  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-  */
- 
- abbr[title] {
-   border-bottom: none; /* 1 */
-   text-decoration: underline; /* 2 */
-   text-decoration: underline dotted; /* 2 */
- }
- 
- /**
-  * Add the correct font weight in Chrome, Edge, and Safari.
-  */
- 
- b,
- strong {
-   font-weight: bolder;
- }
- 
- /**
-  * 1. Correct the inheritance and scaling of font size in all browsers.
-  * 2. Correct the odd `em` font sizing in all browsers.
-  */
- 
- code,
- kbd,
- samp {
-   font-family: monospace, monospace; /* 1 */
-   font-size: 1em; /* 2 */
- }
- 
- /**
-  * Add the correct font size in all browsers.
-  */
- 
- small {
-   font-size: 80%;
- }
- 
- /**
-  * Prevent `sub` and `sup` elements from affecting the line height in
-  * all browsers.
-  */
- 
- sub,
- sup {
-   font-size: 75%;
-   line-height: 0;
-   position: relative;
-   vertical-align: baseline;
- }
- 
- sub {
-   bottom: -0.25em;
- }
- 
- sup {
-   top: -0.5em;
- }
- 
- /* Embedded content
-    ========================================================================== */
- 
- /**
-  * Remove the border on images inside links in IE 10.
-  */
- 
- img {
-   border-style: none;
- }
- 
- /* Forms
-    ========================================================================== */
- 
- /**
-  * 1. Change the font styles in all browsers.
-  * 2. Remove the margin in Firefox and Safari.
-  */
- 
- button,
- input,
- optgroup,
- select,
- textarea {
-   font-family: inherit; /* 1 */
-   font-size: 100%; /* 1 */
-   line-height: 1.15; /* 1 */
-   margin: 0; /* 2 */
- }
- 
- /**
-  * Show the overflow in IE.
-  * 1. Show the overflow in Edge.
-  */
- 
- button,
- input { /* 1 */
-   overflow: visible;
- }
- 
- /**
-  * Remove the inheritance of text transform in Edge, Firefox, and IE.
-  * 1. Remove the inheritance of text transform in Firefox.
-  */
- 
- button,
- select { /* 1 */
-   text-transform: none;
- }
- 
- /**
-  * Correct the inability to style clickable types in iOS and Safari.
-  */
- 
- button,
- [type="button"],
- [type="reset"],
- [type="submit"] {
-   -webkit-appearance: button;
- }
- 
- /**
-  * Remove the inner border and padding in Firefox.
-  */
- 
- button::-moz-focus-inner,
- [type="button"]::-moz-focus-inner,
- [type="reset"]::-moz-focus-inner,
- [type="submit"]::-moz-focus-inner {
-   border-style: none;
-   padding: 0;
- }
- 
- /**
-  * Restore the focus styles unset by the previous rule.
-  */
- 
- button:-moz-focusring,
- [type="button"]:-moz-focusring,
- [type="reset"]:-moz-focusring,
- [type="submit"]:-moz-focusring {
-   outline: 1px dotted ButtonText;
- }
- 
- /**
-  * Correct the padding in Firefox.
-  */
- 
- fieldset {
-   padding: 0.35em 0.75em 0.625em;
- }
- 
- /**
-  * 1. Correct the text wrapping in Edge and IE.
-  * 2. Correct the color inheritance from `fieldset` elements in IE.
-  * 3. Remove the padding so developers are not caught out when they zero out
-  *    `fieldset` elements in all browsers.
-  */
- 
- legend {
-   box-sizing: border-box; /* 1 */
-   color: inherit; /* 2 */
-   display: table; /* 1 */
-   max-width: 100%; /* 1 */
-   padding: 0; /* 3 */
-   white-space: normal; /* 1 */
- }
- 
- /**
-  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
-  */
- 
- progress {
-   vertical-align: baseline;
- }
- 
- /**
-  * Remove the default vertical scrollbar in IE 10+.
-  */
- 
- textarea {
-   overflow: auto;
- }
- 
- /**
-  * 1. Add the correct box sizing in IE 10.
-  * 2. Remove the padding in IE 10.
-  */
- 
- [type="checkbox"],
- [type="radio"] {
-   box-sizing: border-box; /* 1 */
-   padding: 0; /* 2 */
- }
- 
- /**
-  * Correct the cursor style of increment and decrement buttons in Chrome.
-  */
- 
- [type="number"]::-webkit-inner-spin-button,
- [type="number"]::-webkit-outer-spin-button {
-   height: auto;
- }
- 
- /**
-  * 1. Correct the odd appearance in Chrome and Safari.
-  * 2. Correct the outline style in Safari.
-  */
- 
- [type="search"] {
-   -webkit-appearance: textfield; /* 1 */
-   outline-offset: -2px; /* 2 */
- }
- 
- /**
-  * Remove the inner padding in Chrome and Safari on macOS.
-  */
- 
- [type="search"]::-webkit-search-decoration {
-   -webkit-appearance: none;
- }
- 
- /**
-  * 1. Correct the inability to style clickable types in iOS and Safari.
-  * 2. Change font properties to `inherit` in Safari.
-  */
- 
- ::-webkit-file-upload-button {
-   -webkit-appearance: button; /* 1 */
-   font: inherit; /* 2 */
- }
- 
- /* Interactive
-    ========================================================================== */
- 
- /*
-  * Add the correct display in Edge, IE 10+, and Firefox.
-  */
- 
- details {
-   display: block;
- }
- 
- /*
-  * Add the correct display in all browsers.
-  */
- 
- summary {
-   display: list-item;
- }
- 
- /* Misc
-    ========================================================================== */
- 
- /**
-  * Add the correct display in IE 10+.
-  */
- 
- template {
-   display: none;
- }
- 
- /**
-  * Add the correct display in IE 10.
-  */
- 
- [hidden] {
-   display: none;
- }
