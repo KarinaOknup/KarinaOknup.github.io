@@ -2,8 +2,10 @@
   height: 552px;
   width: 952px;
   position: fixed;
-  top:20%;
-  left: 25%;
+  top: 100px;
+  margin:auto;
+  left:0;
+  right:0;
 }
 .cross{
   width: 52px;
@@ -20,3 +22,29 @@
   border-radius: 9px;
   background: #FAFAFA;
 }
+@media (max-width: 1279px){
+.popBox{
+height: 402px;
+width: 682px;
+}
+.popMain{
+height: 350px;
+width: 630px;
+}
+.cross{
+margin-left: 630px;
+}
+}
+@media (max-width: 767px){
+  .popBox{
+    height: 393px;
+    width: 270px;
+  }
+  .popMain{
+    height: 341px;
+    width: 240px;
+  }
+  .cross{
+  margin-left: 218px;
+  }
+  }

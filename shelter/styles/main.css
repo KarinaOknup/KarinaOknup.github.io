@@ -766,7 +766,6 @@ ADDAPTIVE
   .donation{
       height: 542.2px;
       background: #F6F6F6;
-      margin: 0px;
   }
   .footer{
      height: 809px;
@@ -946,15 +945,21 @@ ADDAPTIVE
      margin-top: 20px;
      }
   .donation>.wrapper{
-     margin: 0;
+     margin: auto;
+     left: 0;
+     right: 0;
   }
   .donation>.wrapper>img{
      width: 350px;
-     margin-left:25%;
+     margin: auto;
+     left: 0;
+     right: 0;
   }
   .donation>.wrapper>.info{
      width: 350px;
-     margin-left:25%;
+     margin: auto;
+     left: 0;
+     right: 0;
   }
   .donation>.wrapper>.info>h2{
     margin: auto auto 7%;
@@ -964,12 +969,11 @@ ADDAPTIVE
   }
   .donation>.wrapper>.info>p{
   font-size: 12px;
-  margin: 3.5% auto;
   width: 95%;
   text-align: justify;
   }
   .card{
-  margin: 20px auto;
+  margin: 20px 20px;
   width: 281px;
   height: 43px;
   background: #F1CDB3;
