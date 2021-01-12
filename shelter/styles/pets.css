@@ -1,9 +1,8 @@
-@import "../main/_normalize.css";
 #menu__toggle{
    display: none;
 }
 body {
-    width: 1280px;
+    width: 100%;
     margin: auto;
      }
 .wrapper {
@@ -79,7 +78,7 @@ ul{
     display: flex;
     flex-flow: row ;
     justify-content:flex-end ;
-    align-content: center; 
+    align-content: center;
  }
  .nav-items{
       display: flexbox;
@@ -88,7 +87,7 @@ ul{
       }
 
 div.pets{
-  background: #F6F6F6; 
+  background: #F6F6F6;
   height: 1342px;
 }
 div.slide{
@@ -104,7 +103,7 @@ div.slide{
     border-radius: 9px;
     text-align:center;
     width: 270px;
-    height: 435px; 
+    height: 435px;
     margin-bottom: 2.5%;
      }
 .pet-name{
@@ -252,10 +251,6 @@ cursor: pointer;
          }
 
   @media (max-width:1279px){
-    body {
-      width: 768px;
-      margin: auto;
-       }
   .wrapper {
         max-width: 708px;
         margin: 0% auto 0%;
@@ -431,10 +426,6 @@ cursor: pointer;
   }
 
   @media (max-width:767px){
-   body {
-      width: 320px;
-      margin: auto;
-       }
   .wrapper {
         max-width: 300px;
         margin: 0% auto 0%;
@@ -535,7 +526,6 @@ cursor: pointer;
   .nav-number{
      padding: 4.5%;
   }
- 
   .footer>.wrapper{
    display: flex;
    flex-flow: row wrap;
