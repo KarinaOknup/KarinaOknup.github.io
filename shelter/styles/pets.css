@@ -1,3 +1,6 @@
+@import 'shadow.css';
+@import 'popbox.css';
+
 #menu__toggle{
    display: none;
 }

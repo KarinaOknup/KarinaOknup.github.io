@@ -8,7 +8,7 @@ Array.from(arrPets).forEach( (e)=>{
   let popMain = document.createElement('div');
   let cross = document.createElement('div');
   cross.className = 'cross';
-  cross.innerHTML = '<img alt = "close" src = "assets/icons/cancel.svg">';
+  cross.innerHTML = '<img alt = "close" src = "../assets/icons/cancel.svg">';
   popBox.appendChild(cross);
   popMain.className = 'popMain';
   popBox.appendChild(popMain);
