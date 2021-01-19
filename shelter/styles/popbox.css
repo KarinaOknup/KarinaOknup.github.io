@@ -6,6 +6,56 @@
   margin:auto;
   left:0;
   right:0;
+  z-index: 25;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.info-box{
+  margin-left:30px;
+  font-family: Georgia;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  text-align: left;
+}
+.pet-info-box{
+  color: black;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  margin: 40px 0;
+  font-size: 15px;
+  line-height: 17px;
+  width: 100%;
+  text-align: left;
+}
+.ul-pet-box{
+  color: black;
+  display: grid;
+  grid-template-rows: auto;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  padding-left: 15px;
+  font-family: Georgia;
+  line-height: 17px;
+  text-align: left;
+}
+.ul-pet-box>li{
+  color: #F1CDB3;
+  padding-top: 10px;
+}
+.ul-pet-box>li>span{
+  color: black;
+}
+.pet-type-box{
+font-size: 20px;
+line-height: 23px;
+letter-spacing: 0.06em;
+}
+.pet-img-box{
+  width: 100%;
+  margin: auto;
 }
 .cross{
   width: 52px;
@@ -17,10 +67,20 @@
   margin-left: 890px;
  }
 .popMain{
+  display: grid;
+  grid-template-columns: 50% 50%;
   height: 500px;
   width: 900px;
   border-radius: 9px;
   background: #FAFAFA;
+}
+.pet-name-box{
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.06em;
 }
 @media (max-width: 1279px){
 .popBox{
@@ -32,19 +92,77 @@ height: 350px;
 width: 630px;
 }
 .cross{
-margin-left: 630px;
+margin-left: 625px;
+}
+.pet-info-box{
+  font-size: 13px;
+  margin: 20px 0;
+  text-align: left;
+  margin: 15px 0 15px;
+}
+.ul-pet-box>li{
+padding-top: 3px;
+}
+.pet-img-box{
+  margin-top: 0;
+}
+.pet-name-box{
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 }
 @media (max-width: 767px){
   .popBox{
+    top:100px;
     height: 393px;
-    width: 270px;
+    width: 275px;
   }
   .popMain{
     height: 341px;
     width: 240px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
   }
   .cross{
   margin-left: 218px;
   }
+  .info-box{
+    max-height: 340px;
+    text-align: center;
+    margin: 0;
+  }
+  .pet-img-box{
+    display: none;
+  }
+  .pet-info-box{
+    font-size: 13px;
+    line-height: 14px;
+    margin:5px;
+    width: 230px;
+    font-weight: normal;
+    text-align: justify;
+    }
+  .ul-pet-box{
+    font-size: 13px;
+    padding-left: 15px;
+    line-height: 14px;
+  }
+  .ul-pet-box>li{
+    color: #F1CDB3;
+    padding-top: 5px;
+  }
+  .pet-type-box{
+  font-size: 18px;
+  line-height: 5px;
+  }
+  .pet-img-box{
+    width: 100%;
+    margin: auto;
+  }
+  .pet-name-box{
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding-bottom: 0;
+    }
   }

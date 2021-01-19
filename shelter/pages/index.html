@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
-    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
     <div class="top-main">
@@ -54,15 +53,14 @@
                 </div>
              </div>
         </div>
-
         <div class="pets">
              <div class="wrapper">
                 <h2>Our friends who <br> are looking for a house</h2>
-                <div class="slide">
-                    <button class="btn btn-secondary slide-nav slide-nav-back"><img src="../assets/icons/arrow.svg" alt="back"></button>
-                    <div class="slide-cards">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
                     </div>
-                    <button class="btn btn-secondary  slide-nav slide-nav-next"><img src="../assets/icons/arrow.svg" alt="next"></button>
+                    <div class="btn btn-secondary slide-nav swiper-button-prev"></div>
+                    <div class="btn btn-secondary slide-nav swiper-button-next"></div>
                 </div>
                 <a href="pets.html" class="btn btn-primary">Get to know the rest</a>
              </div>
@@ -137,7 +135,8 @@
             <img src="../assets/images/footer-puppy.png" alt="footer-puppy" class="footer-puppy">
         </div>
     </footer>
-</body>
-<script src="../script/popUp.js"></script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="../script/pets.js"></script>
+</body>
 </html>
