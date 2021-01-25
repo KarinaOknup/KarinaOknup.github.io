@@ -1,7 +1,19 @@
+html{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+button:active, button:focus {
+    outline: none;
+  }
+  button::-moz-focus-inner {
+    border: 0;
+  }
 body{
     font-family: Roboto;
     width: 1600px;
-    margin: 0;
+    margin: auto;
 }
 a{
     font-weight: normal;
@@ -20,7 +32,7 @@ a:hover{
     font-weight: 500;
 }
 p{
-    color: #4E4E4E; 
+    color: #4E4E4E;
 }
 div{
     display: inline-block;
