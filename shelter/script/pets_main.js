@@ -51,20 +51,21 @@ async function slider(){
  new Swiper('.swiper-container', {
   slidesPerView:3,
   slidesPerGroup:1,
-  spaceBetween:60,
+  spaceBetween:50,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next_new',
+    prevEl: '.swiper-button-prev_new',
   },
   breakpoints: {
     1279: {
-      slidesPerView: 3
+      slidesPerView:3,
       },
     360: {
-       slidesPerView: 1
+       slidesPerView:1,
        },
     767: {
-        slidesPerView: 2
+        slidesPerView: 2,
+        spaceBetween:30,
         },
     },
   });

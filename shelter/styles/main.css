@@ -1,7 +1,6 @@
 @import 'shadow.css';
 @import 'popbox.css';
 
-
 #menu__toggle{
    display: none;
 }
@@ -115,16 +114,12 @@ ul{
 p{
    margin-top:46px;
    margin-bottom: 50px;
-   width:92% ;
-
    font-family: Arial;
    font-style: normal;
    font-weight: normal;
    font-size: 15px;
    line-height: 160%;
-
    color: #CDCDCD;
-
 }
 .btn{
    border: 2px solid #F1CDB3;
@@ -186,48 +181,7 @@ p{
 .text>p{
    margin-bottom: -16px;
    width: 70%;
-
    color: #4C4C4C;
-}
-
-.pets>.wrapper{
-   display: grid;
-   grid-template-rows:26.7% 49% auto ;
-}
-.pets>.wrapper>.btn{
-  margin:5.3% auto;
-  width:260px;
-}
-.swiper-container {
-   width: 100%;
-   height: 100%;
-}
-.swiper-slide{
-   background-color: #FAFAFA;
-   border-radius: 9px;
-   mwidth: 270px;
-   height: 435px;
-   text-align:center;
-}
-.swiper-slide:hover{
-   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-}
-.slide-nav{
-   border: 2px solid #F1CDB3;
-   border-radius: 100px;
-   height:52px;
-   max-width:52px;
-}
-.pet-name{
-   font-family: Georgia;
-   font-style: normal;
-   font-weight: normal;
-   font-size: 20px;
-   line-height: 23px;
-   text-align: center;
-   letter-spacing: 0.06em;
-   color: #545454;
-   margin: 7% auto;
 }
 .btn-secondary{
    margin-top: 4.5%;
@@ -239,14 +193,11 @@ p{
    font-weight: normal;
    font-size: 35px;
    line-height: 130%;
-
    align-items: center;
    text-align: center;
    letter-spacing: 0.06em ;
-
    color: #545454;
-
-   margin: 6.8% auto;
+   margin: 30px auto;
 }
 .help-example{
    display: flex;
@@ -323,7 +274,7 @@ width: 84.5%;
 background: #F1CDB3;
 border-radius: 9px;
 }
-a.card>span{
+.card>span{
 font-family: Georgia;
 font-style: normal;
 font-weight: normal;
@@ -335,10 +286,10 @@ padding-left: 3.2%;
 margin-top: auto;
 margin-bottom: auto;
 }
-a.card>img{
+.card>img{
 margin-left: 5%;
 }
-a.card:hover{
+.card:hover{
    border: none;
    background: #FDDCC4;
 }
@@ -368,7 +319,7 @@ margin-bottom: auto;
 letter-spacing: 0.06em;
 color: #F1CDB3;
 }
-a.a-footer:hover{
+.a-footer:hover{
    border:none;
 }
 footer>.wrapper>div{
@@ -512,15 +463,7 @@ margin-left: 1.2%;
      margin-bottom: -16px;
      width: 75%;
   }
-  .pets>.wrapper{
-     display: grid;
-     grid-template-rows:26.7% 49% auto ;
-  }
-    .pets>.wrapper>.btn{
-    margin:8.6% auto;
-    width:260px;
-  }
- 
+
   .help{
      display: flex;
   }
@@ -597,7 +540,7 @@ margin-left: 1.2%;
   width: 350px;
   border-radius: 9px;
   }
-  a.card>span{
+  .card>span{
   font-family: Georgia;
   font-style: normal;
   font-weight: normal;
@@ -609,7 +552,7 @@ margin-left: 1.2%;
   margin-top: auto;
   margin-bottom: auto;
   }
-  a.card>img{
+  .card>img{
   margin-left: 5%;
   }
   .footer>.wrapper{
@@ -634,7 +577,7 @@ margin-left: 1.2%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
   }
-  a.a-footer:hover{
+  .a-footer:hover{
      border:none;
   }
   footer>.wrapper>div{
@@ -670,10 +613,6 @@ margin-left: 1.2%;
    display: none;
 }
 }
-/*
-ADDAPTIVE
- */
-
 @media (max-width: 767px) {
    body{
       overflow-x: hidden;
@@ -801,22 +740,6 @@ ADDAPTIVE
   .donation>.wrapper>.info>h2{
      margin-left: 20%;
   }
-  .pets>.wrapper{
-     display: grid;
-     grid-template-rows:26.7% 55% auto ;
-  }
-  .pets>.wrapper>.btn{
-    margin:8.6% auto;
-    width:260px;
-  }
-  .pet-name{
-     font-size: 20px;
-     line-height: 23px;
-     text-align: center;
-     letter-spacing: 0.06em;
-     color: #545454;
-     margin: 10% auto;
-  }
   .btn-secondary{
      margin-top: 1%;
      width: 70%;
@@ -897,17 +820,17 @@ ADDAPTIVE
   background: #F1CDB3;
   border-radius: 9px;
   }
-  a.card>span{
+  .card>span{
   font-size: 15px;
   line-height: 110%;
   padding-left: 5%;
   margin-top: auto;
   margin-bottom: auto;
   }
-  a.card>img{
+  .card>img{
   margin-left: 5%;
   }
-  a.card:hover{
+  .card:hover{
      border: none;
      background: #FDDCC4;
   }
@@ -934,7 +857,7 @@ ADDAPTIVE
   margin-bottom: auto;
   letter-spacing: 0.06em;
   }
-  a.a-footer:hover{
+  .a-footer:hover{
      border:none;
   }
   footer>.wrapper>div{
