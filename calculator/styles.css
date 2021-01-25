@@ -13,12 +13,14 @@ body {
   }
 
 .calculator-grid {
+  margin: 50px auto;
   display: grid;
   justify-content: center;
   align-content: center;
-  min-height: 100vh;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+  width: 400px;
+  height: 700px;
   }
 
 .calculator-grid > button  {
