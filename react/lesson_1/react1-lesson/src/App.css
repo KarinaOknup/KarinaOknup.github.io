@@ -1,3 +1,19 @@
-ul li{
-  list-style-type:armenian;
+html{
+  font-size: 24px;
+}
+.app-wrapper{
+  margin:0 auto;
+  top: 0;
+  bottom: 0;
+  max-width:1200px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: 50px auto;
+  grid-gap: 10px;
+  grid-template-areas:'head head'
+                      'bar main';
+}
+.main{
+  grid-area: main;
 }

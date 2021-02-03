@@ -1,0 +1,23 @@
+.back-img{
+  width: 100%;
+  height: 100px;
+  object-fit:cover;
+}
+.my-photo{
+  width:200px;
+  height:200px;
+  object-fit:cover;
+  margin: 0;
+  border-radius: 50%;
+  border: 10px double rgb(184, 134, 184);
+}
+.my-info{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.my-name{
+  font-size: 2rem;
+  font-weight: bold;
+  font-variant: small-caps;
+}

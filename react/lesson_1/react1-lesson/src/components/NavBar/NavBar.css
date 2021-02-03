@@ -1,0 +1,11 @@
+.nav-bar{
+  grid-area: bar;
+  background-color:rgb(193, 172, 241);
+  height: 100%;
+  font-size: 1rem;
+}
+.page{
+  list-style-type: none;
+  margin: 20px;
+  padding: 0;
+}
