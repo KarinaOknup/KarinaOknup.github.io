@@ -5,7 +5,7 @@ import Post from './Post/Post'
 function MyPosts() {
   return (
         <div className="posts">
-          <h2>My posts</h2>
+          <h3>My posts</h3>
           <div className='new-post'>
             <textarea></textarea>
             <button>Add</button>

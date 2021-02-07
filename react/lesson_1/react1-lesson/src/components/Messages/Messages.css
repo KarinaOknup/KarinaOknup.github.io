@@ -1,0 +1,23 @@
+.messages{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 4px;
+  height: 100%;
+}
+.dialogs{
+  background-color: rgb(236, 234, 234);
+  height: 100%;
+}
+.dialog-person{
+  width: 90%;
+  background-color: rgb(212, 212, 224);
+  margin:5px auto;
+  padding: 3px;
+}
+.dialog-close:hover{
+  background-color: rgb(204, 204, 236);
+}
+.dialog-open{
+  background-color: rgb(202, 230, 223);
+  padding: 10px;
+}
