@@ -7,15 +7,16 @@ import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
 import {BrowserRouter, Route} from "react-router-dom";
 
-function App() {
+function App(props) {
+
   return (
     <BrowserRouter>
     <div className='app-wrapper'>
       <Header />
       <NavBar />
       <div className='main'>
-        <Route path='/messages' component={Messages}/>
-        <Route path='/profile' component={Profile}/>
+        <Route path='/messages' render={ () => <Messages state={props.state.messagesPage} />}/>
+        <Route path='/profile'  render={ () => <Profile state={props.state.profilePage} /> }/>
       </div>
     </div>
     </BrowserRouter>

@@ -1,10 +1,15 @@
 import React from 'react';
 import './Post.css'
 
-function Post() {
+function Post(props) {
   return (
             <div className='post-item'>
-              post1
+              <div className='post-message'>
+                {props.message}
+              </div>
+              <div className='post-likes'>
+                Likes {props.likes}
+              </div>
             </div>
   );
 }
