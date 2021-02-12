@@ -1,2 +1,2 @@
-# karinaoknup-JS2020Q3
-Private repository for @karinaoknup
+#Karina Oknup
+Work repository for @karinaoknup
