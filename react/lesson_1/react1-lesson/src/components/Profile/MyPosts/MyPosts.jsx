@@ -3,14 +3,23 @@ import './MyPosts.css';
 import Post from './Post/Post'
 
 function MyPosts(props) {
-
-  let posts = props.postsData.map(post => <Post id={post.id} message={post.message} likes={post.likes} />);
+  let posts = props.postsData.map(post => <Post id = {post.id} message = {post.message} likes = {post.likes} />);
+  let newPost = React.createRef();
+  let addPost = () => {
+    props.addPost();
+  }
+  let onTextChange = () => {
+    let text = newPost.current.value;
+    props.updateNewPostText(text);
+  }
   return (
         <div className="posts">
-          <h3> My posts</h3>
+          <h3>My posts</h3>
           <div className='new-post'>
-            <textarea></textarea>
-            <button>Add</button>
+            <textarea onChange = {onTextChange}
+                      ref = {newPost}
+                      value = {props.newPostText}/>
+            <button onClick = {addPost}>Add</button>
           </div>
           <div className="done-posts">
             {posts}

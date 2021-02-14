@@ -1,3 +1,6 @@
+  let renderEntireTree = () =>{
+    console.log("yep");
+  }
   let state = {
     profilePage: {
       postsData:[
@@ -8,6 +11,7 @@
         {id:5, message:'funny',likes:5},
         {id:6, message:'BanPD',likes:0},
       ],
+      newPostText:'write there...',
     },
     messagesPage: {
       dialogsData:[
@@ -24,4 +28,22 @@
       ],
     },
   }
+  export const addPost = () => {
+    let newPost = {
+          id: 5,
+          message: state.profilePage.newPostText,
+          likes: 22
+        };
+    state.profilePage.postsData.push(newPost);
+    state.profilePage.newPostText = ''
+    renderEntireTree(state);
+  }
+  export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    renderEntireTree(state);
+  }
+  export const subscribe = (observer) => {
+    renderEntireTree = observer;
+  }
+
   export default state;

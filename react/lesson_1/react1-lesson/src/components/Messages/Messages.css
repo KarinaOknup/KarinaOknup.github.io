@@ -21,3 +21,21 @@
   background-color: rgb(202, 230, 223);
   padding: 10px;
 }
+.new-message{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  height: 100px;
+  margin-top: 20px;
+}
+.send-message{
+  margin: auto;
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: bisque;
+  font-size: 0.7rem;
+}
+.new-message textarea{
+  border-radius: 10px;
+}
+

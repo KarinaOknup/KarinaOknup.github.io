@@ -10,16 +10,20 @@ import {BrowserRouter, Route} from "react-router-dom";
 function App(props) {
 
   return (
-    <BrowserRouter>
-    <div className='app-wrapper'>
+    <div className = 'app-wrapper'>
       <Header />
       <NavBar />
-      <div className='main'>
-        <Route path='/messages' render={ () => <Messages state={props.state.messagesPage} />}/>
-        <Route path='/profile'  render={ () => <Profile state={props.state.profilePage} /> }/>
+      <div className = 'main'>
+        <Route path = '/messages'
+                render = { () => <Messages state = {props.state.messagesPage} />}/>
+        <Route path = '/profile'
+                render = { () => <Profile profilePage = {props.state.profilePage}
+                addPost = {props.addPost}
+                updateNewPostText = {props.updateNewPostText}/> }/>
       </div>
+      <footer className='footer'>
+      </footer>
     </div>
-    </BrowserRouter>
   );
 }
 
