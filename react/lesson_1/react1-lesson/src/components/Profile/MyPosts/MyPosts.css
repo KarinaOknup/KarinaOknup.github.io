@@ -1,3 +1,19 @@
 .posts{
   width: 100%;
 }
+.new-post{
+display: grid;
+grid-template-columns: 6fr 1fr;
+}
+.btn-post{
+  margin: 20px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: rgb(190, 190, 224);
+  color: rgb(25, 27, 27);
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.new-post textarea{
+  background-color: rgb(235, 233, 231);
+}

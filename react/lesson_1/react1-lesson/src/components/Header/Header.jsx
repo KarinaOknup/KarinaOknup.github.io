@@ -5,6 +5,7 @@ function Header() {
   return (
       <header className="header">
         <img src="https://www.humanrightslogo.net/sites/default/files/HRLogo1C.png" alt="logo" className='logo'/>
+        <h1>Oknup</h1>
       </header>
   );
 }

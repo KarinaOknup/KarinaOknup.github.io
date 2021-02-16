@@ -27,7 +27,7 @@ function Messages(props) {
     alert(newMessage.current.value);
   }
   return (
-      <div className="messages">
+      <div className="page-messages">
       <div className="dialogs">
         {dialogsPersonElements}
       </div>

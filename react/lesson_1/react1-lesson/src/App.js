@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
 import {BrowserRouter, Route} from "react-router-dom";
+import Footer from './components/Footer/Footer';
 
 function App(props) {
 
@@ -21,8 +22,7 @@ function App(props) {
                 addPost = {props.addPost}
                 updateNewPostText = {props.updateNewPostText}/> }/>
       </div>
-      <footer className='footer'>
-      </footer>
+      <Footer/>
     </div>
   );
 }

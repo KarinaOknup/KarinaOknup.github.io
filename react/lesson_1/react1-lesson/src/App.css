@@ -10,15 +10,18 @@ html{
   display: grid;
   grid-template-columns: 1fr 6fr;
   grid-template-rows: 50px auto 70px;
-  grid-gap: 10px;
   grid-template-areas:'head head'
                       'bar main'
                       'foot foot';
 }
-.footer{
-  grid-area: foot;
-  background-color: rgb(65, 53, 53);
-}
 .main{
   grid-area: main;
+  margin: 10px;
+}
+button{
+  outline: none;
+  user-select: none;
+}
+textarea{
+  resize: none;
 }
