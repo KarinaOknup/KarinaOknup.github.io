@@ -8,7 +8,7 @@ function ProfileInfo() {
   <div className="description">
     <span className="profile-name">Kitty</span>
     <ul>
-      <li>data of birdth: 28.12.2018</li>
+      <li>date of birdth: 28.12.2018</li>
       <li>city: Minsk, Belarus</li>
       <li>education: Main Cats Meow University (MCMU)</li>
       <li>web site: kitty.com</li>

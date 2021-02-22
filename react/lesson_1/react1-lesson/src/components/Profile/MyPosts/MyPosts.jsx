@@ -6,17 +6,17 @@ function MyPosts(props) {
   let posts = props.postsData.map(post => <Post id = {post.id} message = {post.message} likes = {post.likes} />);
   let newPost = React.createRef();
   let addPost = () => {
-    props.addPost();
+    props.dispatch({type:'ADD-POST'});
   }
-  let onTextChange = () => {
+  let onPostChange = () => {
     let text = newPost.current.value;
-    props.updateNewPostText(text);
+    props.dispatch({type:'UPDATE-NEW-POST-TEXT', newText: text});
   }
   return (
         <div className="posts">
           <h3>My posts</h3>
           <div className='new-post'>
-            <textarea onChange = {onTextChange}
+            <textarea onChange = {onPostChange}
                       ref = {newPost}
                       value = {props.newPostText}/>
             <button onClick = {addPost} className = 'btn-post'>Add</button>

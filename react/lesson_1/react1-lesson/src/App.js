@@ -19,8 +19,7 @@ function App(props) {
                 render = { () => <Messages state = {props.state.messagesPage} />}/>
         <Route path = '/profile'
                 render = { () => <Profile profilePage = {props.state.profilePage}
-                addPost = {props.addPost}
-                updateNewPostText = {props.updateNewPostText}/> }/>
+                dispatch = {props.dispatch}/> }/>
       </div>
       <Footer/>
     </div>
