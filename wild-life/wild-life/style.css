@@ -1,0 +1,38 @@
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+div{
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+}
+.wrapper{
+  max-width: 1200px;
+  margin: auto;
+}
+.header{
+  height: 779px;
+  background-image: url(./assets/header.png);
+  background-size: cover;
+}
+.content{
+  height: 1368px;
+  background: #CCCCCC;
+}
+.footer{
+  height: 359px;
+  background-image: url(./assets/footer.jpg);
+  background-size: cover;
+
+}
+.footer ul{
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-end;
+}
+ul li{
+  margin-left: 30px;
+}
