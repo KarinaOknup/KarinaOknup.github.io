@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 body{
   width: 100%;
   margin: 0;
@@ -8,6 +9,31 @@ div{
   display: flex;
   flex-flow: column;
 }
+html{
+font-family: Open Sans;
+font-size: 23px;
+font-weight: 400;
+line-height: 60px;
+color: #F7F7F7;
+font-style:normal;
+font-weight: normal;
+}
+a{
+  text-decoration: none;
+  color: #F7F7F7;
+}
+a:hover{
+  border-bottom: 2px solid #F7F7F7;
+}
+a.logo{
+  width: 200px;
+  border-bottom: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  font-family: Roboto;
+  font-size: 1rem;
+}
 .wrapper{
   max-width: 1200px;
   margin: auto;
@@ -16,6 +42,62 @@ div{
   height: 779px;
   background-image: url(./assets/header.png);
   background-size: cover;
+}
+h2{
+  font-size: 2rem;
+  line-height: 1.2rem;
+  letter-spacing: 2px;
+  color: #CD6326;
+}
+p{
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+.donate p{
+  margin-bottom: 50px;
+}
+.btn-main{
+  width: 160px;
+  height: 60px;
+  background: #CD6326;
+  color: #F7F7F7;
+  font-size:1rem;
+  border: #CD6326;
+  border-radius: 5px;
+  font-family: Roboto;
+  line-height: 0.5rem;
+  text-align: center;
+}
+.btn-main:hover{
+  background: #ee992b;
+}
+.donate{
+  margin-top: 60px;
+  width: 300px;
+}
+button{
+  outline: none;
+}
+nav-bar{
+  display: grid;
+  grid-template-columns: 30% auto;
+  align-items: center;
+}
+.btn-sign{
+  width: 120px;
+  height: 50px;
+  border: 2px solid #CD6326;
+  border-radius: 5px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  font-family: Roboto;
+  font-size: 1rem;
+  line-height: 0.5rem;
+  text-align: center;
+  color: #F7F7F7;
+}
+.btn-sign:hover{
+  background: #CD6326;
 }
 .content{
   height: 1368px;
@@ -27,12 +109,13 @@ div{
   background-size: cover;
 
 }
-.footer ul{
+ul{
   list-style: none;
   display: flex;
   flex-flow: row;
   justify-content:flex-end;
 }
+
 ul li{
   margin-left: 30px;
 }
