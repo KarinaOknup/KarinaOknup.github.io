@@ -1,0 +1,45 @@
+nav-bar{
+  display: grid;
+  grid-template-columns: 30% auto;
+  align-items: center;
+}
+a.logo{
+  width: 200px;
+  border-bottom: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  font-family: Roboto;
+  font-size: 1rem;
+}
+.header{
+  height: 779px;
+  background-image: url(../header.png);
+  background-size: cover;
+}
+
+.ul-nav, .social-net{
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-end;
+}
+.ul-nav li{
+  margin-left: 30px;
+}
+.donate p{
+  margin-bottom: 50px;
+}
+.donate{
+  margin-top: 60px;
+  width: 300px;
+}
+.content{
+  height: 1368px;
+  background: #CCCCCC;
+}
+.footer{
+  height: 359px;
+  background-image: url(../footer.jpg);
+  background-size: cover;
+}

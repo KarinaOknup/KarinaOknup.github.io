@@ -1,0 +1,34 @@
+button{
+  outline: none;
+}
+.btn-main{
+  width: 160px;
+  height: 60px;
+  background: #CD6326;
+  color: #F7F7F7;
+  font-size:1rem;
+  border: #CD6326;
+  border-radius: 5px;
+  font-family: Roboto;
+  line-height: 0.5rem;
+  text-align: center;
+}
+.btn-main:hover{
+  background: #ee992b;
+}
+.btn-sign{
+  width: 120px;
+  height: 50px;
+  border: 2px solid #CD6326;
+  border-radius: 5px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  font-family: Roboto;
+  font-size: 1rem;
+  line-height: 0.5rem;
+  text-align: center;
+  color: #F7F7F7;
+}
+.btn-sign:hover{
+  background: #CD6326;
+}
