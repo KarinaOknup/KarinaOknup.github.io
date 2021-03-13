@@ -8,3 +8,18 @@
   text-align: center;
   color: #666666;
 }
+.swiper-slide{
+  width: 300px;
+  height: 360px;
+  line-height: 0.6rem;
+  text-align: center;
+}
+.swiper-slide h4{
+  padding-top: 250px;
+  font-size: 1rem;
+  color: #F7F7F7;
+}
+.swiper-slide span{
+  font-size: 0.7rem;
+  color: #F7F7F7;
+}
