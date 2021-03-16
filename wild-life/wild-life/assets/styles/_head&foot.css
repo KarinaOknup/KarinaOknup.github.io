@@ -4,13 +4,13 @@ nav-bar{
   align-items: center;
 }
 .logo{
+  border: none;
   width: 200px;
   display: flex;
   flex-wrap: nowrap;
   align-content: center;
   font-family: Roboto;
   font-size: 1rem;
-  border: none;
 }
 .header{
   height: 779px;
@@ -27,6 +27,12 @@ nav-bar{
 .ul-nav li{
   margin-left: 30px;
 }
+.search-li{
+  width: 35px;
+}
+.search-li img:hover{
+  width: 30px;
+}
 .donate p{
   margin-bottom: 50px;
 }
@@ -35,11 +41,18 @@ nav-bar{
   width: 300px;
 }
 .content{
-  height: 1368px;
+  height: 1300px;
   background: #CCCCCC;
 }
 .footer{
-  height: 359px;
+  height: 360px;
   background-image: url(../footer.jpg);
   background-size: cover;
+}
+.footer nav-bar {
+  padding-top: 150px;
+}
+.social-net li a:hover{
+  opacity: 0.5;
+  border: none;
 }

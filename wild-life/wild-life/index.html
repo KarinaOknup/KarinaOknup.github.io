@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   <title>WildLife</title>
 </head>
 <body>
@@ -18,7 +21,7 @@
         <ul class="ul-nav">
           <li><a href="#">Blog</a></li>
           <li> <a href="#">Contacts</a></li>
-          <li><img src="./assets/search.png" alt="search"></li>
+          <li class="search-li"><img src="./assets/search.png" alt="search" ></li>
           <li><button class="btn-sign">Sign in</button></li>
         </ul>
       </nav-bar>
@@ -34,17 +37,19 @@
       <div class="articles">
         <h2>Latest articles</h2>
         <span>Breaking news from the wild</span>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-          <!-- slides -->
-            <!-- <div class="swiper-slide" style="background-img:${img}">
-              <h4>${name}</h4>
-              <span>${description}</span>
-            </div> -->
-          </div>
-          <!--  navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+        <div class="slide-box">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+              <!-- slides -->
+                <!-- <div class="swiper-slide" style="background-img:${img}">
+                  <h4>${name}</h4>
+                  <span>${description}</span>
+                </div> -->
+              </div>
+            </div>
+            <!--  navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
       </div>
       <div class="get-news">
@@ -79,6 +84,6 @@
       </nav-bar>
     </div>
   </footer>
-  <script src="./index.js"></script>
 </body>
+<script src="./index.js" type="module"></script>
 </html>
