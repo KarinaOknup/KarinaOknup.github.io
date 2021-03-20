@@ -29,14 +29,12 @@
   color: #F7F7F7;
 }
 .swiper-container {
+  width: 100%;
   margin: 100px 0 240px;
   height: 360px;
 }
 .swiper-button-next, .swiper-button-prev{
   color: #666666;
 }
-.slide-box{
-  width: 100%;
-  position:relative
-}
+
 
