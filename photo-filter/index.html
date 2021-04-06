@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>PhotoFilter</title>
+</head>
+<body>
+  <div class="content">
+    <div class="prop-box">
+      <div>
+        <label for="blur">Blur</label>
+        <br>
+        <input class="propInput" name="blur" type="range" min=0 max=10 step=0.01 value=0 data-sizing="px">
+      </div>
+      <div>
+        <label for="saturate">Saturate</label>
+        <br>
+        <input class="propInput" name="saturate" type="range" min=0 max=10 step=0.01 value=5>
+      </div>
+      <div>
+        <label for="invert">Invert</label>
+        <br>
+        <input class="propInput" name="invert" type="range" min=0 max=1 step=0.01 value=0>
+      </div>
+      <div>
+        <label for="hueRotate">Hue rotate</label>
+        <br>
+        <input class="propInput" name="hue-rotate" type="range" min=0 max=360 step=1 value=0 data-sizing="deg">
+      </div>
+      <div>
+        <label for="sepia">Sepia</label>
+        <br>
+        <input class="propInput" name="sepia" type="range" min=0 max=1 step=0.01 value=0>
+      </div>
+      <div>
+        <label for="brightness">Brightness</label>
+        <br>
+        <input class="propInput" name="brightness" type="range" min=0 max=2 step=0.01 value=1>
+      </div>
+    </div>
+    <div class="img-box">
+      <div class="nav-box">
+        <button class="btn reset">Reset</button>
+        <button class="btn next">Next</button>
+        <button class="btn load">Load</button>
+        <button class="btn save">Save</button>
+      </div>
+      <img src="./assets/jin.jpg" alt="choosen img" class="choosen-img">
+    </div>
+  </div>
+  <footer>
+
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>

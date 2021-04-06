@@ -1,0 +1,24 @@
+/* variables */
+:root{
+  --blur: 0px;/*from 0 to 10*/
+  --saturate:1;/*from 0(b/w) to 1(normal) to inf*/
+  --invert:0;/*from 0 to 1*/
+  --hue-rotate:0deg;/*from 0 to 360*/
+  --sepia:0;/*from 0 to 1*/
+  --brightness:1;/*from 0(black) to 1(normal) to inf*/
+}
+.content{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.img-box{
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+}
+.choosen-img{
+  max-width:500px;
+  filter:blur(var(--blur)) saturate(var(--saturate))
+        invert(var(--invert)) hue-rotate(var(--hue-rotate))
+         sepia(var(--sepia)) brightness(var(--brightness));
+
+}
