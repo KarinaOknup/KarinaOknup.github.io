@@ -13,12 +13,34 @@
 }
 .img-box{
   display: grid;
-  grid-template-rows: 1fr 5fr;
+  grid-template-columns: 1fr 5fr;
 }
-.choosen-img{
-  max-width:500px;
+canvas{
+  max-width: 500px;
   filter:blur(var(--blur)) saturate(var(--saturate))
         invert(var(--invert)) hue-rotate(var(--hue-rotate))
          sepia(var(--sepia)) brightness(var(--brightness));
-
+}
+#fileInput{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+.btn {
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 25px;
+    cursor: pointer;
+    display: block;
+    font: 14px/50px Tahoma;
+    border: 1px solid #0f0f0f;
+    color: #050505;
+}
+.btn:hover {
+   background-color: rgb(183, 168, 197);
 }
