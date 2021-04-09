@@ -62,4 +62,14 @@ fileInput.addEventListener('change', () => {
   read.readAsDataURL(file);
 });
 
+let save = document.querySelector('#save');
+save.addEventListener('click', function(e) {
+  console.log(canvas.toDataURL());
+  let link = document.createElement('a');
+  link.download = 'new.png';
+  link.href = canvas.toDataURL();
+  link.click();
+  link.delete;
+});
+
 drawImage('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')
