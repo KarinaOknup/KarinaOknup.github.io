@@ -2,7 +2,7 @@ let inputs = document.querySelectorAll('.propInput');
 
 function handleUpdate() {
   let suffix = this.dataset.sizing || '';
-  document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix)
+  document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
 }
 
 inputs.forEach(input => input.addEventListener('input', handleUpdate));
@@ -39,16 +39,26 @@ inputs.forEach(input => {
 })
 
 const canvas = document.querySelector('canvas');
-function drawImage(src) {
-  console.log('зашли')
+function drawImage() {
   const img = new Image();
   img.setAttribute('crossOrigin', 'anonymous');
-  img.src = src;
+  img.src = 
   img.onload = function() {
     canvas.width = img.width;
     canvas.height = img.height;
     const ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
+    if (typeof ctx.filter !== "undefined") {
+      ctx.filter =(`blur(${document.getElementsByName('blur').value}px)
+                    saturate(${document.getElementsByName('saturate').value})
+                    invert(${document.getElementsByName('invert').value})
+                    hue-rotate(${document.getElementsByName('hue-rotate').value}deg)
+                    sepia(${document.getElementsByName('sepia').value})
+                    brightness(${document.getElementsByName('brightness').value})`);
+      ctx.drawImage(this, 0, 0);
+    }
+    else {
+      ctx.drawImage(this, 0, 0);
+    }
   };
 }
 const fileInput = document.querySelector('#fileInput');
@@ -64,6 +74,7 @@ fileInput.addEventListener('change', () => {
 
 let save = document.querySelector('#save');
 save.addEventListener('click', function(e) {
+  drawImage();
   console.log(canvas.toDataURL());
   let link = document.createElement('a');
   link.download = 'new.png';
@@ -71,5 +82,3 @@ save.addEventListener('click', function(e) {
   link.click();
   link.delete;
 });
-
-drawImage('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')
